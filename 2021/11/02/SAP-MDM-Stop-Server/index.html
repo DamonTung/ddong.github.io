@@ -22,19 +22,20 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9595118903442497"
      crossorigin="anonymous"></script>
 
-  <meta name="description" content="about meThis is my Blog sitefrom Damon Tung">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="https://blog.ddong.online/about/index.html">
+  <meta name="description" content="package com.sap.mdm.examples;  import com.sap.mdm.commands.AuthenticateServerSessionCommand; import com.sap.mdm.commands.CommandException; import com.sap.mdm.commands.CreateServerSessionCommand; impor">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SAP_MDM_Stop_Server">
+<meta property="og:url" content="https://blog.ddong.online/2021/11/02/SAP-MDM-Stop-Server/index.html">
 <meta property="og:site_name" content="DT&#39;s Blog">
-<meta property="og:description" content="about meThis is my Blog sitefrom Damon Tung">
+<meta property="og:description" content="package com.sap.mdm.examples;  import com.sap.mdm.commands.AuthenticateServerSessionCommand; import com.sap.mdm.commands.CommandException; import com.sap.mdm.commands.CreateServerSessionCommand; impor">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-11-02T02:07:42.000Z">
-<meta property="article:modified_time" content="2021-11-02T02:08:43.167Z">
+<meta property="article:published_time" content="2021-11-02T07:51:34.000Z">
+<meta property="article:modified_time" content="2021-11-02T07:53:03.191Z">
 <meta property="article:author" content="Damon Tung">
+<meta property="article:tag" content="SAP, MDM">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://blog.ddong.online/about/">
+<link rel="canonical" href="https://blog.ddong.online/2021/11/02/SAP-MDM-Stop-Server/">
 
 
 <script id="page-configurations">
@@ -42,13 +43,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>about | DT's Blog
-</title>
+  <title>SAP_MDM_Stop_Server | DT's Blog</title>
   
 
 
@@ -160,44 +160,190 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
-          <div class="content page posts-expand">
+          <div class="content post posts-expand">
             
 
     
-    
-    
-    <div class="post-block" lang="en">
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://blog.ddong.online/2021/11/02/SAP-MDM-Stop-Server/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Damon Tung">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DT's Blog">
+    </span>
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          SAP_MDM_Stop_Server
+        </h1>
 
-<h1 class="post-title" itemprop="name headline">about
-</h1>
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
 
-<div class="post-meta">
+              <time title="Created: 2021-11-02 15:51:34 / Modified: 15:53:03" itemprop="dateCreated datePublished" datetime="2021-11-02T15:51:34+08:00">2021-11-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/SAP/" itemprop="url" rel="index"><span itemprop="name">SAP</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <pre><code>package com.sap.mdm.examples;
+
+import com.sap.mdm.commands.AuthenticateServerSessionCommand;
+import com.sap.mdm.commands.CommandException;
+import com.sap.mdm.commands.CreateServerSessionCommand;
+import com.sap.mdm.net.ConnectionException;
+import com.sap.mdm.net.ConnectionPool;
+import com.sap.mdm.net.ConnectionPoolFactory;
+import com.sap.mdm.server.commands.StopServerCommand;
+
+/*
+ * Copyright Â© 2004-2006 by SAP AG.
+ * All Rights Reserved.
+ * 
+ * SAP, R/3, mySAP, mySAP.com, xApps, xApp, SAP NetWeaver, and other SAP
+ * products and services mentioned herein as well as their respective logos are
+ * trademarks or registered trademarks of SAP AG in Germany and in several other
+ * countries all over the world. All other product and service names mentioned
+ * are the trademarks of their respective companies. Data contained in this
+ * document serves informational purposes only. National product specifications
+ * may vary.
+ * 
+ * These materials are subject to change without notice. These materials are
+ * provided by SAP AG and its affiliated companies (SAP Group) for informational
+ * purposes only, without representation or warranty of any kind, and SAP Group
+ * shall not be liable for errors or omissions with respect to the materials.
+ * The only warranties for SAP Group products and services are those that are
+ * set forth in the express warranty statements accompanying such products and
+ * services, if any. Nothing herein should be construed as constituting an
+ * additional warranty.
+ * 
+ */
+
+/**
+ * This example demonstrates shutting down the MDM server. The steps are:
+ * &lt;ol&gt;
+ * &lt;li&gt;Establishes connection with the MDM server&lt;/li&gt;
+ * &lt;li&gt;Creates a server session&lt;/li&gt;
+ * &lt;li&gt;Authenticates the server session&lt;/li&gt;
+ * &lt;li&gt;Stops the MDM server&lt;/li&gt;
+ * &lt;/ol&gt;
+ * Commands used:&lt;br&gt;
+ * &lt;code&gt;CreateServerSessionCommand&lt;/code&gt;&lt;br&gt;
+ * &lt;code&gt;AuthenticateServerSessionCommand&lt;/code&gt;&lt;br&gt;
+ * &lt;code&gt;StopServerCommand&lt;/code&gt;&lt;br&gt;
+ * &lt;br&gt;
+ * &lt;a href=&quot;StopServer.java&quot;&gt;Source code for StopServer.java&lt;/a&gt;
+ */
+public class StopServer &#123;        
+private StopServer() &#123;
+&#125;
+
+public static void main(String[] args) &#123;
+    // create connection pool
+    String connectionTag = &quot;LOCALHOST&quot;;
+    ConnectionPool connections = null;
+    try &#123;
+        connections = ConnectionPoolFactory.getInstance(connectionTag);
+    &#125; catch (ConnectionException e) &#123;
+        e.printStackTrace();
+        return;
+    &#125;
+
+    // create server session
+    CreateServerSessionCommand sessionCommand = new CreateServerSessionCommand(connections);
+    try &#123;
+        sessionCommand.execute();
+    &#125; catch (CommandException e) &#123;
+        e.printStackTrace();
+        return;
+    &#125;        
+    String sessionId = sessionCommand.getSession();
+    
+    // authenticate the repository session
+    String userName = &quot;Admin&quot;;
+    String userPassword = &quot;&quot;;
+    AuthenticateServerSessionCommand authCommand = new AuthenticateServerSessionCommand(connections);
+    authCommand.setSession(sessionId);
+    authCommand.setUserName(userName);
+    authCommand.setUserPassword(userPassword);
+    try &#123;
+        authCommand.execute();
+    &#125; catch (CommandException e) &#123;
+        e.printStackTrace();
+        return;
+    &#125;        
+
+    // stop the MDM server
+    StopServerCommand stopServerCommand = new StopServerCommand(connections);
+    stopServerCommand.setSession(sessionId);
+    try &#123;
+        stopServerCommand.execute();
+    &#125; catch (CommandException e) &#123;
+        e.printStackTrace();
+        return;
+    &#125;
+&#125;
+&#125;
+</code></pre>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/SAP-MDM/" rel="tag"># SAP, MDM</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/11/02/Check-Attribute-Definition/" rel="prev" title="Check_Attribute_Definition">
+      <i class="fa fa-chevron-left"></i> Check_Attribute_Definition
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
-          <h3 id="about-me"><a href="#about-me" class="headerlink" title="about me"></a>about me</h3><p>This is my Blog site<br><em>from</em> <strong>Damon Tung</strong></p>
-
-      </div>
-      
-      
-      
-    </div>
-    
-
-    
-    
-    
 
 
           </div>
@@ -248,7 +394,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#about-me"><span class="nav-number">1.</span> <span class="nav-text">about me</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
