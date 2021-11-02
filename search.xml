@@ -278,12 +278,15 @@ Error message:
 <pre><code>Use Git Bash to run the command, instead of cmd
 </code></pre>
 ]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
       <tags>
         <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
-    <title>mxupdate</title>
+    <title>MxUpdate Samples</title>
     <url>/2021/11/02/mxupdate/</url>
     <content><![CDATA[<h2 id="program"><a href="#program" class="headerlink" title="program"></a>program</h2><pre><code>exec program mxupdate --update --path D:\EPLM_Workspace\Enovia-DEV\40_mxupdate\program\jpo\ --program nsnDBAccessJPO;
 compile program nsnDBAccessJPO;
@@ -297,6 +300,9 @@ compile program nsnDBAccessJPO;
 <h2 id="run-tcl-script"><a href="#run-tcl-script" class="headerlink" title="run tcl script"></a>run tcl script</h2><pre><code>40_mxupdate/datamodel/type/TYPE_Conflict Mineral Declaration.tcl
 </code></pre>
 ]]></content>
+      <categories>
+        <category>Enovia</category>
+      </categories>
       <tags>
         <tag>Enovia</tag>
       </tags>
