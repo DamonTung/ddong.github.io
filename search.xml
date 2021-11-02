@@ -300,4 +300,23 @@ Error message:
         <tag>Hexo</tag>
       </tags>
   </entry>
+  <entry>
+    <title>mxupdate</title>
+    <url>/2021/11/02/mxupdate/</url>
+    <content><![CDATA[<h2 id="program"><a href="#program" class="headerlink" title="program"></a>program</h2><pre><code>exec program mxupdate --update --path D:\EPLM_Workspace\Enovia-DEV\40_mxupdate\program\jpo\ --program nsnDBAccessJPO;
+compile program nsnDBAccessJPO;
+</code></pre>
+<h2 id="attribute"><a href="#attribute" class="headerlink" title="attribute"></a>attribute</h2><pre><code>exec program mxupdate --update --path E:\EPLM_workspace\Enovia-5-3\40_mxupdate\datamodel\attribute\ --attribute &quot;NSN Network Element Type&quot;;
+</code></pre>
+<h2 id="type"><a href="#type" class="headerlink" title="type"></a>type</h2><pre><code>exec program mxupdate --update --path E:\EPLM_workspace\Enovia-5-3\40_mxupdate\datamodel\type\ --type &quot;Conflict Mineral Declaration&quot;;
+</code></pre>
+<h2 id="person"><a href="#person" class="headerlink" title="person"></a>person</h2><pre><code>exec program mxupdate --update --path C:\workspace\EPLM\vendor\dbschema\user\person\ --person admin_platform;
+</code></pre>
+<h2 id="run-tcl-script"><a href="#run-tcl-script" class="headerlink" title="run tcl script"></a>run tcl script</h2><pre><code>40_mxupdate/datamodel/type/TYPE_Conflict Mineral Declaration.tcl
+</code></pre>
+]]></content>
+      <tags>
+        <tag>Enovia</tag>
+      </tags>
+  </entry>
 </search>
