@@ -162,6 +162,113 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://blog.ddong.online/2021/11/02/Check-Attribute-Definition/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Damon Tung">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DT's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/02/Check-Attribute-Definition/" class="post-title-link" itemprop="url">Check_Attribute_Definition</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-11-02 15:42:45 / Modified: 15:48:07" itemprop="dateCreated datePublished" datetime="2021-11-02T15:42:45+08:00">2021-11-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Enovia/" itemprop="url" rel="index"><span itemprop="name">Enovia</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <pre><code>public void checkAttributeDefinition(String strAttrName) throws Exception&#123;
+        System.out.println(&quot;Context user:&quot; + context.getUser());
+        String attName = strAttrName;
+        AttributeType attrType = new AttributeType(attName);
+
+        if(attrType != null) &#123;
+            attrType.open(context);
+            System.out.println(&quot;Attribute Schema: &quot; + attrType.getName());
+            System.out.println(&quot;Max Length: &quot; + attrType.getMaxLength());
+            System.out.println(&quot;Is Multivalue: &quot; + attrType.isMultiVal());
+            System.out.println(&quot;Choices::&quot; + attrType.getChoices());
+            System.out.println(&quot;Is Multiline: &quot; + attrType.isMultiLine());
+            System.out.println(&quot;Is Range value: &quot; + attrType.isRangeVal());
+            System.out.println(&quot;Is Single value: &quot; + attrType.isSingleVal());
+            System.out.println(&quot;Is Hidden value: &quot; + attrType.isHidden());
+            System.out.println(&quot;Default Value:&quot; + attrType.getDefaultValue());
+            System.out.println(&quot;Data Type:&quot; + attrType.getDataType());
+            System.out.println(&quot;Attribute Description:&quot; + attrType.getDescription());
+            String queryTrigger = &quot;print attribute \&quot;&quot; + attName + &quot;\&quot; select trigger dump |&quot;;
+            System.out.println(&quot;Trigger::&quot; + MqlUtil.mqlCommand(context, queryTrigger));
+            System.out.println(&quot;Is Dimension Attribute: &quot; + UOMUtil.isAssociatedWithDimension(context, attName));
+            if (UOMUtil.isAssociatedWithDimension(context, attName)) &#123;
+                System.out.println(&quot;Attribute Dimension:&quot; + attrType.getDimension(context));
+            &#125;
+        &#125;
+        String queryType = &quot;list type * select name attribute[&quot; + attName + &quot;] dump |&quot;;
+        String result = MQLUtils.mql(context, queryType);
+        String[] tempArr = result.split(&quot;\\n&quot;);
+        StringList attDefinedType = new StringList();
+        for(String strType: tempArr) &#123;
+            String[] tempType = strType.split(&quot;\\|&quot;);
+            if(tempType.length &gt; 1 &amp;&amp; &quot;True&quot;.equalsIgnoreCase(tempType[1]))&#123;
+                attDefinedType.add(tempType[0]);
+            &#125;
+        &#125;
+        if(attDefinedType.size() &gt; 0)&#123;
+            System.out.println(&quot;Defined on Fllowing Types::&lt;&quot; + String.join(&quot;,&quot;, attDefinedType) + &quot;&gt;.&quot;);
+        &#125;
+    &#125;
+</code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://blog.ddong.online/2021/11/02/mxupdate/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -736,7 +843,7 @@ Error message:
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -749,7 +856,7 @@ Error message:
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

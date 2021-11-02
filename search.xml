@@ -348,4 +348,55 @@ compile program nsnDBAccessJPO;
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
   </entry>
+  <entry>
+    <title>Check_Attribute_Definition</title>
+    <url>/2021/11/02/Check-Attribute-Definition/</url>
+    <content><![CDATA[<pre><code>public void checkAttributeDefinition(String strAttrName) throws Exception&#123;
+        System.out.println(&quot;Context user:&quot; + context.getUser());
+        String attName = strAttrName;
+        AttributeType attrType = new AttributeType(attName);
+
+        if(attrType != null) &#123;
+            attrType.open(context);
+            System.out.println(&quot;Attribute Schema: &quot; + attrType.getName());
+            System.out.println(&quot;Max Length: &quot; + attrType.getMaxLength());
+            System.out.println(&quot;Is Multivalue: &quot; + attrType.isMultiVal());
+            System.out.println(&quot;Choices::&quot; + attrType.getChoices());
+            System.out.println(&quot;Is Multiline: &quot; + attrType.isMultiLine());
+            System.out.println(&quot;Is Range value: &quot; + attrType.isRangeVal());
+            System.out.println(&quot;Is Single value: &quot; + attrType.isSingleVal());
+            System.out.println(&quot;Is Hidden value: &quot; + attrType.isHidden());
+            System.out.println(&quot;Default Value:&quot; + attrType.getDefaultValue());
+            System.out.println(&quot;Data Type:&quot; + attrType.getDataType());
+            System.out.println(&quot;Attribute Description:&quot; + attrType.getDescription());
+            String queryTrigger = &quot;print attribute \&quot;&quot; + attName + &quot;\&quot; select trigger dump |&quot;;
+            System.out.println(&quot;Trigger::&quot; + MqlUtil.mqlCommand(context, queryTrigger));
+            System.out.println(&quot;Is Dimension Attribute: &quot; + UOMUtil.isAssociatedWithDimension(context, attName));
+            if (UOMUtil.isAssociatedWithDimension(context, attName)) &#123;
+                System.out.println(&quot;Attribute Dimension:&quot; + attrType.getDimension(context));
+            &#125;
+        &#125;
+        String queryType = &quot;list type * select name attribute[&quot; + attName + &quot;] dump |&quot;;
+        String result = MQLUtils.mql(context, queryType);
+        String[] tempArr = result.split(&quot;\\n&quot;);
+        StringList attDefinedType = new StringList();
+        for(String strType: tempArr) &#123;
+            String[] tempType = strType.split(&quot;\\|&quot;);
+            if(tempType.length &gt; 1 &amp;&amp; &quot;True&quot;.equalsIgnoreCase(tempType[1]))&#123;
+                attDefinedType.add(tempType[0]);
+            &#125;
+        &#125;
+        if(attDefinedType.size() &gt; 0)&#123;
+            System.out.println(&quot;Defined on Fllowing Types::&lt;&quot; + String.join(&quot;,&quot;, attDefinedType) + &quot;&gt;.&quot;);
+        &#125;
+    &#125;
+</code></pre>
+]]></content>
+      <categories>
+        <category>Enovia</category>
+      </categories>
+      <tags>
+        <tag>Enovia,Attribute</tag>
+      </tags>
+  </entry>
 </search>
