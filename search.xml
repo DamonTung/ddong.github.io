@@ -1442,4 +1442,31 @@ public static void main(String[] args) &#123;
         <tag>Enovia</tag>
       </tags>
   </entry>
+  <entry>
+    <title>SVN_Commands</title>
+    <url>/2021/11/02/SVN-Commands/</url>
+    <content><![CDATA[<h2 id="Got-detail-of-repository"><a href="#Got-detail-of-repository" class="headerlink" title="Got detail of repository"></a>Got detail of repository</h2><pre><code>svn info
+</code></pre>
+<h2 id="change-svn-branch-within-same-repository"><a href="#change-svn-branch-within-same-repository" class="headerlink" title="change svn branch within same repository"></a>change svn branch within same repository</h2><pre><code>svn switch NEW_BRANCH_URL
+svn cleanup
+</code></pre>
+<h2 id="change-location-with-different-repository"><a href="#change-location-with-different-repository" class="headerlink" title="change location with different repository"></a>change location with different repository</h2><pre><code>svn switch --relocate CURRENT_URL NEW_URL
+</code></pre>
+<blockquote>
+<p>Note: Be careful when using the –relocate option. If you mistype the argument, you might end up creating nonsensical URLs within your working copy that render the whole workspace unusable and tricky to fix. It’s also important to understand exactly when one should or shouldn’t use –relocate. Here’s the rule of thumb:</p>
+</blockquote>
+<ol>
+<li><p>If the working copy needs to reflect a new directory within the repository, use just svn switch.</p>
+</li>
+<li><p>If the working copy still reflects the same repository directory, but the location of the repository itself has changed, use svn switch with the –relocate option.</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>SVN</category>
+      </categories>
+      <tags>
+        <tag>SVN</tag>
+      </tags>
+  </entry>
 </search>

@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.ddong.online/2021/11/02/SVN-Commands/</loc>
+    
+    <lastmod>2021-11-02</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.ddong.online/2021/11/02/StringUtilsInEnovia/</loc>
     
     <lastmod>2021-11-02</lastmod>
@@ -115,6 +122,13 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>https://blog.ddong.online/tags/SVN/</loc>
+    <lastmod>2021-11-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   
   <url>
@@ -140,6 +154,13 @@
   
   <url>
     <loc>https://blog.ddong.online/categories/Redis/</loc>
+    <lastmod>2021-11-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.ddong.online/categories/SVN/</loc>
     <lastmod>2021-11-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
