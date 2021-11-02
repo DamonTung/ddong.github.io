@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.ddong.online","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="mxType framework.jar  Static Method List  isOfParentType123456789101112131415161718&#x2F;*** var0 - context* var1 - sub type need to check* var2 - parent type **&#x2F;public static boolean isOfParentType(Contex">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mxType_in_Enovia">
+<meta property="og:url" content="https://blog.ddong.online/2021/11/02/mxType-in-Enovia/index.html">
+<meta property="og:site_name" content="DT&#39;s Blog">
+<meta property="og:description" content="mxType framework.jar  Static Method List  isOfParentType123456789101112131415161718&#x2F;*** var0 - context* var1 - sub type need to check* var2 - parent type **&#x2F;public static boolean isOfParentType(Contex">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-11-02T10:05:07.000Z">
+<meta property="article:modified_time" content="2021-11-02T10:07:21.464Z">
+<meta property="article:author" content="Damon Tung">
+<meta property="article:tag" content="Enovia">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://blog.ddong.online/2021/11/02/mxType-in-Enovia/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>mxType_in_Enovia | DT's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9595118903442497"
+     crossorigin="anonymous"></script>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">DT's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://blog.ddong.online/2021/11/02/mxType-in-Enovia/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Damon Tung">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DT's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          mxType_in_Enovia
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-11-02 18:05:07 / Modified: 18:07:21" itemprop="dateCreated datePublished" datetime="2021-11-02T18:05:07+08:00">2021-11-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Enovia/" itemprop="url" rel="index"><span itemprop="name">Enovia</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="mxType"><a href="#mxType" class="headerlink" title="mxType"></a>mxType</h2><blockquote>
+<p>framework.jar</p>
+</blockquote>
+<p>Static Method List </p>
+<h3 id="isOfParentType"><a href="#isOfParentType" class="headerlink" title="isOfParentType"></a>isOfParentType</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* var0 - context</span></span><br><span class="line"><span class="comment">* var1 - sub type need to check</span></span><br><span class="line"><span class="comment">* var2 - parent type </span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"><span class="keyword">public</span> <span class="built_in">static</span> <span class="keyword">boolean</span> isOfParentType(Context var0, <span class="keyword">String</span> var1, <span class="keyword">String</span> var2) throws FrameworkException &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (var1.equals(var2)) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">String</span> var3 = <span class="string">&quot;derivative[&quot;</span> + var1 + <span class="string">&quot;]&quot;</span>;</span><br><span class="line">                <span class="keyword">String</span> var4 = MqlUtil.mqlCommand(var0, <span class="string">&quot;print type <span class="subst">$1</span> select <span class="subst">$2</span> dump&quot;</span>, <span class="keyword">new</span> <span class="keyword">String</span>[]&#123;var2, var3&#125;);</span><br><span class="line">                <span class="keyword">return</span> var4.equalsIgnoreCase(<span class="string">&quot;true&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (<span class="built_in">Exception</span> var5) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> FrameworkException(var5);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="getAttributes"><a href="#getAttributes" class="headerlink" title="getAttributes"></a>getAttributes</h3><figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* var0 - current context</span></span><br><span class="line"><span class="comment">* var1 - type name</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">public static MapList get<span class="constructor">Attributes(Context <span class="params">var0</span>, String <span class="params">var1</span>)</span> throws FrameworkException &#123;</span><br><span class="line">        return get<span class="constructor">Attributes(<span class="params">var0</span>, <span class="params">var1</span>, <span class="params">false</span>)</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="getAttributes-1"><a href="#getAttributes-1" class="headerlink" title="getAttributes"></a>getAttributes</h3><figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* var0 - context</span></span><br><span class="line"><span class="comment">* var1 - type name</span></span><br><span class="line"><span class="comment">* var2 - if attribute is multiline</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"> public static MapList get<span class="constructor">Attributes(Context <span class="params">var0</span>, String <span class="params">var1</span>, <span class="params">boolean</span> <span class="params">var2</span>)</span> throws FrameworkException &#123;</span><br><span class="line">        AttributeType var3 = null;</span><br><span class="line">        MapList var4 = <span class="keyword">new</span> <span class="constructor">MapList()</span>;</span><br><span class="line">        <span class="built_in">int</span> var5 = <span class="number">0</span>;</span><br><span class="line">        String var6 = <span class="string">&quot;type&quot;</span>;</span><br><span class="line">        String var7 = <span class="string">&quot;name&quot;</span>;</span><br><span class="line">        String var8 = <span class="string">&quot;description&quot;</span>;</span><br><span class="line">        String var9 = <span class="string">&quot;default&quot;</span>;</span><br><span class="line">        String var10 = <span class="string">&quot;choices&quot;</span>;</span><br><span class="line">        String var11 = <span class="string">&quot;multiline&quot;</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="module-access"><span class="module"><span class="identifier">ContextUtil</span>.</span></span>start<span class="constructor">Transaction(<span class="params">var0</span>, <span class="params">false</span>)</span>;</span><br><span class="line">            Vault var12 = var0.get<span class="constructor">Vault()</span>;</span><br><span class="line">            BusinessType var13 = <span class="keyword">new</span> <span class="constructor">BusinessType(<span class="params">var1</span>, <span class="params">var12</span>)</span>;</span><br><span class="line">            var13.<span class="keyword">open</span>(var0);</span><br><span class="line">            BusinessTypeList var14 = <span class="module-access"><span class="module"><span class="identifier">BusinessType</span>.</span></span>get<span class="constructor">BusinessTypes(<span class="params">var0</span>)</span>;</span><br><span class="line">            BusinessTypeItr var15 = <span class="keyword">new</span> <span class="constructor">BusinessTypeItr(<span class="params">var14</span>)</span>;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span>(<span class="literal">true</span>) &#123;</span><br><span class="line">                BusinessType var16;</span><br><span class="line">                <span class="keyword">do</span> &#123;</span><br><span class="line">                    <span class="keyword">if</span> (!var15.next<span class="literal">()</span>) &#123;</span><br><span class="line">                        var13.close(var0);</span><br><span class="line">                        <span class="module-access"><span class="module"><span class="identifier">ContextUtil</span>.</span></span>commit<span class="constructor">Transaction(<span class="params">var0</span>)</span>;</span><br><span class="line">                        return var4;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    var16 = var15.obj<span class="literal">()</span>;</span><br><span class="line">                &#125; <span class="keyword">while</span>(!var16.<span class="keyword">to</span><span class="constructor">String()</span>.equals(var1));</span><br><span class="line"></span><br><span class="line">                var16.<span class="keyword">open</span>(var0);</span><br><span class="line">                AttributeTypeList var17 = var16.get<span class="constructor">AttributeTypes(<span class="params">var0</span>)</span>;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">for</span>(AttributeTypeItr var18 = <span class="keyword">new</span> <span class="constructor">AttributeTypeItr(<span class="params">var17</span>)</span>; var18.next<span class="literal">()</span>; ++var5) &#123;</span><br><span class="line">                    HashMap var19 = <span class="keyword">new</span> <span class="constructor">HashMap()</span>;</span><br><span class="line">                    var3 = var18.obj<span class="literal">()</span>;</span><br><span class="line">                    var3.<span class="keyword">open</span>(var0);</span><br><span class="line">                    var19.put(var7, var3.<span class="keyword">to</span><span class="constructor">String()</span>);</span><br><span class="line">                    var19.put(var6, var3.get<span class="constructor">DataType()</span>);</span><br><span class="line">                    var19.put(var8, var3.get<span class="constructor">Description()</span>);</span><br><span class="line">                    var19.put(var9, var3.get<span class="constructor">DefaultValue()</span>);</span><br><span class="line">                    var19.put(var10, var3.get<span class="constructor">Choices()</span>);</span><br><span class="line">                    <span class="keyword">if</span> (var2) &#123;</span><br><span class="line">                        <span class="keyword">if</span> (<span class="string">&quot;string&quot;</span>.equals<span class="constructor">IgnoreCase(<span class="params">var3</span>.<span class="params">getDataType</span>()</span>)) &#123;</span><br><span class="line">                            String var20 = <span class="module-access"><span class="module"><span class="identifier">MqlUtil</span>.</span></span>mql<span class="constructor">Command(<span class="params">var0</span>, <span class="string">&quot;print attribute $1 select $2 dump&quot;</span>, <span class="params">new</span> String[]&#123;<span class="params">var3</span>.<span class="params">toString</span>()</span>, <span class="string">&quot;multiline&quot;</span>&#125;);</span><br><span class="line">                            var19.put(var11, var20);</span><br><span class="line">                        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                            var19.put(var11, <span class="string">&quot;false&quot;</span>);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    var3.close(var0);</span><br><span class="line">                    var4.add(var5, var19);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                var16.close(var0);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; catch (Exception var21) &#123;</span><br><span class="line">            <span class="module-access"><span class="module"><span class="identifier">ContextUtil</span>.</span></span>abort<span class="constructor">Transaction(<span class="params">var0</span>)</span>;</span><br><span class="line">            throw <span class="keyword">new</span> <span class="constructor">FrameworkException(<span class="params">var21</span>)</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="getDefaultPolicy"><a href="#getDefaultPolicy" class="headerlink" title="getDefaultPolicy"></a>getDefaultPolicy</h3><figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* var0 - context</span></span><br><span class="line"><span class="comment">* var1 - business type</span></span><br><span class="line"><span class="comment">* var2 - if true means query policy for Person otherwise false</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"> public static Map get<span class="constructor">DefaultPolicy(Context <span class="params">var0</span>, String <span class="params">var1</span>, <span class="params">boolean</span> <span class="params">var2</span>)</span> throws FrameworkException &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Map var3 = null;</span><br><span class="line">            MapList var4 = get<span class="constructor">Policies(<span class="params">var0</span>, <span class="params">var1</span>, <span class="params">var2</span>)</span>;</span><br><span class="line">            <span class="keyword">if</span> (!var4.is<span class="constructor">Empty()</span>) &#123;</span><br><span class="line">                var3 = (Map)var4.get(<span class="number">0</span>);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            return var3;</span><br><span class="line">        &#125; catch (Exception var5) &#123;</span><br><span class="line">            throw <span class="keyword">new</span> <span class="constructor">FrameworkException(<span class="params">var5</span>)</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line"> public static MapList get<span class="constructor">Policies(Context <span class="params">var0</span>, String <span class="params">var1</span>, <span class="params">boolean</span> <span class="params">var2</span>)</span> throws MatrixException &#123;</span><br><span class="line">        MapList var3 = <span class="keyword">new</span> <span class="constructor">MapList()</span>;</span><br><span class="line">        BusinessType var4 = <span class="keyword">new</span> <span class="constructor">BusinessType(<span class="params">var1</span>, <span class="params">var0</span>.<span class="params">getVault</span>()</span>);</span><br><span class="line">        var4.<span class="keyword">open</span>(var0);</span><br><span class="line">        PolicyList var5 = null;</span><br><span class="line">        <span class="keyword">if</span> (var2) &#123;</span><br><span class="line">            var5 = var4.get<span class="constructor">PoliciesForPerson(<span class="params">var0</span>, <span class="params">false</span>)</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            var5 = var4.get<span class="constructor">Policies(<span class="params">var0</span>)</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Iterator var7 = var5.iterator<span class="literal">()</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(var7.has<span class="constructor">Next()</span>) &#123;</span><br><span class="line">            Policy var6 = (Policy)var7.next<span class="literal">()</span>;</span><br><span class="line">            var6.<span class="keyword">open</span>(var0);</span><br><span class="line">            HashMap var8 = <span class="keyword">new</span> <span class="constructor">HashMap()</span>;</span><br><span class="line">            var8.put(<span class="string">&quot;name&quot;</span>, var6.get<span class="constructor">Name()</span>);</span><br><span class="line">            var8.put(<span class="string">&quot;description&quot;</span>, var6.get<span class="constructor">Description(<span class="params">var0</span>)</span>);</span><br><span class="line">            var8.put(<span class="string">&quot;revision&quot;</span>, var6.get<span class="constructor">FirstInSequence()</span>);</span><br><span class="line">            String var9 = <span class="module-access"><span class="module"><span class="identifier">MqlUtil</span>.</span></span>mql<span class="constructor">Command(<span class="params">var0</span>, <span class="string">&quot;print Policy $1 select $2 dump $3&quot;</span>, <span class="params">new</span> String[]&#123;<span class="params">var6</span>.<span class="params">getName</span>()</span>, <span class="string">&quot;format&quot;</span>, <span class="string">&quot;|&quot;</span>&#125;);</span><br><span class="line">            String var10 = <span class="module-access"><span class="module"><span class="identifier">MqlUtil</span>.</span></span>mql<span class="constructor">Command(<span class="params">var0</span>, <span class="string">&quot;print Policy $1 select $2 dump $3&quot;</span>, <span class="params">new</span> String[]&#123;<span class="params">var6</span>.<span class="params">getName</span>()</span>, <span class="string">&quot;defaultformat&quot;</span>, <span class="string">&quot;|&quot;</span>&#125;);</span><br><span class="line">            String var11 = <span class="module-access"><span class="module"><span class="identifier">MqlUtil</span>.</span></span>mql<span class="constructor">Command(<span class="params">var0</span>, <span class="string">&quot;print Policy $1 select $2 dump $3&quot;</span>, <span class="params">new</span> String[]&#123;<span class="params">var6</span>.<span class="params">getName</span>()</span>, <span class="string">&quot;store&quot;</span>, <span class="string">&quot;|&quot;</span>&#125;);</span><br><span class="line">            StringList var12 = <span class="module-access"><span class="module"><span class="identifier">FrameworkUtil</span>.</span></span>split(var9, <span class="string">&quot;|&quot;</span>);</span><br><span class="line">            var8.put(<span class="string">&quot;formats&quot;</span>, var12);</span><br><span class="line">            var8.put(<span class="string">&quot;defaultFormat&quot;</span>, var10);</span><br><span class="line">            var8.put(<span class="string">&quot;store&quot;</span>, var11);</span><br><span class="line">            var6.close(var0);</span><br><span class="line">            var3.add(var8);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        return var3;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Enovia/" rel="tag"># Enovia</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/11/02/Oracle-PDB-and-CDB/" rel="prev" title="Oracle_PDB_and_CDB">
+      <i class="fa fa-chevron-left"></i> Oracle_PDB_and_CDB
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/11/02/lsof-linux/" rel="next" title="lsof_linux">
+      lsof_linux <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#mxType"><span class="nav-number">1.</span> <span class="nav-text">mxType</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#isOfParentType"><span class="nav-number">1.1.</span> <span class="nav-text">isOfParentType</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getAttributes"><span class="nav-number">1.2.</span> <span class="nav-text">getAttributes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getAttributes-1"><span class="nav-number">1.3.</span> <span class="nav-text">getAttributes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getDefaultPolicy"><span class="nav-number">1.4.</span> <span class="nav-text">getDefaultPolicy</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Damon Tung</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Damon Tung</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

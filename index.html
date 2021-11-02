@@ -168,6 +168,562 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://blog.ddong.online/2021/11/02/mql-enovia/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Damon Tung">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DT's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/02/mql-enovia/" class="post-title-link" itemprop="url">MQL 快捷键</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-11-02 18:19:07 / Modified: 18:21:12" itemprop="dateCreated datePublished" datetime="2021-11-02T18:19:07+08:00">2021-11-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Enovia/" itemprop="url" rel="index"><span itemprop="name">Enovia</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Using-Control-Characters"><a href="#Using-Control-Characters" class="headerlink" title="Using Control Characters"></a>Using Control Characters</h1><p>All editing commands are control characters which are entered by holding the Ctrl or Esc key while typing another key, as listed in the following table. All editing commands operate from any place on the line, not just at the beginning of the line.</p>
+<p><em>Command Line Editing Control Characters</em></p>
+<table>
+<thead>
+<tr>
+<th>Control Character</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Ctrl-A</td>
+<td>Moves the cursor to the beginning of the line.</td>
+</tr>
+<tr>
+<td>Ctrl-B</td>
+<td>Moves the cursor to the left (back) one column.</td>
+</tr>
+<tr>
+<td>Esc-B</td>
+<td>Moves the cursor back one word.</td>
+</tr>
+<tr>
+<td>Ctrl-D</td>
+<td>Deletes the character to the right of the cursor.</td>
+</tr>
+<tr>
+<td>Ctrl-E</td>
+<td>Moves the cursor to the end of the line.</td>
+</tr>
+<tr>
+<td>Ctrl-F</td>
+<td>Moves the cursor right (forward) one column.</td>
+</tr>
+<tr>
+<td>Esc-F</td>
+<td>Moves the cursor forward one word.</td>
+</tr>
+<tr>
+<td>Ctrl-H</td>
+<td>Deletes the character to the left of the cursor.</td>
+</tr>
+<tr>
+<td>Ctrl-I</td>
+<td>Jumps to the next tab stop.</td>
+</tr>
+<tr>
+<td>Ctrl-J</td>
+<td>Returns the current line.</td>
+</tr>
+<tr>
+<td>Ctrl-K</td>
+<td>Kills from the cursor to the end of the line (see Ctrl-Y).</td>
+</tr>
+<tr>
+<td>Ctrl-L</td>
+<td>Redisplays the current line.</td>
+</tr>
+<tr>
+<td>Ctrl-M</td>
+<td>Returns the current line.</td>
+</tr>
+<tr>
+<td>Ctrl-N</td>
+<td>Fetches the next line from the history list.</td>
+</tr>
+<tr>
+<td>Ctrl-O</td>
+<td>Toggles the overwrite/insert mode, initially in insert mode.</td>
+</tr>
+<tr>
+<td>Ctrl-P</td>
+<td>Fetches the previous line from the history list.</td>
+</tr>
+<tr>
+<td>Ctrl-R</td>
+<td>Begins a reverse incremental search through the history list. Each printing character typed adds to the search substring (which is empty initially). MQL finds and displays the first matching location. Typing Ctrl-R again marks the current starting location and begins a new search for the current substring.</td>
+</tr>
+<tr>
+<td>Type Ctrl-H</td>
+<td>Or press the Del key to delete the last character from the search string. MQL restarts the search from the last starting location.Repeated Ctrl-H or Del characters, therefore, unwind the search to the match nearest to the point where you last typed Ctrl-R or Ctrl-S (described below).Type Esc or any other editing character to accept the current match and terminate the search.</td>
+</tr>
+<tr>
+<td>Type Ctrl-H</td>
+<td>Or press the Del key until the search string is empty to reset the start of the search to the beginning of the history list. Type Esc or any other editing character to accept the current match and terminate the search.</td>
+</tr>
+<tr>
+<td>Ctrl-S</td>
+<td>Begins a forward incremental search through the history list. The behavior is like Ctrl-R but in the opposite direction through the history list.</td>
+</tr>
+<tr>
+<td>Ctrl-T</td>
+<td>Transposes the current and previous character.</td>
+</tr>
+<tr>
+<td>Ctrl-U</td>
+<td>Kills the entire line (see Ctrl-Y).</td>
+</tr>
+<tr>
+<td>Ctrl-Y</td>
+<td>Yanks the previously killed text back at the current location.Backspace Deletes the character left of the cursor.</td>
+</tr>
+<tr>
+<td>Del</td>
+<td>Deletes the character right of the cursor.</td>
+</tr>
+<tr>
+<td>Return</td>
+<td>Returns the current line.</td>
+</tr>
+<tr>
+<td>Tab</td>
+<td>Jumps to the next tab stop.</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://blog.ddong.online/2021/11/02/check-disk-space-linx/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Damon Tung">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DT's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/02/check-disk-space-linx/" class="post-title-link" itemprop="url">检查Linux 磁盘空间</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-11-02 18:17:03 / Modified: 18:17:52" itemprop="dateCreated datePublished" datetime="2021-11-02T18:17:03+08:00">2021-11-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="How-to-check-disk-space"><a href="#How-to-check-disk-space" class="headerlink" title="How to check disk space"></a>How to check disk space</h1><p>Start by tracking down where the excess usage is being stored. If you have no idea, start from the mountpoint for /dev/sda1:</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount <span class="string">| grep sda1</span></span><br></pre></td></tr></table></figure>
+<p>Use the du command. If /dev/sda1 is mounted on / (“root”):</p>
+<figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">du</span> --<span class="comment">max</span><span class="literal">-</span><span class="comment">depth=1</span> --<span class="comment">human</span><span class="literal">-</span><span class="comment">readable</span> <span class="comment">/</span> <span class="comment">|</span> <span class="comment">sort</span> --<span class="comment">human</span><span class="literal">-</span><span class="comment">numeric</span><span class="literal">-</span><span class="comment">sort</span></span><br></pre></td></tr></table></figure>
+<p>This will list the first level of directories contained in the specified path, in order from smallest to largest. You can increase the depth past 1 to get details of the subdirectories, or change the path to specify a single directory. You can also use the short flags.</p>
+<p>For instance, if your username is ubuntu and you want to inspect your home directory:</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">du -d1 -h <span class="regexp">/home/u</span>buntu | <span class="keyword">sort</span> -h</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://blog.ddong.online/2021/11/02/lsof-linux/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Damon Tung">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DT's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/02/lsof-linux/" class="post-title-link" itemprop="url">lsof_linux</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-11-02 18:15:16 / Modified: 18:16:02" itemprop="dateCreated datePublished" datetime="2021-11-02T18:15:16+08:00">2021-11-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="lsof-一切皆文件"><a href="#lsof-一切皆文件" class="headerlink" title="lsof 一切皆文件"></a>lsof 一切皆文件</h1><p>lsof（list open files）是一个查看当前系统文件的工具。在linux环境下，任何事物都以文件的形式存在，通过文件不仅仅可以访问常规数据，还可以访问网络连接和硬件。如传输控制协议 (TCP) 和用户数据报协议 (UDP) 套接字等，系统在后台都为该应用程序分配了一个文件描述符，该文件描述符提供了大量关于这个应用程序本身的信息。</p>
+<p>lsof打开的文件可以是：</p>
+<pre><code>普通文件
+目录
+网络文件系统的文件
+字符或设备文件
+(函数)共享库
+管道，命名管道
+符号链接
+网络文件（例如：NFS file、网络socket，unix域名socket）
+还有其它类型的文件，等等
+</code></pre>
+<ol>
+<li>命令参数<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="deletion">-a 列出打开文件存在的进程</span></span><br><span class="line"><span class="deletion">-c&lt;进程名&gt; 列出指定进程所打开的文件</span></span><br><span class="line"><span class="deletion">-g 列出GID号进程详情</span></span><br><span class="line"><span class="deletion">-d&lt;文件号&gt; 列出占用该文件号的进程</span></span><br><span class="line"><span class="addition">+d&lt;目录&gt; 列出目录下被打开的文件</span></span><br><span class="line"><span class="addition">+D&lt;目录&gt; 递归列出目录下被打开的文件</span></span><br><span class="line"><span class="deletion">-n&lt;目录&gt; 列出使用NFS的文件</span></span><br><span class="line"><span class="deletion">-i&lt;条件&gt; 列出符合条件的进程。（4、6、协议、:端口、 @ip ）</span></span><br><span class="line"><span class="deletion">-p&lt;进程号&gt; 列出指定进程号所打开的文件</span></span><br><span class="line"><span class="deletion">-u 列出UID号进程详情</span></span><br><span class="line"><span class="deletion">-h 显示帮助信息</span></span><br><span class="line"><span class="deletion">-v 显示版本信息</span></span><br></pre></td></tr></table></figure></li>
+<li>使用实例<br>实例1：无任何参数<figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$lsof| more</span><br><span class="line">COMMAND     PID      USER   FD      TYPE             DEVICE SIZE/OFF       NODE NAME</span><br><span class="line">init         <span class="number"> 1 </span>     root  cwd       DIR              253,0    <span class="number"> 4096 </span>        <span class="number"> 2 </span>/</span><br><span class="line">init         <span class="number"> 1 </span>     root  rtd       DIR              253,0    <span class="number"> 4096 </span>        <span class="number"> 2 </span>/</span><br><span class="line">init         <span class="number"> 1 </span>     root  txt       REG              253,0  <span class="number"> 150352 </span>  <span class="number"> 1310795 </span>/sbin/init</span><br><span class="line">init         <span class="number"> 1 </span>     root  mem       REG              253,0   <span class="number"> 65928 </span>  <span class="number"> 5505054 </span>/lib64/libnss_files-2.12.so</span><br><span class="line">init         <span class="number"> 1 </span>     root  mem       REG              253,0 <span class="number"> 1918016 </span>  <span class="number"> 5521405 </span>/lib64/libc-2.12.so</span><br><span class="line">init         <span class="number"> 1 </span>     root  mem       REG              253,0   <span class="number"> 93224 </span>  <span class="number"> 5521440 </span>/lib64/libgcc_s-4.4.6-20120305.so.1</span><br><span class="line">init         <span class="number"> 1 </span>     root  mem       REG              253,0   <span class="number"> 47064 </span>  <span class="number"> 5521407 </span>/lib64/librt-2.12.so</span><br><span class="line">init         <span class="number"> 1 </span>     root  mem       REG              253,0  <span class="number"> 145720 </span>  <span class="number"> 5521406 </span>/lib64/libpthread-2.12.so</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+说明：</li>
+</ol>
+<p>lsof输出各列信息的意义如下：</p>
+<ul>
+<li><p>COMMAND：进程的名称</p>
+</li>
+<li><p>PID：进程标识符</p>
+</li>
+<li><p>PPID：父进程标识符（需要指定-R参数）</p>
+</li>
+<li><p>USER：进程所有者</p>
+</li>
+<li><p>PGID：进程所属组</p>
+</li>
+<li><p>FD：文件描述符，应用程序通过文件描述符识别该文件。如cwd、txt等:</p>
+<blockquote>
+<p>  （1）cwd：表示current work dirctory，即：应用程序的当前工作目录，这是该应用程序启动的目录，除非它本身对这个目录进行更改<br>  （2）txt ：该类型的文件是程序代码，如应用程序二进制文件本身或共享库，如上列表中显示的 /sbin/init 程序<br>  （3）lnn：library references (AIX);<br>  （4）er：FD information error (see NAME column);<br>  （5）jld：jail directory (FreeBSD);<br>  （6）ltx：shared library text (code and data);<br>  （7）mxx ：hex memory-mapped type number xx.<br>  （8）m86：DOS Merge mapped file;<br>  （9）mem：memory-mapped file;<br>  （10）mmap：memory-mapped device;<br>  （11）pd：parent directory;<br>  （12）rtd：root directory;<br>  （13）tr：kernel trace file (OpenBSD);<br>  （14）v86  VP/ix mapped file;<br>  （15）0：表示标准输入<br>  （16）1：表示标准输出<br>  （17）2：表示标准错误<br>  一般在标准输出、标准错误、标准输入后还跟着文件状态模式：r、w、u等<br>  （1）u：表示该文件被打开并处于读取/写入模式<br>  （2）r：表示该文件被打开并处于只读模式<br>  （3）w：表示该文件被打开并处于<br>  （4）空格：表示该文件的状态模式为unknow，且没有锁定<br>  （5）-：表示该文件的状态模式为unknow，且被锁定<br>  同时在文件状态模式后面，还跟着相关的锁<br>  （1）N：for a Solaris NFS lock of unknown type;<br>  （2）r：for read lock on part of the file;<br>  （3）R：for a read lock on the entire file;<br>  （4）w：for a write lock on part of the file;（文件的部分写锁）<br>  （5）W：for a write lock on the entire file;（整个文件的写锁）<br>  （6）u：for a read and write lock of any length;<br>  （7）U：for a lock of unknown type;<br>  （8）x：for an SCO OpenServer Xenix lock on part      of the file;<br>  （9）X：for an SCO OpenServer Xenix lock on the      entire file;<br>  （10）space：if there is no lock.</p>
+</blockquote>
+</li>
+<li><p>TYPE：文件类型，如DIR、REG等，常见的文件类型:</p>
+<blockquote>
+<p>   （1）DIR：表示目录<br>  （2）CHR：表示字符类型<br>  （3）BLK：块设备类型<br>  （4）UNIX： UNIX 域套接字<br>  （5）FIFO：先进先出 (FIFO) 队列<br>  （6）IPv4：网际协议 (IP) 套接字</p>
+</blockquote>
+</li>
+<li><p>DEVICE：指定磁盘的名称</p>
+</li>
+<li><p>SIZE：文件的大小</p>
+</li>
+<li><p>NODE：索引节点（文件在磁盘上的标识）</p>
+</li>
+<li><p>NAME：打开文件的确切名称</p>
+</li>
+</ul>
+<p>实例2：查找某个文件相关的进程</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$lsof</span> <span class="regexp">/bin/</span>bash</span><br><span class="line">COMMAND     PID USER  FD   TYPE DEVICE SIZE/OFF    NODE NAME</span><br><span class="line">mysqld_sa  <span class="number">2169</span> root txt    REG  <span class="number">253</span>,<span class="number">0</span>   <span class="number">938736</span> <span class="number">4587562</span> <span class="regexp">/bin/</span>bash</span><br><span class="line">ksmtuned   <span class="number">2334</span> root txt    REG  <span class="number">253</span>,<span class="number">0</span>   <span class="number">938736</span> <span class="number">4587562</span> <span class="regexp">/bin/</span>bash</span><br><span class="line">bash      <span class="number">20121</span> root txt    REG  <span class="number">253</span>,<span class="number">0</span>   <span class="number">938736</span> <span class="number">4587562</span> <span class="regexp">/bin/</span>bash</span><br></pre></td></tr></table></figure>
+<p>实例3：列出某个用户打开的文件信息</p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"><span class="meta-keyword">$lsof</span> -u username</span></span><br></pre></td></tr></table></figure>
+<p>-u 选项，u是user的缩写</p>
+<p>实例4：列出某个程序进程所打开的文件信息</p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"><span class="meta-keyword">$lsof</span> -c mysql</span></span><br></pre></td></tr></table></figure>
+<p>-c 选项将会列出所有以mysql这个进程开头的程序的文件，其实你也可以写成 </p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsof <span class="string">| grep mysql</span></span><br></pre></td></tr></table></figure>
+<p>但是第一种方法明显比第二种方法要少打几个字符；<br>实例5：列出某个用户以及某个进程所打开的文件信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$lsof</span>  -u <span class="built_in">test</span> -c mysql</span><br></pre></td></tr></table></figure>
+<p>实例6：通过某个进程号显示该进程打开的文件</p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"><span class="meta-keyword">$lsof</span> -p 11968</span></span><br></pre></td></tr></table></figure>
+<p>实例7：列出所有的网络连接</p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"><span class="meta-keyword">$lsof</span> -i</span></span><br></pre></td></tr></table></figure>
+<p>实例8：列出所有tcp 网络连接信息</p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"><span class="meta-keyword">$lsof</span> -i tcp</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$lsof -n -i tcp</span><br><span class="line">COMMAND     PID  <span class="keyword">USER</span>   <span class="title">FD</span>   <span class="keyword">TYPE</span>  DEVICE SIZE/OFF <span class="keyword">NODE</span> <span class="title">NAME</span></span><br><span class="line">svnserve  <span class="number">11552</span> weber    <span class="number">3</span>u  IPv4 <span class="number">3799399</span>      <span class="number">0</span>t0  TCP *:svn (LISTEN)</span><br><span class="line">redis-ser <span class="number">25501</span> weber    <span class="number">4</span>u  IPv4  <span class="number">113150</span>      <span class="number">0</span>t0  TCP <span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">6379</span> (LISTEN)</span><br></pre></td></tr></table></figure>
+<p>实例9：列出谁在使用某个端口</p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"><span class="meta-keyword">$lsof</span> -i :3306</span></span><br></pre></td></tr></table></figure>
+<p>实例10：列出某个用户的所有活跃的网络端口</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$lsof</span> -a -u <span class="built_in">test</span> -i</span><br></pre></td></tr></table></figure>
+<p>实例11：根据文件描述列出对应的文件信息</p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"><span class="meta-keyword">$lsof</span> -d description(like 2)</span></span><br></pre></td></tr></table></figure>
+<p>示例:</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$lsof</span> -d <span class="number">3</span> | grep PARSER1</span><br><span class="line">tail      <span class="number">6499</span> tde    <span class="number">3</span>r   REG    <span class="number">253</span>,<span class="number">3</span>   <span class="number">4514722</span>     <span class="number">417798</span> <span class="regexp">/opt/</span>applog<span class="regexp">/open/</span>log/HOSTPARSER1_ERROR_141217.log.<span class="number">001</span></span><br></pre></td></tr></table></figure>
+<p>说明： 0表示标准输入，1表示标准输出，2表示标准错误，从而可知：所以大多数应用程序所打开的文件的 FD 都是从 3 开始<br>实例12：列出被进程号为1234的进程所打开的所有IPV4 network files</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$lsof</span> -<span class="selector-tag">i</span> <span class="number">4</span> -<span class="selector-tag">a</span> -<span class="selector-tag">p</span> <span class="number">1234</span></span><br></pre></td></tr></table></figure>
+<p>实例13：列出目前连接主机nf5260i5-td上端口为：20，21，80相关的所有文件信息，且每隔3秒重复执行</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">lsof</span> -i @nf<span class="number">5260</span>i<span class="number">5</span>-td:<span class="number">20</span>,<span class="number">21</span>,<span class="number">80</span> -r <span class="number">3</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://blog.ddong.online/2021/11/02/mxType-in-Enovia/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Damon Tung">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DT's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/02/mxType-in-Enovia/" class="post-title-link" itemprop="url">mxType_in_Enovia</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-11-02 18:05:07 / Modified: 18:07:21" itemprop="dateCreated datePublished" datetime="2021-11-02T18:05:07+08:00">2021-11-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Enovia/" itemprop="url" rel="index"><span itemprop="name">Enovia</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="mxType"><a href="#mxType" class="headerlink" title="mxType"></a>mxType</h2><blockquote>
+<p>framework.jar</p>
+</blockquote>
+<p>Static Method List </p>
+<h3 id="isOfParentType"><a href="#isOfParentType" class="headerlink" title="isOfParentType"></a>isOfParentType</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* var0 - context</span></span><br><span class="line"><span class="comment">* var1 - sub type need to check</span></span><br><span class="line"><span class="comment">* var2 - parent type </span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"><span class="keyword">public</span> <span class="built_in">static</span> <span class="keyword">boolean</span> isOfParentType(Context var0, <span class="keyword">String</span> var1, <span class="keyword">String</span> var2) throws FrameworkException &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (var1.equals(var2)) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">String</span> var3 = <span class="string">&quot;derivative[&quot;</span> + var1 + <span class="string">&quot;]&quot;</span>;</span><br><span class="line">                <span class="keyword">String</span> var4 = MqlUtil.mqlCommand(var0, <span class="string">&quot;print type <span class="subst">$1</span> select <span class="subst">$2</span> dump&quot;</span>, <span class="keyword">new</span> <span class="keyword">String</span>[]&#123;var2, var3&#125;);</span><br><span class="line">                <span class="keyword">return</span> var4.equalsIgnoreCase(<span class="string">&quot;true&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (<span class="built_in">Exception</span> var5) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> FrameworkException(var5);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="getAttributes"><a href="#getAttributes" class="headerlink" title="getAttributes"></a>getAttributes</h3><figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* var0 - current context</span></span><br><span class="line"><span class="comment">* var1 - type name</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">public static MapList get<span class="constructor">Attributes(Context <span class="params">var0</span>, String <span class="params">var1</span>)</span> throws FrameworkException &#123;</span><br><span class="line">        return get<span class="constructor">Attributes(<span class="params">var0</span>, <span class="params">var1</span>, <span class="params">false</span>)</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="getAttributes-1"><a href="#getAttributes-1" class="headerlink" title="getAttributes"></a>getAttributes</h3><figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* var0 - context</span></span><br><span class="line"><span class="comment">* var1 - type name</span></span><br><span class="line"><span class="comment">* var2 - if attribute is multiline</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"> public static MapList get<span class="constructor">Attributes(Context <span class="params">var0</span>, String <span class="params">var1</span>, <span class="params">boolean</span> <span class="params">var2</span>)</span> throws FrameworkException &#123;</span><br><span class="line">        AttributeType var3 = null;</span><br><span class="line">        MapList var4 = <span class="keyword">new</span> <span class="constructor">MapList()</span>;</span><br><span class="line">        <span class="built_in">int</span> var5 = <span class="number">0</span>;</span><br><span class="line">        String var6 = <span class="string">&quot;type&quot;</span>;</span><br><span class="line">        String var7 = <span class="string">&quot;name&quot;</span>;</span><br><span class="line">        String var8 = <span class="string">&quot;description&quot;</span>;</span><br><span class="line">        String var9 = <span class="string">&quot;default&quot;</span>;</span><br><span class="line">        String var10 = <span class="string">&quot;choices&quot;</span>;</span><br><span class="line">        String var11 = <span class="string">&quot;multiline&quot;</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="module-access"><span class="module"><span class="identifier">ContextUtil</span>.</span></span>start<span class="constructor">Transaction(<span class="params">var0</span>, <span class="params">false</span>)</span>;</span><br><span class="line">            Vault var12 = var0.get<span class="constructor">Vault()</span>;</span><br><span class="line">            BusinessType var13 = <span class="keyword">new</span> <span class="constructor">BusinessType(<span class="params">var1</span>, <span class="params">var12</span>)</span>;</span><br><span class="line">            var13.<span class="keyword">open</span>(var0);</span><br><span class="line">            BusinessTypeList var14 = <span class="module-access"><span class="module"><span class="identifier">BusinessType</span>.</span></span>get<span class="constructor">BusinessTypes(<span class="params">var0</span>)</span>;</span><br><span class="line">            BusinessTypeItr var15 = <span class="keyword">new</span> <span class="constructor">BusinessTypeItr(<span class="params">var14</span>)</span>;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span>(<span class="literal">true</span>) &#123;</span><br><span class="line">                BusinessType var16;</span><br><span class="line">                <span class="keyword">do</span> &#123;</span><br><span class="line">                    <span class="keyword">if</span> (!var15.next<span class="literal">()</span>) &#123;</span><br><span class="line">                        var13.close(var0);</span><br><span class="line">                        <span class="module-access"><span class="module"><span class="identifier">ContextUtil</span>.</span></span>commit<span class="constructor">Transaction(<span class="params">var0</span>)</span>;</span><br><span class="line">                        return var4;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    var16 = var15.obj<span class="literal">()</span>;</span><br><span class="line">                &#125; <span class="keyword">while</span>(!var16.<span class="keyword">to</span><span class="constructor">String()</span>.equals(var1));</span><br><span class="line"></span><br><span class="line">                var16.<span class="keyword">open</span>(var0);</span><br><span class="line">                AttributeTypeList var17 = var16.get<span class="constructor">AttributeTypes(<span class="params">var0</span>)</span>;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">for</span>(AttributeTypeItr var18 = <span class="keyword">new</span> <span class="constructor">AttributeTypeItr(<span class="params">var17</span>)</span>; var18.next<span class="literal">()</span>; ++var5) &#123;</span><br><span class="line">                    HashMap var19 = <span class="keyword">new</span> <span class="constructor">HashMap()</span>;</span><br><span class="line">                    var3 = var18.obj<span class="literal">()</span>;</span><br><span class="line">                    var3.<span class="keyword">open</span>(var0);</span><br><span class="line">                    var19.put(var7, var3.<span class="keyword">to</span><span class="constructor">String()</span>);</span><br><span class="line">                    var19.put(var6, var3.get<span class="constructor">DataType()</span>);</span><br><span class="line">                    var19.put(var8, var3.get<span class="constructor">Description()</span>);</span><br><span class="line">                    var19.put(var9, var3.get<span class="constructor">DefaultValue()</span>);</span><br><span class="line">                    var19.put(var10, var3.get<span class="constructor">Choices()</span>);</span><br><span class="line">                    <span class="keyword">if</span> (var2) &#123;</span><br><span class="line">                        <span class="keyword">if</span> (<span class="string">&quot;string&quot;</span>.equals<span class="constructor">IgnoreCase(<span class="params">var3</span>.<span class="params">getDataType</span>()</span>)) &#123;</span><br><span class="line">                            String var20 = <span class="module-access"><span class="module"><span class="identifier">MqlUtil</span>.</span></span>mql<span class="constructor">Command(<span class="params">var0</span>, <span class="string">&quot;print attribute $1 select $2 dump&quot;</span>, <span class="params">new</span> String[]&#123;<span class="params">var3</span>.<span class="params">toString</span>()</span>, <span class="string">&quot;multiline&quot;</span>&#125;);</span><br><span class="line">                            var19.put(var11, var20);</span><br><span class="line">                        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                            var19.put(var11, <span class="string">&quot;false&quot;</span>);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    var3.close(var0);</span><br><span class="line">                    var4.add(var5, var19);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                var16.close(var0);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; catch (Exception var21) &#123;</span><br><span class="line">            <span class="module-access"><span class="module"><span class="identifier">ContextUtil</span>.</span></span>abort<span class="constructor">Transaction(<span class="params">var0</span>)</span>;</span><br><span class="line">            throw <span class="keyword">new</span> <span class="constructor">FrameworkException(<span class="params">var21</span>)</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="getDefaultPolicy"><a href="#getDefaultPolicy" class="headerlink" title="getDefaultPolicy"></a>getDefaultPolicy</h3><figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* var0 - context</span></span><br><span class="line"><span class="comment">* var1 - business type</span></span><br><span class="line"><span class="comment">* var2 - if true means query policy for Person otherwise false</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"> public static Map get<span class="constructor">DefaultPolicy(Context <span class="params">var0</span>, String <span class="params">var1</span>, <span class="params">boolean</span> <span class="params">var2</span>)</span> throws FrameworkException &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Map var3 = null;</span><br><span class="line">            MapList var4 = get<span class="constructor">Policies(<span class="params">var0</span>, <span class="params">var1</span>, <span class="params">var2</span>)</span>;</span><br><span class="line">            <span class="keyword">if</span> (!var4.is<span class="constructor">Empty()</span>) &#123;</span><br><span class="line">                var3 = (Map)var4.get(<span class="number">0</span>);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            return var3;</span><br><span class="line">        &#125; catch (Exception var5) &#123;</span><br><span class="line">            throw <span class="keyword">new</span> <span class="constructor">FrameworkException(<span class="params">var5</span>)</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line"> public static MapList get<span class="constructor">Policies(Context <span class="params">var0</span>, String <span class="params">var1</span>, <span class="params">boolean</span> <span class="params">var2</span>)</span> throws MatrixException &#123;</span><br><span class="line">        MapList var3 = <span class="keyword">new</span> <span class="constructor">MapList()</span>;</span><br><span class="line">        BusinessType var4 = <span class="keyword">new</span> <span class="constructor">BusinessType(<span class="params">var1</span>, <span class="params">var0</span>.<span class="params">getVault</span>()</span>);</span><br><span class="line">        var4.<span class="keyword">open</span>(var0);</span><br><span class="line">        PolicyList var5 = null;</span><br><span class="line">        <span class="keyword">if</span> (var2) &#123;</span><br><span class="line">            var5 = var4.get<span class="constructor">PoliciesForPerson(<span class="params">var0</span>, <span class="params">false</span>)</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            var5 = var4.get<span class="constructor">Policies(<span class="params">var0</span>)</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Iterator var7 = var5.iterator<span class="literal">()</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(var7.has<span class="constructor">Next()</span>) &#123;</span><br><span class="line">            Policy var6 = (Policy)var7.next<span class="literal">()</span>;</span><br><span class="line">            var6.<span class="keyword">open</span>(var0);</span><br><span class="line">            HashMap var8 = <span class="keyword">new</span> <span class="constructor">HashMap()</span>;</span><br><span class="line">            var8.put(<span class="string">&quot;name&quot;</span>, var6.get<span class="constructor">Name()</span>);</span><br><span class="line">            var8.put(<span class="string">&quot;description&quot;</span>, var6.get<span class="constructor">Description(<span class="params">var0</span>)</span>);</span><br><span class="line">            var8.put(<span class="string">&quot;revision&quot;</span>, var6.get<span class="constructor">FirstInSequence()</span>);</span><br><span class="line">            String var9 = <span class="module-access"><span class="module"><span class="identifier">MqlUtil</span>.</span></span>mql<span class="constructor">Command(<span class="params">var0</span>, <span class="string">&quot;print Policy $1 select $2 dump $3&quot;</span>, <span class="params">new</span> String[]&#123;<span class="params">var6</span>.<span class="params">getName</span>()</span>, <span class="string">&quot;format&quot;</span>, <span class="string">&quot;|&quot;</span>&#125;);</span><br><span class="line">            String var10 = <span class="module-access"><span class="module"><span class="identifier">MqlUtil</span>.</span></span>mql<span class="constructor">Command(<span class="params">var0</span>, <span class="string">&quot;print Policy $1 select $2 dump $3&quot;</span>, <span class="params">new</span> String[]&#123;<span class="params">var6</span>.<span class="params">getName</span>()</span>, <span class="string">&quot;defaultformat&quot;</span>, <span class="string">&quot;|&quot;</span>&#125;);</span><br><span class="line">            String var11 = <span class="module-access"><span class="module"><span class="identifier">MqlUtil</span>.</span></span>mql<span class="constructor">Command(<span class="params">var0</span>, <span class="string">&quot;print Policy $1 select $2 dump $3&quot;</span>, <span class="params">new</span> String[]&#123;<span class="params">var6</span>.<span class="params">getName</span>()</span>, <span class="string">&quot;store&quot;</span>, <span class="string">&quot;|&quot;</span>&#125;);</span><br><span class="line">            StringList var12 = <span class="module-access"><span class="module"><span class="identifier">FrameworkUtil</span>.</span></span>split(var9, <span class="string">&quot;|&quot;</span>);</span><br><span class="line">            var8.put(<span class="string">&quot;formats&quot;</span>, var12);</span><br><span class="line">            var8.put(<span class="string">&quot;defaultFormat&quot;</span>, var10);</span><br><span class="line">            var8.put(<span class="string">&quot;store&quot;</span>, var11);</span><br><span class="line">            var6.close(var0);</span><br><span class="line">            var3.add(var8);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        return var3;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://blog.ddong.online/2021/11/02/Oracle-PDB-and-CDB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Damon Tung">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DT's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/02/Oracle-PDB-and-CDB/" class="post-title-link" itemprop="url">Oracle_PDB_and_CDB</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-11-02 17:59:07 / Modified: 18:03:19" itemprop="dateCreated datePublished" datetime="2021-11-02T17:59:07+08:00">2021-11-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Database/" itemprop="url" rel="index"><span itemprop="name">Database</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Pretty-Sqlplus-Output"><a href="#Pretty-Sqlplus-Output" class="headerlink" title="Pretty Sqlplus Output"></a>Pretty Sqlplus Output</h2><figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> lines <span class="comment">256</span>;</span><br><span class="line"><span class="keyword">set</span> trimout <span class="comment">on</span>;</span><br><span class="line"><span class="keyword">set</span> tab <span class="comment">off</span>;</span><br><span class="line"><span class="keyword">set</span> pagesize <span class="comment">100</span>;</span><br><span class="line"><span class="keyword">set</span> colsep <span class="comment">&quot; | &quot;</span>;</span><br><span class="line">COLUMN column_name FORMAT <span class="keyword">model</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="switch-PDB"><a href="#switch-PDB" class="headerlink" title="switch PDB"></a>switch PDB</h2><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">session</span> <span class="keyword">set</span> container = PDB_NAME;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Conn-to-CDB-from-PDB"><a href="#Conn-to-CDB-from-PDB" class="headerlink" title="Conn to CDB from PDB"></a>Conn to CDB from PDB</h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER SESSION <span class="builtin-name">SET</span> <span class="attribute">CONTAINER</span>=cdb$root;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Open-PDB"><a href="#Open-PDB" class="headerlink" title="Open PDB"></a>Open PDB</h2><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> pluggable <span class="keyword">database</span> PDB_NAME <span class="keyword">open</span>;</span><br><span class="line"><span class="keyword">alter</span> pluggable <span class="keyword">database</span> <span class="keyword">all</span> <span class="keyword">open</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="Auto-Open-PDB-when-CDB-restart"><a href="#Auto-Open-PDB-when-CDB-restart" class="headerlink" title="Auto Open PDB when CDB restart"></a>Auto Open PDB when CDB restart</h2><ol>
+<li>Create trigger at CDB<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TRIGGER</span> open_all_pdbs</span><br><span class="line">  <span class="keyword">AFTER</span> STARTUP <span class="keyword">ON</span> <span class="keyword">DATABASE</span></span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">   <span class="keyword">EXECUTE</span> <span class="keyword">IMMEDIATE</span> ‘<span class="keyword">ALTER</span> PLUGGABLE <span class="keyword">DATABASE</span> <span class="keyword">ALL</span> <span class="keyword">OPEN</span>’;</span><br><span class="line"><span class="keyword">END</span> ;</span><br><span class="line">/</span><br></pre></td></tr></table></figure>
+<h2 id="Create-unlimited-bigfile-tablespace"><a href="#Create-unlimited-bigfile-tablespace" class="headerlink" title="Create unlimited bigfile tablespace"></a>Create unlimited bigfile tablespace</h2><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> BIGFILE <span class="keyword">TABLESPACE</span> &quot;NSNPR_DATA&quot; DATAFILE <span class="string">&#x27;D:/datafiles/NSNPR/NSNPR_tvc_index.dbf&#x27;</span> SIZE <span class="number">100</span>M REUSE AUTOEXTEND <span class="keyword">ON</span> NEXT <span class="number">3</span>G MAXSIZE UNLIMITED LOGGING EXTENT MANAGEMENT <span class="keyword">LOCAL</span> SEGMENT SPACE MANAGEMENT AUTO ;</span><br></pre></td></tr></table></figure>
+<h2 id="Create-user-and-grant-privilege"><a href="#Create-user-and-grant-privilege" class="headerlink" title="Create user and grant privilege"></a>Create user and grant privilege</h2><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> NSNPR IDENTIFIED <span class="keyword">BY</span> XXXXX</span><br><span class="line">  <span class="keyword">default</span> <span class="keyword">tablespace</span> NSNPR_DATA</span><br><span class="line">  <span class="keyword">temporary</span> <span class="keyword">tablespace</span> <span class="keyword">TEMP</span></span><br><span class="line">  profile <span class="keyword">DEFAULT</span>;</span><br><span class="line"><span class="comment">-- Grant/Revoke role privileges </span></span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">connect</span> <span class="keyword">to</span> NSNPR;</span><br><span class="line"><span class="keyword">grant</span> resource <span class="keyword">to</span> NSNPR;</span><br><span class="line"><span class="comment">-- Grant/Revoke system privileges </span></span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">create</span> <span class="keyword">database</span> link <span class="keyword">to</span> NSNPR;</span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">create</span> <span class="built_in">public</span> <span class="keyword">database</span> link <span class="keyword">to</span> NSNPR;</span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">create</span> <span class="keyword">table</span> <span class="keyword">to</span> NSNPR;</span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">create</span> <span class="keyword">view</span> <span class="keyword">to</span> NSNPR;</span><br><span class="line"><span class="keyword">grant</span> query rewrite <span class="keyword">to</span> NSNPR;</span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">select</span> <span class="keyword">any</span> <span class="keyword">dictionary</span> <span class="keyword">to</span> NSNPR;</span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">select</span> <span class="keyword">any</span> <span class="keyword">table</span> <span class="keyword">to</span> NSNPR;</span><br><span class="line"><span class="keyword">grant</span> unlimited <span class="keyword">tablespace</span> <span class="keyword">to</span> NSNPR;</span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">connect</span> <span class="keyword">to</span> NSNPR;</span><br><span class="line"><span class="keyword">grant</span> resource <span class="keyword">to</span> NSNPR;</span><br><span class="line"><span class="keyword">grant</span> DATAPUMP_IMP_FULL_DATABASE <span class="keyword">to</span> NSNPR;</span><br><span class="line"><span class="keyword">grant</span> dba <span class="keyword">to</span> NSNPR;</span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">create</span> <span class="keyword">any</span> <span class="keyword">index</span> <span class="keyword">to</span> NSNPR;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="Create-Directory"><a href="#Create-Directory" class="headerlink" title="Create Directory"></a>Create Directory</h2><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> <span class="built_in">replace</span> directory EXPDP_1</span><br><span class="line"> <span class="keyword">as</span> <span class="string">&#x27;D:\dump&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Impdp-with-multi-dump-file"><a href="#Impdp-with-multi-dump-file" class="headerlink" title="Impdp with multi dump file"></a>Impdp with multi dump file</h2><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">impdp</span> IMP_User/Pass@pdborcl directory=expdp_<span class="number">1</span> dumpfile=expdp_nsnpr_DB_<span class="number">15092020</span>_<span class="number">01</span>.dmp,expdp_nsnpr_DB_<span class="number">15092020</span>_<span class="number">02</span>.dmp,expdp_nsnpr_DB_<span class="number">15092020</span>_<span class="number">03</span>.dmp,	expdp_nsnpr_DB_<span class="number">15092020</span>_<span class="number">04</span>.dmp,expdp_nsnpr_DB_<span class="number">15092020</span>_<span class="number">05</span>.dmp,expdp_nsnpr_DB_<span class="number">15092020</span>_<span class="number">06</span>.dmp,expdp_nsnpr_DB_<span class="number">15092020</span>_<span class="number">07</span>.dmp,expdp_nsnpr_DB_<span class="number">15092020</span>_<span class="number">08</span>.dmp,expdp_nsnpr_DB_<span class="number">15092020</span>_<span class="number">09</span>.dmp,expdp_nsnpr_DB_<span class="number">15092020</span>_<span class="number">10</span>.dmp,expdp_nsnpr_DB_<span class="number">15092020</span>_<span class="number">11</span>.dmp,expdp_nsnpr_DB_<span class="number">15092020</span>_<span class="number">12</span>.dmp,expdp_nsnpr_DB_<span class="number">15092020</span>_<span class="number">13</span>.dmp full=y table_exists_action=replace logfile=NSNPR-import-%date:~<span class="number">4</span>,<span class="number">2</span>%-%date:~<span class="number">7</span>,<span class="number">2</span>%-%date:~<span class="number">10</span>,<span class="number">4</span>%.log LOGTIME=<span class="literal">ALL</span> METRICS=Y version=<span class="number">12</span>.<span class="number">2</span></span><br></pre></td></tr></table></figure>
+<h2 id="Resize-tablespace"><a href="#Resize-tablespace" class="headerlink" title="Resize tablespace"></a>Resize tablespace</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span>space TABLESPACE_NAME resize <span class="number">100</span>G;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://blog.ddong.online/2021/11/02/loadRepository-and-modify-table-and-field/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -619,1605 +1175,11 @@ public static void main(String[] args) &#123;
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://blog.ddong.online/2021/11/02/Redis_Commands/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Damon Tung">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DT's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/02/Redis_Commands/" class="post-title-link" itemprop="url">Redis 常用命令</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-11-02 15:51:34 / Modified: 16:41:15" itemprop="dateCreated datePublished" datetime="2021-11-02T15:51:34+08:00">2021-11-02</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Redis/" itemprop="url" rel="index"><span itemprop="name">Redis</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Redis-命令"><a href="#Redis-命令" class="headerlink" title="Redis 命令"></a>Redis 命令</h1><p>Redis 命令用于在 redis 服务上执行操作。</p>
-<p>要在 redis 服务上执行命令需要一个 redis 客户端。</p>
-<p>语法<br>Redis 客户端的基本语法为：</p>
-<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ redis-<span class="keyword">cli</span></span><br></pre></td></tr></table></figure>
-<p>实例<br>以下实例讲解了如何启动 redis 客户端：</p>
-<p>启动 redis 服务器，打开终端并输入命令 redis-cli，该命令会连接本地的 redis 服务。</p>
-<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ redis-<span class="keyword">cli</span></span><br><span class="line">redis <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt;</span><br><span class="line">redis <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; <span class="built_in">PING</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">PONG</span><br></pre></td></tr></table></figure>
-<p>在以上实例中我们连接到本地的 redis 服务并执行 PING 命令，该命令用于检测 redis 服务是否启动。</p>
-<p>在远程服务上执行命令<br>如果需要在远程 redis 服务上执行命令，同样我们使用的也是 redis-cli 命令。</p>
-<p>语法</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ redis-cli -h host -<span class="selector-tag">p</span> port -<span class="selector-tag">a</span> password</span><br></pre></td></tr></table></figure>
-<p>实例<br>以下实例演示了如何连接到主机为 127.0.0.1，端口为 6379 ，密码为 mypass 的 redis 服务上。</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$redis</span>-cli -h <span class="number">127.0</span>.<span class="number">0.1</span> -<span class="selector-tag">p</span> <span class="number">6379</span> -<span class="selector-tag">a</span> <span class="string">&quot;mypass&quot;</span></span><br><span class="line">redis <span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">6379</span>&gt;</span><br><span class="line">redis <span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">6379</span>&gt; PING</span><br><span class="line"></span><br><span class="line">PONG</span><br></pre></td></tr></table></figure>
-
-<h1 id="Redis-数据类型"><a href="#Redis-数据类型" class="headerlink" title="Redis 数据类型"></a>Redis 数据类型</h1><p>Redis支持五种数据类型：string（字符串），hash（哈希），list（列表），set（集合）及zset(sorted set：有序集合)。</p>
-<h2 id="String（字符串）"><a href="#String（字符串）" class="headerlink" title="String（字符串）"></a>String（字符串）</h2><p>string 是 redis 最基本的类型，你可以理解成与 Memcached 一模一样的类型，一个 key 对应一个 value。</p>
-<p>string 类型是二进制安全的。意思是 redis 的 string 可以包含任何数据。比如jpg图片或者序列化的对象。</p>
-<p>string 类型是 Redis 最基本的数据类型，string 类型的值最大能存储 512MB。</p>
-<p>实例</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">redis 127.0.0.1:6379&gt; <span class="builtin-name">SET</span> runoob <span class="string">&quot;菜鸟教程&quot;</span></span><br><span class="line">OK</span><br><span class="line">redis 127.0.0.1:6379&gt; <span class="builtin-name">GET</span> runoob</span><br><span class="line"><span class="string">&quot;菜鸟教程&quot;</span></span><br></pre></td></tr></table></figure>
-<p>在以上实例中我们使用了 Redis 的 SET 和 GET 命令。键为 runoob，对应的值为 菜鸟教程。</p>
-<p>注意：一个键最大能存储 512MB。</p>
-<h2 id="Hash（哈希）"><a href="#Hash（哈希）" class="headerlink" title="Hash（哈希）"></a>Hash（哈希）</h2><p>Redis hash 是一个键值(key=&gt;value)对集合。</p>
-<p>Redis hash 是一个 string 类型的 field 和 value 的映射表，hash 特别适合用于存储对象。</p>
-<p>实例<br>DEL runoob 用于删除前面测试用过的 key，不然会报错：(error) WRONGTYPE Operation against a key holding the wrong kind of value</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">redis</span> <span class="number">127.0.0.1:6379</span>&gt; DEL runoob</span><br><span class="line">redis <span class="number">127.0.0.1:6379</span>&gt; HMSET runoob field1 <span class="string">&quot;Hello&quot;</span> field2 <span class="string">&quot;World&quot;</span></span><br><span class="line"><span class="string">&quot;OK&quot;</span></span><br><span class="line">redis <span class="number">127.0.0.1:6379</span>&gt; HGET runoob field1</span><br><span class="line"><span class="string">&quot;Hello&quot;</span></span><br><span class="line">redis <span class="number">127.0.0.1:6379</span>&gt; HGET runoob field2</span><br><span class="line"><span class="string">&quot;World&quot;</span></span><br></pre></td></tr></table></figure>
-<p>实例中我们使用了 Redis HMSET, HGET 命令，HMSET 设置了两个 field=&gt;value 对, HGET 获取对应 field 对应的 value。</p>
-<p>每个 hash 可以存储 232 -1 键值对（40多亿）。<br>List（列表）<br>Redis 列表是简单的字符串列表，按照插入顺序排序。你可以添加一个元素到列表的头部（左边）或者尾部（右边）。</p>
-<p>实例<br>redis 127.0.0.1:6379&gt; DEL runoob<br>redis 127.0.0.1:6379&gt; lpush runoob redis<br>(integer) 1<br>redis 127.0.0.1:6379&gt; lpush runoob mongodb<br>(integer) 2<br>redis 127.0.0.1:6379&gt; lpush runoob rabitmq<br>(integer) 3<br>redis 127.0.0.1:6379&gt; lrange runoob 0 10</p>
-<ol>
-<li>“rabitmq”</li>
-<li>“mongodb”</li>
-<li>“redis”<br>redis 127.0.0.1:6379&gt;<br>列表最多可存储 2^32 - 1 元素 (4294967295, 每个列表可存储40多亿)。</li>
-</ol>
-<h2 id="Set（集合）"><a href="#Set（集合）" class="headerlink" title="Set（集合）"></a>Set（集合）</h2><p>Redis 的 Set 是 string 类型的无序集合。</p>
-<p>集合是通过哈希表实现的，所以添加，删除，查找的复杂度都是 O(1)。</p>
-<h3 id="sadd-命令"><a href="#sadd-命令" class="headerlink" title="sadd 命令"></a>sadd 命令</h3><p>添加一个 string 元素到 key 对应的 set 集合中，成功返回 1，如果元素已经在集合中返回 0。</p>
-<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sadd <span class="built_in">key</span> <span class="built_in">member</span></span><br></pre></td></tr></table></figure>
-<p>实例</p>
-<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">redis <span class="number">127.0</span>.<span class="number">0</span>.<span class="number">1</span>:<span class="number">6379</span>&gt; DEL runoob</span><br><span class="line">redis <span class="number">127.0</span>.<span class="number">0</span>.<span class="number">1</span>:<span class="number">6379</span>&gt; sadd runoob redis</span><br><span class="line">(integer) <span class="number">1</span></span><br><span class="line">redis <span class="number">127.0</span>.<span class="number">0</span>.<span class="number">1</span>:<span class="number">6379</span>&gt; sadd runoob mongodb</span><br><span class="line">(integer) <span class="number">1</span></span><br><span class="line">redis <span class="number">127.0</span>.<span class="number">0</span>.<span class="number">1</span>:<span class="number">6379</span>&gt; sadd runoob rabitm<span class="string">q</span></span><br><span class="line"><span class="string">(integer)</span> <span class="number">1</span></span><br><span class="line">redis <span class="number">127.0</span>.<span class="number">0</span>.<span class="number">1</span>:<span class="number">6379</span>&gt; sadd runoob rabitm<span class="string">q</span></span><br><span class="line"><span class="string">(integer)</span> <span class="number">0</span></span><br><span class="line">redis <span class="number">127.0</span>.<span class="number">0</span>.<span class="number">1</span>:<span class="number">6379</span>&gt; smembers runoob</span><br><span class="line"></span><br><span class="line"><span class="number">1</span>) <span class="string">&quot;redis&quot;</span></span><br><span class="line"><span class="number">2</span>) <span class="string">&quot;rabitmq&quot;</span></span><br><span class="line"><span class="number">3</span>) <span class="string">&quot;mongodb&quot;</span></span><br></pre></td></tr></table></figure>
-<p>注意：以上实例中 rabitmq 添加了两次，但根据集合内元素的唯一性，第二次插入的元素将被忽略。</p>
-<p>集合中最大的成员数为 2^32 - 1(4294967295, 每个集合可存储40多亿个成员)。</p>
-<h2 id="zset-sorted-set：有序集合"><a href="#zset-sorted-set：有序集合" class="headerlink" title="zset(sorted set：有序集合)"></a>zset(sorted set：有序集合)</h2><p>Redis zset 和 set 一样也是string类型元素的集合,且不允许重复的成员。<br>不同的是每个元素都会关联一个double类型的分数。redis正是通过分数来为集合中的成员进行从小到大的排序。</p>
-<p>zset的成员是唯一的,但分数(score)却可以重复。</p>
-<h3 id="zadd-命令"><a href="#zadd-命令" class="headerlink" title="zadd 命令"></a>zadd 命令</h3><p>添加元素到集合，元素在集合中存在则更新对应score</p>
-<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">zadd key score member </span><br><span class="line">实例</span><br><span class="line">redis <span class="number">127.0</span>.<span class="number">0</span>.<span class="number">1</span>:<span class="number">6379</span>&gt; DEL runoob</span><br><span class="line">redis <span class="number">127.0</span>.<span class="number">0</span>.<span class="number">1</span>:<span class="number">6379</span>&gt; zadd runoob <span class="number">0</span> redis</span><br><span class="line">(integer) <span class="number">1</span></span><br><span class="line">redis <span class="number">127.0</span>.<span class="number">0</span>.<span class="number">1</span>:<span class="number">6379</span>&gt; zadd runoob <span class="number">0</span> mongodb</span><br><span class="line">(integer) <span class="number">1</span></span><br><span class="line">redis <span class="number">127.0</span>.<span class="number">0</span>.<span class="number">1</span>:<span class="number">6379</span>&gt; zadd runoob <span class="number">0</span> rabitm<span class="string">q</span></span><br><span class="line"><span class="string">(integer)</span> <span class="number">1</span></span><br><span class="line">redis <span class="number">127.0</span>.<span class="number">0</span>.<span class="number">1</span>:<span class="number">6379</span>&gt; zadd runoob <span class="number">0</span> rabitm<span class="string">q</span></span><br><span class="line"><span class="string">(integer)</span> <span class="number">0</span></span><br><span class="line">redis <span class="number">127.0</span>.<span class="number">0</span>.<span class="number">1</span>:<span class="number">6379</span>&gt; &gt; ZRANGEBYSCORE runoob <span class="number">0</span> <span class="number">1000</span></span><br><span class="line"><span class="number">1</span>) <span class="string">&quot;mongodb&quot;</span></span><br><span class="line"><span class="number">2</span>) <span class="string">&quot;rabitmq&quot;</span></span><br><span class="line"><span class="number">3</span>) <span class="string">&quot;redis&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="Redis-keys-命令"><a href="#Redis-keys-命令" class="headerlink" title="Redis keys 命令"></a>Redis keys 命令</h1><p>下表给出了与 Redis 键相关的基本命令：</p>
-<table>
-<thead>
-<tr>
-<th align="center">序号</th>
-<th>命令</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">1</td>
-<td>DEL key</td>
-<td>该命令用于在 key 存在时删除 key。</td>
-</tr>
-<tr>
-<td align="center">2</td>
-<td>DUMP key</td>
-<td>序列化给定 key ，并返回被序列化的值。</td>
-</tr>
-<tr>
-<td align="center">3</td>
-<td>EXISTS key</td>
-<td>检查给定 key 是否存在。</td>
-</tr>
-<tr>
-<td align="center">4</td>
-<td>EXPIRE key seconds</td>
-<td>为给定 key 设置过期时间，以秒计。</td>
-</tr>
-<tr>
-<td align="center">5</td>
-<td>EXPIREAT key timestamp</td>
-<td>EXPIREAT 的作用和 EXPIRE 类似，都用于为 key 设置过期时间。 不同在于 EXPIREAT 命令接受的时间参数是 UNIX 时间戳(unix timestamp)。</td>
-</tr>
-<tr>
-<td align="center">6</td>
-<td>PEXPIRE key milliseconds</td>
-<td>设置 key 的过期时间以毫秒计。</td>
-</tr>
-<tr>
-<td align="center">7</td>
-<td>PEXPIREAT key milliseconds-timestamp</td>
-<td>设置 key 过期时间的时间戳(unix timestamp) 以毫秒计</td>
-</tr>
-<tr>
-<td align="center">8</td>
-<td>KEYS pattern</td>
-<td>查找所有符合给定模式( pattern)的 key 。</td>
-</tr>
-<tr>
-<td align="center">9</td>
-<td>MOVE key db</td>
-<td>将当前数据库的 key 移动到给定的数据库 db 当中。</td>
-</tr>
-<tr>
-<td align="center">10</td>
-<td>PERSIST key</td>
-<td>移除 key 的过期时间，key 将持久保持。</td>
-</tr>
-<tr>
-<td align="center">11</td>
-<td>PTTL key</td>
-<td>以毫秒为单位返回 key 的剩余的过期时间。</td>
-</tr>
-<tr>
-<td align="center">12</td>
-<td>TTL key</td>
-<td>以秒为单位，返回给定 key 的剩余生存时间(TTL, time to live)。</td>
-</tr>
-<tr>
-<td align="center">13</td>
-<td>RANDOMKEY</td>
-<td>从当前数据库中随机返回一个 key 。</td>
-</tr>
-<tr>
-<td align="center">14</td>
-<td>RENAME key newkey</td>
-<td>修改 key 的名称</td>
-</tr>
-<tr>
-<td align="center">15</td>
-<td>RENAMENX key newkey</td>
-<td>仅当 newkey 不存在时，将 key 改名为 newkey 。</td>
-</tr>
-<tr>
-<td align="center">16</td>
-<td>SCAN cursor [MATCH pattern] [COUNT count]</td>
-<td>迭代数据库中的数据库键。</td>
-</tr>
-<tr>
-<td align="center">17</td>
-<td>TYPE key</td>
-<td>返回 key 所储存的值的类型。</td>
-</tr>
-</tbody></table>
-<h1 id="Redis-字符串命令"><a href="#Redis-字符串命令" class="headerlink" title="Redis 字符串命令"></a>Redis 字符串命令</h1><p>下表列出了常用的 redis 字符串命令：</p>
-<table>
-<thead>
-<tr>
-<th align="center">序号</th>
-<th>命令</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">1</td>
-<td>SET key value</td>
-<td>设置指定 key 的值</td>
-</tr>
-<tr>
-<td align="center">2</td>
-<td>GET key</td>
-<td>获取指定 key 的值。</td>
-</tr>
-<tr>
-<td align="center">3</td>
-<td>GETRANGE key start end</td>
-<td>返回 key 中字符串值的子字符</td>
-</tr>
-<tr>
-<td align="center">4</td>
-<td>GETSET key value</td>
-<td>将给定 key 的值设为 value ，并返回 key 的旧值(old value)。</td>
-</tr>
-<tr>
-<td align="center">5</td>
-<td>GETBIT key offset</td>
-<td>对 key 所储存的字符串值，获取指定偏移量上的位(bit)。</td>
-</tr>
-<tr>
-<td align="center">6</td>
-<td>MGET key1 [key2..]</td>
-<td>获取所有(一个或多个)给定 key 的值。</td>
-</tr>
-<tr>
-<td align="center">7</td>
-<td>SETBIT key offset value</td>
-<td>对 key 所储存的字符串值，设置或清除指定偏移量上的位(bit)。</td>
-</tr>
-<tr>
-<td align="center">8</td>
-<td>SETEX key seconds value</td>
-<td>将值 value 关联到 key ，并将 key 的过期时间设为 seconds (以秒为单位)。</td>
-</tr>
-<tr>
-<td align="center">9</td>
-<td>SETNX key value</td>
-<td>只有在 key 不存在时设置 key 的值。</td>
-</tr>
-<tr>
-<td align="center">10</td>
-<td>SETRANGE key offset value</td>
-<td>用 value 参数覆写给定 key 所储存的字符串值，从偏移量 offset 开始。</td>
-</tr>
-<tr>
-<td align="center">11</td>
-<td>STRLEN key</td>
-<td>返回 key 所储存的字符串值的长度。</td>
-</tr>
-<tr>
-<td align="center">12</td>
-<td>MSET key value [key value …]</td>
-<td>同时设置一个或多个 key-value 对。</td>
-</tr>
-<tr>
-<td align="center">13</td>
-<td>MSETNX key value [key value …]</td>
-<td>同时设置一个或多个 key-value 对，当且仅当所有给定 key 都不存在。</td>
-</tr>
-<tr>
-<td align="center">14</td>
-<td>PSETEX key milliseconds value</td>
-<td>这个命令和 SETEX 命令相似，但它以毫秒为单位设置 key 的生存时间，而不是像 SETEX 命令那样，以秒为单位。</td>
-</tr>
-<tr>
-<td align="center">15</td>
-<td>INCR key</td>
-<td>将 key 中储存的数字值增一。</td>
-</tr>
-<tr>
-<td align="center">16</td>
-<td>INCRBY key increment</td>
-<td>将 key 所储存的值加上给定的增量值（increment） 。</td>
-</tr>
-<tr>
-<td align="center">17</td>
-<td>INCRBYFLOAT key increment</td>
-<td>将 key 所储存的值加上给定的浮点增量值（increment） 。</td>
-</tr>
-<tr>
-<td align="center">18</td>
-<td>DECR key</td>
-<td>将 key 中储存的数字值减一。</td>
-</tr>
-<tr>
-<td align="center">19</td>
-<td>DECRBY key decrement</td>
-<td>key 所储存的值减去给定的减量值（decrement） 。</td>
-</tr>
-<tr>
-<td align="center">20</td>
-<td>APPEND key value</td>
-<td>如果 key 已经存在并且是一个字符串， APPEND 命令将指定的 value 追加到该 key 原来值（value）的末尾。</td>
-</tr>
-</tbody></table>
-<h1 id="Redis-hash-命令"><a href="#Redis-hash-命令" class="headerlink" title="Redis hash 命令"></a>Redis hash 命令</h1><p>下表列出了 redis hash 基本的相关命令：</p>
-<table>
-<thead>
-<tr>
-<th>序号</th>
-<th>命令</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>HDEL key field1 [field2]</td>
-<td>删除一个或多个哈希表字段</td>
-</tr>
-<tr>
-<td>2</td>
-<td>HEXISTS key field</td>
-<td>查看哈希表 key 中，指定的字段是否存在。</td>
-</tr>
-<tr>
-<td>3</td>
-<td>HGET key field</td>
-<td>获取存储在哈希表中指定字段的值。</td>
-</tr>
-<tr>
-<td>4</td>
-<td>HGETALL key</td>
-<td>获取在哈希表中指定 key 的所有字段和值</td>
-</tr>
-<tr>
-<td>5</td>
-<td>HINCRBY key field increment</td>
-<td>为哈希表 key 中的指定字段的整数值加上增量 increment 。</td>
-</tr>
-<tr>
-<td>6</td>
-<td>HINCRBYFLOAT key field increment</td>
-<td>为哈希表 key 中的指定字段的浮点数值加上增量 increment 。</td>
-</tr>
-<tr>
-<td>7</td>
-<td>HKEYS key</td>
-<td>获取所有哈希表中的字段</td>
-</tr>
-<tr>
-<td>8</td>
-<td>HLEN key</td>
-<td>获取哈希表中字段的数量</td>
-</tr>
-<tr>
-<td>9</td>
-<td>HMGET key field1 [field2]</td>
-<td>获取所有给定字段的值</td>
-</tr>
-<tr>
-<td>10</td>
-<td>HMSET key field1 value1 [field2 value2 ]</td>
-<td>同时将多个 field-value (域-值)对设置到哈希表 key 中。</td>
-</tr>
-<tr>
-<td>11</td>
-<td>HSET key field value</td>
-<td>将哈希表 key 中的字段 field 的值设为 value 。</td>
-</tr>
-<tr>
-<td>12</td>
-<td>HSETNX key field value</td>
-<td>只有在字段 field 不存在时，设置哈希表字段的值。</td>
-</tr>
-<tr>
-<td>13</td>
-<td>HVALS key</td>
-<td>获取哈希表中所有值。</td>
-</tr>
-<tr>
-<td>14</td>
-<td>HSCAN key cursor [MATCH pattern] [COUNT count]</td>
-<td>迭代哈希表中的键值对。</td>
-</tr>
-</tbody></table>
-<h1 id="Redis-列表命令"><a href="#Redis-列表命令" class="headerlink" title="Redis 列表命令"></a>Redis 列表命令</h1><p>下表列出了列表相关的基本命令：</p>
-<table>
-<thead>
-<tr>
-<th>序号</th>
-<th>命令</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>BLPOP key1 [key2 ] timeout</td>
-<td>移出并获取列表的第一个元素， 如果列表没有元素会阻塞列表直到等待超时或发现可弹出元素为止。</td>
-</tr>
-<tr>
-<td>2</td>
-<td>BRPOP key1 [key2 ] timeout</td>
-<td>移出并获取列表的最后一个元素， 如果列表没有元素会阻塞列表直到等待超时或发现可弹出元素为止。</td>
-</tr>
-<tr>
-<td>3</td>
-<td>BRPOPLPUSH source destination timeout</td>
-<td>从列表中弹出一个值，将弹出的元素插入到另外一个列表中并返回它； 如果列表没有元素会阻塞列表直到等待超时或发现可弹出元素为止。</td>
-</tr>
-<tr>
-<td>4</td>
-<td>LINDEX key index</td>
-<td>通过索引获取列表中的元素</td>
-</tr>
-<tr>
-<td>5</td>
-<td>LINSERT key BEFORE</td>
-<td>AFTER pivot value</td>
-</tr>
-<tr>
-<td>6</td>
-<td>LLEN key</td>
-<td>获取列表长度</td>
-</tr>
-<tr>
-<td>7</td>
-<td>LPOP key</td>
-<td>移出并获取列表的第一个元素</td>
-</tr>
-<tr>
-<td>8</td>
-<td>LPUSH key value1 [value2]</td>
-<td>将一个或多个值插入到列表头部</td>
-</tr>
-<tr>
-<td>9</td>
-<td>LPUSHX key value</td>
-<td>将一个值插入到已存在的列表头部</td>
-</tr>
-<tr>
-<td>10</td>
-<td>LRANGE key start stop</td>
-<td>获取列表指定范围内的元素</td>
-</tr>
-<tr>
-<td>11</td>
-<td>LREM key count value</td>
-<td>移除列表元素</td>
-</tr>
-<tr>
-<td>12</td>
-<td>LSET key index value</td>
-<td>通过索引设置列表元素的值</td>
-</tr>
-<tr>
-<td>13</td>
-<td>LTRIM key start stop</td>
-<td>对一个列表进行修剪(trim)，就是说，让列表只保留指定区间内的元素，不在指定区间之内的元素都将被删除。</td>
-</tr>
-<tr>
-<td>14</td>
-<td>RPOP key</td>
-<td>移除列表的最后一个元素，返回值为移除的元素。</td>
-</tr>
-<tr>
-<td>15</td>
-<td>RPOPLPUSH source destination</td>
-<td>移除列表的最后一个元素，并将该元素添加到另一个列表并返回</td>
-</tr>
-<tr>
-<td>16</td>
-<td>RPUSH key value1 [value2]</td>
-<td>在列表中添加一个或多个值</td>
-</tr>
-<tr>
-<td>17</td>
-<td>RPUSHX key value</td>
-<td>为已存在的列表添加值</td>
-</tr>
-</tbody></table>
-<h1 id="Redis-集合命令"><a href="#Redis-集合命令" class="headerlink" title="Redis 集合命令"></a>Redis 集合命令</h1><p>下表列出了 Redis 集合基本命令：</p>
-<table>
-<thead>
-<tr>
-<th>序号</th>
-<th>命令</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>SADD key member1 [member2]</td>
-<td>向集合添加一个或多个成员</td>
-</tr>
-<tr>
-<td>2</td>
-<td>SCARD key</td>
-<td>获取集合的成员数</td>
-</tr>
-<tr>
-<td>3</td>
-<td>SDIFF key1 [key2]</td>
-<td>返回第一个集合与其他集合之间的差异。</td>
-</tr>
-<tr>
-<td>4</td>
-<td>SDIFFSTORE destination key1 [key2]</td>
-<td>返回给定所有集合的差集并存储在 destination 中</td>
-</tr>
-<tr>
-<td>5</td>
-<td>SINTER key1 [key2]</td>
-<td>返回给定所有集合的交集</td>
-</tr>
-<tr>
-<td>6</td>
-<td>SINTERSTORE destination key1 [key2]</td>
-<td>返回给定所有集合的交集并存储在 destination 中</td>
-</tr>
-<tr>
-<td>7</td>
-<td>SISMEMBER key member</td>
-<td>判断 member 元素是否是集合 key 的成员</td>
-</tr>
-<tr>
-<td>8</td>
-<td>SMEMBERS key</td>
-<td>返回集合中的所有成员</td>
-</tr>
-<tr>
-<td>9</td>
-<td>SMOVE source destination member</td>
-<td>将 member 元素从 source 集合移动到 destination 集合</td>
-</tr>
-<tr>
-<td>10</td>
-<td>SPOP key</td>
-<td>移除并返回集合中的一个随机元素</td>
-</tr>
-<tr>
-<td>11</td>
-<td>SRANDMEMBER key [count]</td>
-<td>返回集合中一个或多个随机数</td>
-</tr>
-<tr>
-<td>12</td>
-<td>SREM key member1 [member2]</td>
-<td>移除集合中一个或多个成员</td>
-</tr>
-<tr>
-<td>13</td>
-<td>SUNION key1 [key2]</td>
-<td>返回所有给定集合的并集</td>
-</tr>
-<tr>
-<td>14</td>
-<td>SUNIONSTORE destination key1 [key2]</td>
-<td>所有给定集合的并集存储在 destination 集合中</td>
-</tr>
-<tr>
-<td>15</td>
-<td>SSCAN key cursor [MATCH pattern] [COUNT count]</td>
-<td>迭代集合中的元素</td>
-</tr>
-</tbody></table>
-<h1 id="Redis-有序集合命令"><a href="#Redis-有序集合命令" class="headerlink" title="Redis 有序集合命令"></a>Redis 有序集合命令</h1><p>下表列出了 redis 有序集合的基本命令:</p>
-<p>序号|    命令 |描述<br>1|    ZADD key score1 member1 [score2 member2]|向有序集合添加一个或多个成员，或者更新已存在成员的分数<br>2|    ZCARD key|获取有序集合的成员数<br>3|    ZCOUNT key min max|计算在有序集合中指定区间分数的成员数<br>4|    ZINCRBY key increment member|有序集合中对指定成员的分数加上增量 increment<br>5|    ZINTERSTORE destination numkeys key [key …]|计算给定的一个或多个有序集的交集并将结果集存储在新的有序集合 destination 中<br>6|    ZLEXCOUNT key min max|在有序集合中计算指定字典区间内成员数量<br>7|    ZRANGE key start stop [WITHSCORES]|通过索引区间返回有序集合指定区间内的成员<br>8|    ZRANGEBYLEX key min max [LIMIT offset count]|通过字典区间返回有序集合的成员<br>9|    ZRANGEBYSCORE key min max [WITHSCORES] [LIMIT]|通过分数返回有序集合指定区间内的成员<br>10|    ZRANK key member|返回有序集合中指定成员的索引<br>11|    ZREM key member [member …]|移除有序集合中的一个或多个成员<br>12|    ZREMRANGEBYLEX key min max|移除有序集合中给定的字典区间的所有成员<br>13|    ZREMRANGEBYRANK key start stop|移除有序集合中给定的排名区间的所有成员<br>14|    ZREMRANGEBYSCORE key min max|移除有序集合中给定的分数区间的所有成员<br>15|    ZREVRANGE key start stop [WITHSCORES]|返回有序集中指定区间内的成员，通过索引，分数从高到低<br>16|    ZREVRANGEBYSCORE key max min [WITHSCORES]|返回有序集中指定分数区间内的成员，分数从高到低排序<br>17|    ZREVRANK key member|返回有序集合中指定成员的排名，有序集成员按分数值递减(从大到小)排序<br>18|    ZSCORE key member|返回有序集中，成员的分数值<br>19|    ZUNIONSTORE destination numkeys key [key …]|计算给定的一个或多个有序集的并集，并存储在新的 key 中<br>20|    ZSCAN key cursor [MATCH pattern] [COUNT count]|迭代有序集合中的元素（包括元素成员和元素分值）</p>
-<h1 id="Redis-HyperLogLog-命令"><a href="#Redis-HyperLogLog-命令" class="headerlink" title="Redis HyperLogLog 命令"></a>Redis HyperLogLog 命令</h1><p>Redis HyperLogLog 是用来做基数统计的算法，HyperLogLog 的优点是，在输入元素的数量或者体积非常非常大时，计算基数所需的空间总是固定 的、并且是很小的。</p>
-<p>在 Redis 里面，每个 HyperLogLog 键只需要花费 12 KB 内存，就可以计算接近 2^64 个不同元素的基 数。这和计算基数时，元素越多耗费内存就越多的集合形成鲜明对比。</p>
-<p>但是，因为 HyperLogLog 只会根据输入元素来计算基数，而不会储存输入元素本身，所以 HyperLogLog 不能像集合那样，返回输入的各个元素。</p>
-<h2 id="什么是基数"><a href="#什么是基数" class="headerlink" title="什么是基数?"></a>什么是基数?</h2><p>比如数据集 {1, 3, 5, 7, 5, 7, 8}， 那么这个数据集的基数集为 {1, 3, 5 ,7, 8}, 基数(不重复元素)为5。 基数估计就是在误差可接受的范围内，快速计算基数。</p>
-<p>下表列出了 redis HyperLogLog 的基本命令：</p>
-<table>
-<thead>
-<tr>
-<th>序号</th>
-<th>命令</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>PFADD key element [element …]</td>
-<td>添加指定元素到 HyperLogLog 中。</td>
-</tr>
-<tr>
-<td>2</td>
-<td>PFCOUNT key [key …]</td>
-<td>返回给定 HyperLogLog 的基数估算值。</td>
-</tr>
-<tr>
-<td>3</td>
-<td>PFMERGE destkey sourcekey [sourcekey …]</td>
-<td>将多个 HyperLogLog 合并为一个 HyperLogLog</td>
-</tr>
-</tbody></table>
-<h1 id="Redis-发布订阅命令"><a href="#Redis-发布订阅命令" class="headerlink" title="Redis 发布订阅命令"></a>Redis 发布订阅命令</h1><p>下表列出了 redis 发布订阅常用命令：</p>
-<table>
-<thead>
-<tr>
-<th>序号</th>
-<th>命令</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>PSUBSCRIBE pattern [pattern …]</td>
-<td>订阅一个或多个符合给定模式的频道。</td>
-</tr>
-<tr>
-<td>2</td>
-<td>PUBSUB subcommand [argument [argument …]]</td>
-<td>查看订阅与发布系统状态。</td>
-</tr>
-<tr>
-<td>3</td>
-<td>PUBLISH channel message</td>
-<td>将信息发送到指定的频道。</td>
-</tr>
-<tr>
-<td>4</td>
-<td>PUNSUBSCRIBE [pattern [pattern …]]</td>
-<td>退订所有给定模式的频道。</td>
-</tr>
-<tr>
-<td>5</td>
-<td>SUBSCRIBE channel [channel …]</td>
-<td>订阅给定的一个或多个频道的信息。</td>
-</tr>
-<tr>
-<td>6</td>
-<td>UNSUBSCRIBE [channel [channel …]]</td>
-<td>指退订给定的频道。</td>
-</tr>
-</tbody></table>
-<h1 id="Redis-事务命令"><a href="#Redis-事务命令" class="headerlink" title="Redis 事务命令"></a>Redis 事务命令</h1><p>下表列出了 redis 事务的相关命令：</p>
-<table>
-<thead>
-<tr>
-<th>序号</th>
-<th>命令</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>DISCARD</td>
-<td>取消事务，放弃执行事务块内的所有命令。</td>
-</tr>
-<tr>
-<td>2</td>
-<td>EXEC</td>
-<td>执行所有事务块内的命令。</td>
-</tr>
-<tr>
-<td>3</td>
-<td>MULTI</td>
-<td>标记一个事务块的开始。</td>
-</tr>
-<tr>
-<td>4</td>
-<td>UNWATCH</td>
-<td>取消 WATCH 命令对所有 key 的监视。</td>
-</tr>
-<tr>
-<td>5</td>
-<td>WATCH key [key …]</td>
-<td>监视一个(或多个) key ，如果在事务执行之前这个(或这些) key 被其他命令所改动，那么事务将被打断。</td>
-</tr>
-</tbody></table>
-<h1 id="Redis-脚本命令"><a href="#Redis-脚本命令" class="headerlink" title="Redis 脚本命令"></a>Redis 脚本命令</h1><p>下表列出了 redis 脚本常用命令：</p>
-<p>序号|    命令 |描述<br>1|    EVAL script numkeys key [key …] arg [arg …]|执行 Lua 脚本。<br>2|    EVALSHA sha1 numkeys key [key …] arg [arg …]|执行 Lua 脚本。<br>3|    SCRIPT EXISTS script [script …]|查看指定的脚本是否已经被保存在缓存当中。<br>4|    SCRIPT FLUSH|从脚本缓存中移除所有脚本。<br>5|    SCRIPT KILL|杀死当前正在运行的 Lua 脚本。<br>6|    SCRIPT LOAD script|将脚本 script 添加到脚本缓存中，但并不立即执行这个脚本。</p>
-<h1 id="Redis-连接命令"><a href="#Redis-连接命令" class="headerlink" title="Redis 连接命令"></a>Redis 连接命令</h1><p>下表列出了 redis 连接的基本命令：</p>
-<p>序号|    命令 |描述<br>1|    AUTH password|验证密码是否正确<br>2|    ECHO message|打印字符串<br>3|    PING|查看服务是否运行<br>4|    QUIT|关闭当前连接<br>5|    SELECT index|切换到指定的数据库</p>
-<h1 id="Redis-服务器命令"><a href="#Redis-服务器命令" class="headerlink" title="Redis 服务器命令"></a>Redis 服务器命令</h1><p>下表列出了 redis 服务器的相关命令:</p>
-<table>
-<thead>
-<tr>
-<th>序号</th>
-<th>命令</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>BGREWRITEAOF</td>
-<td>异步执行一个 AOF（AppendOnly File） 文件重写操作</td>
-</tr>
-<tr>
-<td>2</td>
-<td>BGSAVE</td>
-<td>在后台异步保存当前数据库的数据到磁盘</td>
-</tr>
-<tr>
-<td>3</td>
-<td>CLIENT KILL [ip:port] [ID client-id]</td>
-<td>关闭客户端连接</td>
-</tr>
-<tr>
-<td>4</td>
-<td>CLIENT LIST</td>
-<td>获取连接到服务器的客户端连接列表</td>
-</tr>
-<tr>
-<td>5</td>
-<td>CLIENT GETNAME</td>
-<td>获取连接的名称</td>
-</tr>
-<tr>
-<td>6</td>
-<td>CLIENT PAUSE timeout</td>
-<td>在指定时间内终止运行来自客户端的命令</td>
-</tr>
-<tr>
-<td>7</td>
-<td>CLIENT SETNAME connection-name</td>
-<td>设置当前连接的名称</td>
-</tr>
-<tr>
-<td>8</td>
-<td>CLUSTER SLOTS</td>
-<td>获取集群节点的映射数组</td>
-</tr>
-<tr>
-<td>9</td>
-<td>COMMAND</td>
-<td>获取 Redis 命令详情数组</td>
-</tr>
-<tr>
-<td>10</td>
-<td>COMMAND COUNT</td>
-<td>获取 Redis 命令总数</td>
-</tr>
-<tr>
-<td>11</td>
-<td>COMMAND GETKEYS</td>
-<td>获取给定命令的所有键</td>
-</tr>
-<tr>
-<td>12</td>
-<td>TIME</td>
-<td>返回当前服务器时间</td>
-</tr>
-<tr>
-<td>13</td>
-<td>COMMAND INFO command-name [command-name …]</td>
-<td>获取指定 Redis 命令描述的数组</td>
-</tr>
-<tr>
-<td>14</td>
-<td>CONFIG GET parameter</td>
-<td>获取指定配置参数的值</td>
-</tr>
-<tr>
-<td>15</td>
-<td>CONFIG REWRITE</td>
-<td>对启动 Redis 服务器时所指定的 redis.conf 配置文件进行改写</td>
-</tr>
-<tr>
-<td>16</td>
-<td>CONFIG SET parameter value</td>
-<td>修改 redis 配置参数，无需重启</td>
-</tr>
-<tr>
-<td>17</td>
-<td>CONFIG RESETSTAT</td>
-<td>重置 INFO 命令中的某些统计数据</td>
-</tr>
-<tr>
-<td>18</td>
-<td>DBSIZE</td>
-<td>返回当前数据库的 key 的数量</td>
-</tr>
-<tr>
-<td>19</td>
-<td>DEBUG OBJECT key</td>
-<td>获取 key 的调试信息</td>
-</tr>
-<tr>
-<td>20</td>
-<td>DEBUG SEGFAULT</td>
-<td>让 Redis 服务崩溃</td>
-</tr>
-<tr>
-<td>21</td>
-<td>FLUSHALL</td>
-<td>删除所有数据库的所有key</td>
-</tr>
-<tr>
-<td>22</td>
-<td>FLUSHDB</td>
-<td>删除当前数据库的所有key</td>
-</tr>
-<tr>
-<td>23</td>
-<td>INFO [section]</td>
-<td>获取 Redis 服务器的各种信息和统计数值</td>
-</tr>
-<tr>
-<td>24</td>
-<td>LASTSAVE</td>
-<td>返回最近一次 Redis 成功将数据保存到磁盘上的时间，以 UNIX 时间戳格式表示</td>
-</tr>
-<tr>
-<td>25</td>
-<td>MONITOR</td>
-<td>实时打印出 Redis 服务器接收到的命令，调试用</td>
-</tr>
-<tr>
-<td>26</td>
-<td>ROLE</td>
-<td>返回主从实例所属的角色</td>
-</tr>
-<tr>
-<td>27</td>
-<td>SAVE</td>
-<td>同步保存数据到硬盘</td>
-</tr>
-<tr>
-<td>28</td>
-<td>SHUTDOWN [NOSAVE] [SAVE]</td>
-<td>异步保存数据到硬盘，并关闭服务器</td>
-</tr>
-<tr>
-<td>29</td>
-<td>SLAVEOF host port</td>
-<td>将当前服务器转变为指定服务器的从属服务器(slave server)</td>
-</tr>
-<tr>
-<td>30</td>
-<td>SLOWLOG subcommand [argument]</td>
-<td>管理 redis 的慢日志</td>
-</tr>
-<tr>
-<td>31</td>
-<td>SYNC</td>
-<td>用于复制功能(replication)的内部命令</td>
-</tr>
-</tbody></table>
-<h1 id="Redis-Stream"><a href="#Redis-Stream" class="headerlink" title="Redis Stream"></a>Redis Stream</h1><p>Redis Stream 是 Redis 5.0 版本新增加的数据结构。</p>
-<p>Redis Stream 主要用于消息队列（MQ，Message Queue），Redis 本身是有一个 Redis 发布订阅 (pub/sub) 来实现消息队列的功能，但它有个缺点就是消息无法持久化，如果出现网络断开、Redis 宕机等，消息就会被丢弃。</p>
-<p>简单来说发布订阅 (pub/sub) 可以分发消息，但无法记录历史消息。</p>
-<p>而 Redis Stream 提供了消息的持久化和主备复制功能，可以让任何客户端访问任何时刻的数据，并且能记住每一个客户端的访问位置，还能保证消息不丢失。</p>
-<p>Redis Stream 的结构如下所示，它有一个消息链表，将所有加入的消息都串起来，每个消息都有一个唯一的 ID 和对应的内容：</p>
-<p>每个 Stream 都有唯一的名称，它就是 Redis 的 key，在我们首次使用 xadd 指令追加消息时自动创建。</p>
-<h2 id="消息队列相关命令："><a href="#消息队列相关命令：" class="headerlink" title="消息队列相关命令："></a>消息队列相关命令：</h2><p>XADD - 添加消息到末尾<br>XTRIM - 对流进行修剪，限制长度<br>XDEL - 删除消息<br>XLEN - 获取流包含的元素数量，即消息长度<br>XRANGE - 获取消息列表，会自动过滤已经删除的消息<br>XREVRANGE - 反向获取消息列表，ID 从大到小<br>XREAD - 以阻塞或非阻塞方式获取消息列表</p>
-<h2 id="消费者组相关命令："><a href="#消费者组相关命令：" class="headerlink" title="消费者组相关命令："></a>消费者组相关命令：</h2><p>XGROUP CREATE - 创建消费者组<br>XREADGROUP GROUP - 读取消费者组中的消息<br>XACK - 将消息标记为”已处理”<br>XGROUP SETID - 为消费者组设置新的最后递送消息ID<br>XGROUP DELCONSUMER - 删除消费者<br>XGROUP DESTROY - 删除消费者组<br>XPENDING - 显示待处理消息的相关信息<br>XCLAIM - 转移消息的归属权<br>XINFO - 查看流和消费者组的相关信息；<br>XINFO GROUPS - 打印消费者组的信息；<br>XINFO STREAM - 打印流信息</p>
-<h1 id="Redis-数据备份与恢复"><a href="#Redis-数据备份与恢复" class="headerlink" title="Redis 数据备份与恢复"></a>Redis 数据备份与恢复</h1><p>Redis SAVE 命令用于创建当前数据库的备份。</p>
-<p>语法<br>redis Save 命令基本语法如下：</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">redis</span> <span class="number">127.0.0.1:6379</span>&gt; SAVE </span><br></pre></td></tr></table></figure>
-<p>实例</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">redis</span> <span class="number">127.0.0.1:6379</span>&gt; SAVE </span><br><span class="line">OK</span><br></pre></td></tr></table></figure>
-<p>该命令将在 redis 安装目录中创建dump.rdb文件。</p>
-<h2 id="恢复数据"><a href="#恢复数据" class="headerlink" title="恢复数据"></a>恢复数据</h2><p>如果需要恢复数据，只需将备份文件 (dump.rdb) 移动到 redis 安装目录并启动服务即可。获取 redis 目录可以使用 CONFIG 命令，如下所示：<br> <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">redis 127.0.0.1:6379&gt;<span class="built_in"> CONFIG </span><span class="builtin-name">GET</span> dir</span><br><span class="line">1) <span class="string">&quot;dir&quot;</span></span><br><span class="line">2) <span class="string">&quot;/usr/local/redis/bin&quot;</span></span><br></pre></td></tr></table></figure><br>以上命令 CONFIG GET dir 输出的 redis 安装目录为 /usr/local/redis/bin。</p>
-<h2 id="Bgsave"><a href="#Bgsave" class="headerlink" title="Bgsave"></a>Bgsave</h2><p>创建 redis 备份文件也可以使用命令 BGSAVE，该命令在后台执行。</p>
-<p>实例</p>
-<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">127.0.0.1:6379</span>&gt; BGSAVE</span><br><span class="line"></span><br><span class="line">Background saving started</span><br></pre></td></tr></table></figure>
-
-<h1 id="Redis-安全"><a href="#Redis-安全" class="headerlink" title="Redis 安全"></a>Redis 安全</h1><p>我们可以通过 redis 的配置文件设置密码参数，这样客户端连接到 redis 服务就需要密码验证，这样可以让你的 redis 服务更安全。</p>
-<p>实例<br>我们可以通过以下命令查看是否设置了密码验证：</p>
-<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">127</span>.<span class="number">0</span>.<span class="number">0</span>.<span class="number">1</span>:<span class="number">6379</span>&gt; CONFIG get requirepass</span><br><span class="line"><span class="attribute">1</span>) <span class="string">&quot;requirepass&quot;</span></span><br><span class="line"><span class="attribute">2</span>) <span class="string">&quot;&quot;</span></span><br></pre></td></tr></table></figure>
-<p>默认情况下 requirepass 参数是空的，这就意味着你无需通过密码验证就可以连接到 redis 服务。</p>
-<p>你可以通过以下命令来修改该参数：</p>
-<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">127</span>.<span class="number">0</span>.<span class="number">0</span>.<span class="number">1</span>:<span class="number">6379</span>&gt; CONFIG set requirepass <span class="string">&quot;runoob&quot;</span></span><br><span class="line"><span class="attribute">OK</span></span><br><span class="line"><span class="attribute">127</span>.<span class="number">0</span>.<span class="number">0</span>.<span class="number">1</span>:<span class="number">6379</span>&gt; CONFIG get requirepass</span><br><span class="line"><span class="attribute">1</span>) <span class="string">&quot;requirepass&quot;</span></span><br><span class="line"><span class="attribute">2</span>) <span class="string">&quot;runoob&quot;</span></span><br></pre></td></tr></table></figure>
-<p>设置密码后，客户端连接 redis 服务就需要密码验证，否则无法执行命令。</p>
-<p>语法<br>AUTH 命令基本语法格式如下：</p>
-<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">127.0.0.1:6379</span>&gt; AUTH password</span><br></pre></td></tr></table></figure>
-<p>实例</p>
-<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">127.0.0.1:6379</span>&gt; AUTH <span class="string">&quot;runoob&quot;</span></span><br><span class="line">OK</span><br><span class="line"><span class="number">127.0.0.1:6379</span>&gt; SET mykey <span class="string">&quot;Test value&quot;</span></span><br><span class="line">OK</span><br><span class="line"><span class="number">127.0.0.1:6379</span>&gt; GET mykey</span><br><span class="line"><span class="string">&quot;Test value&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="Redis-客户端连接"><a href="#Redis-客户端连接" class="headerlink" title="Redis 客户端连接"></a>Redis 客户端连接</h1><p>Redis 通过监听一个 TCP 端口或者 Unix socket 的方式来接收来自客户端的连接，当一个连接建立后，Redis 内部会进行以下一些操作：</p>
-<p>首先，客户端 socket 会被设置为非阻塞模式，因为 Redis 在网络事件处理上采用的是非阻塞多路复用模型。<br>然后为这个 socket 设置 TCP_NODELAY 属性，禁用 Nagle 算法<br>然后创建一个可读的文件事件用于监听这个客户端 socket 的数据发送<br>最大连接数<br>在 Redis2.4 中，最大连接数是被直接硬编码在代码里面的，而在2.6版本中这个值变成可配置的。</p>
-<p>maxclients 的默认值是 10000，你也可以在 redis.conf 中对这个值进行修改。</p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">config get maxclients</span><br><span class="line"></span><br><span class="line"><span class="number">1</span>) <span class="string">&quot;maxclients&quot;</span></span><br><span class="line"><span class="number">2</span>) <span class="string">&quot;10000&quot;</span></span><br></pre></td></tr></table></figure>
-<p>实例<br>以下实例我们在服务启动时设置最大连接数为 100000：</p>
-<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-<span class="keyword">server</span> <span class="comment">--maxclients 100000</span></span><br></pre></td></tr></table></figure>
-<h2 id="客户端命令"><a href="#客户端命令" class="headerlink" title="客户端命令"></a>客户端命令</h2><table>
-<thead>
-<tr>
-<th>S.N.</th>
-<th>命令</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>CLIENT LIST</td>
-<td>返回连接到 redis 服务的客户端列表</td>
-</tr>
-<tr>
-<td>2</td>
-<td>CLIENT SETNAME</td>
-<td>设置当前连接的名称</td>
-</tr>
-<tr>
-<td>3</td>
-<td>CLIENT GETNAME</td>
-<td>获取通过 CLIENT SETNAME 命令设置的服务名称</td>
-</tr>
-<tr>
-<td>4</td>
-<td>CLIENT PAUSE</td>
-<td>挂起客户端连接，指定挂起的时间以毫秒计</td>
-</tr>
-<tr>
-<td>5</td>
-<td>CLIENT KILL</td>
-<td>关闭客户端连接</td>
-</tr>
-</tbody></table>
-<h1 id="Redis-管道技术"><a href="#Redis-管道技术" class="headerlink" title="Redis 管道技术"></a>Redis 管道技术</h1><p>Redis是一种基于客户端-服务端模型以及请求/响应协议的TCP服务。这意味着通常情况下一个请求会遵循以下步骤：</p>
-<p>客户端向服务端发送一个查询请求，并监听Socket返回，通常是以阻塞模式，等待服务端响应。<br>服务端处理命令，并将结果返回给客户端。</p>
-<h2 id="Redis-管道技术-1"><a href="#Redis-管道技术-1" class="headerlink" title="Redis 管道技术"></a>Redis 管道技术</h2><p>Redis 管道技术可以在服务端未响应时，客户端可以继续向服务端发送请求，并最终一次性读取所有服务端的响应。</p>
-<p>实例<br>查看 redis 管道，只需要启动 redis 实例并输入以下命令：</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$(echo <span class="operator">-</span>en <span class="string">&quot;PING<span class="subst">\r</span><span class="subst">\n</span> SET runoobkey redis<span class="subst">\r</span><span class="subst">\n</span>GET runoobkey<span class="subst">\r</span><span class="subst">\n</span>INCR visitor<span class="subst">\r</span><span class="subst">\n</span>INCR visitor<span class="subst">\r</span><span class="subst">\n</span>INCR visitor<span class="subst">\r</span><span class="subst">\n</span>&quot;</span>; sleep <span class="number">10</span>) <span class="operator">|</span> nc localhost <span class="number">6379</span></span><br><span class="line"></span><br><span class="line"><span class="operator">+</span><span class="type">PONG</span></span><br><span class="line"><span class="operator">+</span><span class="type">OK</span></span><br><span class="line">redis</span><br><span class="line">:<span class="number">1</span></span><br><span class="line">:<span class="number">2</span></span><br><span class="line">:<span class="number">3</span></span><br></pre></td></tr></table></figure>
-<p>以上实例中我们通过使用 PING 命令查看redis服务是否可用， 之后我们设置了 runoobkey 的值为 redis，然后我们获取 runoobkey 的值并使得 visitor 自增 3 次。</p>
-<p>在返回的结果中我们可以看到这些命令一次性向 redis 服务提交，并最终一次性读取所有服务端的响应</p>
-<h2 id="管道技术的优势"><a href="#管道技术的优势" class="headerlink" title="管道技术的优势"></a>管道技术的优势</h2><p>管道技术最显著的优势是提高了 redis 服务的性能。</p>
-<p>一些测试数据<br>在下面的测试中，我们将使用Redis的Ruby客户端，支持管道技术特性，测试管道技术对速度的提升效果。</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">require</span> <span class="string">&#x27;rubygems&#x27;</span> </span><br><span class="line"><span class="keyword">require</span> <span class="string">&#x27;redis&#x27;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bench</span><span class="params">(descr)</span></span> </span><br><span class="line">start = Time.now </span><br><span class="line"><span class="keyword">yield</span> </span><br><span class="line">puts <span class="string">&quot;<span class="subst">#&#123;descr&#125;</span> <span class="subst">#&#123;Time.now-start&#125;</span> seconds&quot;</span> </span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">without_pipelining</span> </span></span><br><span class="line">r = Redis.new </span><br><span class="line"><span class="number">10000</span>.times &#123; </span><br><span class="line">    r.ping </span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">with_pipelining</span> </span></span><br><span class="line">r = Redis.new </span><br><span class="line">r.pipelined &#123; </span><br><span class="line">    <span class="number">10000</span>.times &#123; </span><br><span class="line">        r.ping </span><br><span class="line">    &#125; </span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">bench(<span class="string">&quot;without pipelining&quot;</span>) &#123; </span><br><span class="line">    without_pipelining </span><br><span class="line">&#125; </span><br><span class="line">bench(<span class="string">&quot;with pipelining&quot;</span>) &#123; </span><br><span class="line">    with_pipelining </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>从处于局域网中的Mac OS X系统上执行上面这个简单脚本的数据表明，开启了管道操作后，往返延时已经被改善得相当低了。</p>
-<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">without</span> pipelining <span class="number">1</span>.<span class="number">185238</span> seconds </span><br><span class="line"><span class="attribute">with</span> pipelining <span class="number">0</span>.<span class="number">250783</span> seconds</span><br></pre></td></tr></table></figure>
-<p>如你所见，开启管道后，我们的速度效率提升了5倍。</p>
-<h1 id="Redis-分区"><a href="#Redis-分区" class="headerlink" title="Redis 分区"></a>Redis 分区</h1><p>分区是分割数据到多个Redis实例的处理过程，因此每个实例只保存key的一个子集。</p>
-<h2 id="分区的优势"><a href="#分区的优势" class="headerlink" title="分区的优势"></a>分区的优势</h2><p>通过利用多台计算机内存的和值，允许我们构造更大的数据库。<br>通过多核和多台计算机，允许我们扩展计算能力；通过多台计算机和网络适配器，允许我们扩展网络带宽。</p>
-<h2 id="分区的不足"><a href="#分区的不足" class="headerlink" title="分区的不足"></a>分区的不足</h2><p>redis的一些特性在分区方面表现的不是很好：</p>
-<ul>
-<li>涉及多个key的操作通常是不被支持的。举例来说，当两个set映射到不同的redis实例上时，你就不能对这两个set执行交集操作。</li>
-<li>涉及多个key的redis事务不能使用。</li>
-<li>当使用分区时，数据处理较为复杂，比如你需要处理多个rdb/aof文件，并且从多个实例和主机备份持久化文件。</li>
-<li>增加或删除容量也比较复杂。redis集群大多数支持在运行时增加、删除节点的透明数据平衡的能力，但是类似于客户端分区、代理等其他系统则不支持这项特性。然而，一种叫做presharding的技术对此是有帮助的。<h2 id="分区类型"><a href="#分区类型" class="headerlink" title="分区类型"></a>分区类型</h2>Redis 有两种类型分区。 假设有4个Redis实例 R0，R1，R2，R3，和类似user:1，user:2这样的表示用户的多个key，对既定的key有多种不同方式来选择这个key存放在哪个实例中。也就是说，有不同的系统来映射某个key到某个Redis服务。</li>
-</ul>
-<h3 id="范围分区"><a href="#范围分区" class="headerlink" title="范围分区"></a>范围分区</h3><p>最简单的分区方式是按范围分区，就是映射一定范围的对象到特定的Redis实例。</p>
-<p>比如，ID从0到10000的用户会保存到实例R0，ID从10001到 20000的用户会保存到R1，以此类推。</p>
-<p>这种方式是可行的，并且在实际中使用，不足就是要有一个区间范围到实例的映射表。这个表要被管理，同时还需要各 种对象的映射表，通常对Redis来说并非是好的方法。</p>
-<h3 id="哈希分区"><a href="#哈希分区" class="headerlink" title="哈希分区"></a>哈希分区</h3><p>另外一种分区方法是hash分区。这对任何key都适用，也无需是object_name:这种形式，像下面描述的一样简单：</p>
-<p>用一个hash函数将key转换为一个数字，比如使用crc32 hash函数。对key foobar执行crc32(foobar)会输出类似93024922的整数。<br>对这个整数取模，将其转化为0-3之间的数字，就可以将这个整数映射到4个Redis实例中的一个了。93024922 % 4 = 2，就是说key foobar应该被存到R2实例中。注意：取模操作是取除的余数，通常在多种编程语言中用%操作符实现。</p>
-<h1 id="Java-使用-Redis"><a href="#Java-使用-Redis" class="headerlink" title="Java 使用 Redis"></a>Java 使用 Redis</h1><p>安装<br>开始在 Java 中使用 Redis 前， 我们需要确保已经安装了 redis 服务及 Java redis 驱动，且你的机器上能正常使用 Java。 Java的安装配置可以参考我们的 Java 开发环境配置 接下来让我们安装 Java redis 驱动：</p>
-<p>首先你需要下载驱动包 下载 jedis.jar，确保下载最新驱动包。<br>在你的 classpath 中包含该驱动包</p>
-<h2 id="连接到-redis-服务"><a href="#连接到-redis-服务" class="headerlink" title="连接到 redis 服务"></a>连接到 redis 服务</h2><p>实例</p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> redis.clients.jedis.Jedis;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RedisJava</span> &#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">String</span>[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//连接本地的 Redis 服务</span></span><br><span class="line">        Jedis jedis = <span class="keyword">new</span> <span class="built_in">Jedis</span>(<span class="string">&quot;localhost&quot;</span>);</span><br><span class="line">        <span class="comment">// 如果 Redis 服务设置来密码，需要下面这行，没有就不需要</span></span><br><span class="line">        <span class="comment">// jedis.auth(&quot;123456&quot;); </span></span><br><span class="line">        System.out.<span class="built_in">println</span>(<span class="string">&quot;连接成功&quot;</span>);</span><br><span class="line">        <span class="comment">//查看服务是否运行</span></span><br><span class="line">        System.out.<span class="built_in">println</span>(<span class="string">&quot;服务正在运行: &quot;</span>+jedis.<span class="built_in">ping</span>());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>编译以上 Java 程序，确保驱动包的路径是正确的。</p>
-<blockquote>
-<p>连接成功<br>服务正在运行: PONG</p>
-</blockquote>
-<h2 id="Redis-Java-String-字符串-实例"><a href="#Redis-Java-String-字符串-实例" class="headerlink" title="Redis Java String(字符串) 实例"></a>Redis Java String(字符串) 实例</h2><p>实例</p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> redis.clients.jedis.Jedis;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RedisStringJava</span> &#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">String</span>[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//连接本地的 Redis 服务</span></span><br><span class="line">        Jedis jedis = <span class="keyword">new</span> <span class="built_in">Jedis</span>(<span class="string">&quot;localhost&quot;</span>);</span><br><span class="line">        System.out.<span class="built_in">println</span>(<span class="string">&quot;连接成功&quot;</span>);</span><br><span class="line">        <span class="comment">//设置 redis 字符串数据</span></span><br><span class="line">        jedis.<span class="built_in">set</span>(<span class="string">&quot;runoobkey&quot;</span>, <span class="string">&quot;www.runoob.com&quot;</span>);</span><br><span class="line">        <span class="comment">// 获取存储的数据并输出</span></span><br><span class="line">        System.out.<span class="built_in">println</span>(<span class="string">&quot;redis 存储的字符串为: &quot;</span>+ jedis.<span class="built_in">get</span>(<span class="string">&quot;runoobkey&quot;</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>编译以上程序。</p>
-<blockquote>
-<p>连接成功<br>redis 存储的字符串为: <a target="_blank" rel="noopener" href="http://www.runoob.com/">www.runoob.com</a></p>
-</blockquote>
-<h2 id="Redis-Java-List-列表-实例"><a href="#Redis-Java-List-列表-实例" class="headerlink" title="Redis Java List(列表) 实例"></a>Redis Java List(列表) 实例</h2><p>实例</p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> redis.clients.jedis.Jedis;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RedisListJava</span> &#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">String</span>[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//连接本地的 Redis 服务</span></span><br><span class="line">        Jedis jedis = <span class="keyword">new</span> <span class="built_in">Jedis</span>(<span class="string">&quot;localhost&quot;</span>);</span><br><span class="line">        System.out.<span class="built_in">println</span>(<span class="string">&quot;连接成功&quot;</span>);</span><br><span class="line">        <span class="comment">//存储数据到列表中</span></span><br><span class="line">        jedis.<span class="built_in">lpush</span>(<span class="string">&quot;site-list&quot;</span>, <span class="string">&quot;Runoob&quot;</span>);</span><br><span class="line">        jedis.<span class="built_in">lpush</span>(<span class="string">&quot;site-list&quot;</span>, <span class="string">&quot;Google&quot;</span>);</span><br><span class="line">        jedis.<span class="built_in">lpush</span>(<span class="string">&quot;site-list&quot;</span>, <span class="string">&quot;Taobao&quot;</span>);</span><br><span class="line">        <span class="comment">// 获取存储的数据并输出</span></span><br><span class="line">        List&lt;<span class="keyword">String</span>&gt; list = jedis.<span class="built_in">lrange</span>(<span class="string">&quot;site-list&quot;</span>, <span class="number">0</span> ,<span class="number">2</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;list.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">            System.out.<span class="built_in">println</span>(<span class="string">&quot;列表项为: &quot;</span>+list.<span class="built_in">get</span>(i));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>编译以上程序。</p>
-<blockquote>
-<p>连接成功<br>列表项为: Taobao<br>列表项为: Google<br>列表项为: Runoob</p>
-</blockquote>
-<h2 id="Redis-Java-Keys-实例"><a href="#Redis-Java-Keys-实例" class="headerlink" title="Redis Java Keys 实例"></a>Redis Java Keys 实例</h2><p>实例</p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"><span class="keyword">import</span> java.util.Set;</span><br><span class="line"><span class="keyword">import</span> redis.clients.jedis.Jedis;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RedisKeyJava</span> &#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">String</span>[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//连接本地的 Redis 服务</span></span><br><span class="line">        Jedis jedis = <span class="keyword">new</span> <span class="built_in">Jedis</span>(<span class="string">&quot;localhost&quot;</span>);</span><br><span class="line">        System.out.<span class="built_in">println</span>(<span class="string">&quot;连接成功&quot;</span>);</span><br><span class="line"> </span><br><span class="line">        <span class="comment">// 获取数据并输出</span></span><br><span class="line">        Set&lt;<span class="keyword">String</span>&gt; keys = jedis.<span class="built_in">keys</span>(<span class="string">&quot;*&quot;</span>); </span><br><span class="line">        Iterator&lt;<span class="keyword">String</span>&gt; it=keys.<span class="built_in">iterator</span>() ;   </span><br><span class="line">        <span class="keyword">while</span>(it.<span class="built_in">hasNext</span>())&#123;   </span><br><span class="line">            <span class="keyword">String</span> key = it.<span class="built_in">next</span>();   </span><br><span class="line">            System.out.<span class="built_in">println</span>(key);   </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>编译以上程序。</p>
-<blockquote>
-<p>连接成功<br>runoobkey<br>site-list</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://blog.ddong.online/2021/11/02/Check-Attribute-Definition/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Damon Tung">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DT's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/02/Check-Attribute-Definition/" class="post-title-link" itemprop="url">Check_Attribute_Definition</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-11-02 15:42:45 / Modified: 15:48:07" itemprop="dateCreated datePublished" datetime="2021-11-02T15:42:45+08:00">2021-11-02</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Enovia/" itemprop="url" rel="index"><span itemprop="name">Enovia</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <pre><code>public void checkAttributeDefinition(String strAttrName) throws Exception&#123;
-        System.out.println(&quot;Context user:&quot; + context.getUser());
-        String attName = strAttrName;
-        AttributeType attrType = new AttributeType(attName);
-
-        if(attrType != null) &#123;
-            attrType.open(context);
-            System.out.println(&quot;Attribute Schema: &quot; + attrType.getName());
-            System.out.println(&quot;Max Length: &quot; + attrType.getMaxLength());
-            System.out.println(&quot;Is Multivalue: &quot; + attrType.isMultiVal());
-            System.out.println(&quot;Choices::&quot; + attrType.getChoices());
-            System.out.println(&quot;Is Multiline: &quot; + attrType.isMultiLine());
-            System.out.println(&quot;Is Range value: &quot; + attrType.isRangeVal());
-            System.out.println(&quot;Is Single value: &quot; + attrType.isSingleVal());
-            System.out.println(&quot;Is Hidden value: &quot; + attrType.isHidden());
-            System.out.println(&quot;Default Value:&quot; + attrType.getDefaultValue());
-            System.out.println(&quot;Data Type:&quot; + attrType.getDataType());
-            System.out.println(&quot;Attribute Description:&quot; + attrType.getDescription());
-            String queryTrigger = &quot;print attribute \&quot;&quot; + attName + &quot;\&quot; select trigger dump |&quot;;
-            System.out.println(&quot;Trigger::&quot; + MqlUtil.mqlCommand(context, queryTrigger));
-            System.out.println(&quot;Is Dimension Attribute: &quot; + UOMUtil.isAssociatedWithDimension(context, attName));
-            if (UOMUtil.isAssociatedWithDimension(context, attName)) &#123;
-                System.out.println(&quot;Attribute Dimension:&quot; + attrType.getDimension(context));
-            &#125;
-        &#125;
-        String queryType = &quot;list type * select name attribute[&quot; + attName + &quot;] dump |&quot;;
-        String result = MQLUtils.mql(context, queryType);
-        String[] tempArr = result.split(&quot;\\n&quot;);
-        StringList attDefinedType = new StringList();
-        for(String strType: tempArr) &#123;
-            String[] tempType = strType.split(&quot;\\|&quot;);
-            if(tempType.length &gt; 1 &amp;&amp; &quot;True&quot;.equalsIgnoreCase(tempType[1]))&#123;
-                attDefinedType.add(tempType[0]);
-            &#125;
-        &#125;
-        if(attDefinedType.size() &gt; 0)&#123;
-            System.out.println(&quot;Defined on Fllowing Types::&lt;&quot; + String.join(&quot;,&quot;, attDefinedType) + &quot;&gt;.&quot;);
-        &#125;
-    &#125;
-</code></pre>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://blog.ddong.online/2021/11/02/mxupdate/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Damon Tung">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DT's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/02/mxupdate/" class="post-title-link" itemprop="url">MxUpdate Samples</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-11-02 12:33:17 / Modified: 12:50:32" itemprop="dateCreated datePublished" datetime="2021-11-02T12:33:17+08:00">2021-11-02</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Enovia/" itemprop="url" rel="index"><span itemprop="name">Enovia</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="program"><a href="#program" class="headerlink" title="program"></a>program</h2><pre><code>exec program mxupdate --update --path D:\EPLM_Workspace\Enovia-DEV\40_mxupdate\program\jpo\ --program nsnDBAccessJPO;
-compile program nsnDBAccessJPO;
-</code></pre>
-<h2 id="attribute"><a href="#attribute" class="headerlink" title="attribute"></a>attribute</h2><pre><code>exec program mxupdate --update --path E:\EPLM_workspace\Enovia-5-3\40_mxupdate\datamodel\attribute\ --attribute &quot;NSN Network Element Type&quot;;
-</code></pre>
-<h2 id="type"><a href="#type" class="headerlink" title="type"></a>type</h2><pre><code>exec program mxupdate --update --path E:\EPLM_workspace\Enovia-5-3\40_mxupdate\datamodel\type\ --type &quot;Conflict Mineral Declaration&quot;;
-</code></pre>
-<h2 id="person"><a href="#person" class="headerlink" title="person"></a>person</h2><pre><code>exec program mxupdate --update --path C:\workspace\EPLM\vendor\dbschema\user\person\ --person admin_platform;
-</code></pre>
-<h2 id="run-tcl-script"><a href="#run-tcl-script" class="headerlink" title="run tcl script"></a>run tcl script</h2><pre><code>40_mxupdate/datamodel/type/TYPE_Conflict Mineral Declaration.tcl
-</code></pre>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://blog.ddong.online/2021/11/02/Config-Hexo-with-GitHub-via-Windows/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Damon Tung">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DT's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/02/Config-Hexo-with-GitHub-via-Windows/" class="post-title-link" itemprop="url">Config_Hexo_with_GitHub_via_Windows</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-11-02 10:15:01 / Modified: 15:32:52" itemprop="dateCreated datePublished" datetime="2021-11-02T10:15:01+08:00">2021-11-02</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Config-Hexo-with-GitHub-via-Windows"><a href="#Config-Hexo-with-GitHub-via-Windows" class="headerlink" title="Config Hexo with GitHub via Windows"></a>Config Hexo with GitHub via Windows</h1><p>If you want to set up a GitHub website with Hexo in Windows, and you need your website set up with basic functionality, like tags, categories, about, search, theme, visitor count, comments and etc, you can follow the below guide.</p>
-<h2 id="Set-up-the-account-and-repository-in-GitHub"><a href="#Set-up-the-account-and-repository-in-GitHub" class="headerlink" title="Set up the account and repository in GitHub"></a>Set up the account and repository in GitHub</h2><p>Create an account in <a target="_blank" rel="noopener" href="https://github.com/">https://github.com/</a>, click on the Create New button in the left upper corner, choose New Repository.</p>
-<p>In the Repository name, input [your_GitHub_account].github.io such as “damontung.github.io”, select the checkbox Initialize this repository with a README, and click on button Create repository.</p>
-<p>In the home page of the new repository, choose tab Settings. In the GitHub Pages section, change Source from None to master branch, and click on Save button next to it.</p>
-<h2 id="Install-Git"><a href="#Install-Git" class="headerlink" title="Install Git"></a>Install Git</h2><p>Git is the tool to manage your repository on GitHub.</p>
-<p>Download the <a target="_blank" rel="noopener" href="https://git-scm.com/download/win">Git</a>, and install it.</p>
-<p>After installation, right click on any folder, and choose Git Bash Here to open Git Bash. To bind your GitHub account and email to the Git tool on your local computer, run the below commands.</p>
-<p>git config –global user.name [your GitHub account]<br>git config –global user.email [your GitHub email address]</p>
-<h2 id="Install-Node-js"><a href="#Install-Node-js" class="headerlink" title="Install Node.js"></a>Install Node.js</h2><p>Hexo is a framework based on Node.js.</p>
-<p>Download <a target="_blank" rel="noopener" href="https://nodejs.org/en/download/">Node.js</a>, and install it. Run the below command to validate the Node.js status after installation.</p>
-<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">node</span> <span class="title">-v</span></span><br></pre></td></tr></table></figure>
-
-<p>npm is the package manager for JavasSript. Run the below command to check the npm status.</p>
-<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> -v</span><br></pre></td></tr></table></figure>
-
-<h2 id="Install-Hexo"><a href="#Install-Hexo" class="headerlink" title="Install Hexo"></a>Install Hexo</h2><p><strong>Hexo</strong> is a framework which is helpful to build a blog. See <a target="_blank" rel="noopener" href="https://hexo.io/">https://hexo.io/</a> for details.</p>
-<p>Create a folder as the base folder for Hexo. Run cmd command, run cd to change the folder to the Hexo base folder, and run the below command to install Hexo.</p>
-<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-<span class="keyword">cli</span></span><br></pre></td></tr></table></figure>
-<p>Run the below command to install Hexo Git deployer</p>
-<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
-
-<p>Run the below command to initialize Hexo</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">init</span></span><br></pre></td></tr></table></figure>
-<p>Hexo basic commands<br>Initialize Hexo after installation</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">init</span></span><br></pre></td></tr></table></figure>
-
-<p>Start Hexo server. You can stop the server by pressing Ctrl + C.</p>
-<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">server</span></span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-
-<p>After the server start, open the below link in browser, and you can see the initial page for Hexo</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="regexp">//</span>localhost:<span class="number">4000</span>/</span><br></pre></td></tr></table></figure>
-
-<p>Create a new page, like tags, categories, about me, etc</p>
-<figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> <span class="type">page</span> [page_name]</span><br></pre></td></tr></table></figure>
-
-<p>Create a new post</p>
-<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">hexo</span> new<span class="meta"> [post_name]</span></span><br><span class="line"><span class="attribute">hexo</span> n<span class="meta"> [post_name]</span></span><br></pre></td></tr></table></figure>
-<p>Generate the website for .md files</p>
-<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">generate</span></span><br><span class="line">hexo g</span><br></pre></td></tr></table></figure>
-
-<p>Deploy the website to GitHub</p>
-<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">hexo deploy</span></span><br><span class="line"><span class="attribute">hexo d</span></span><br></pre></td></tr></table></figure>
-
-<p>Generate the website for .md files and deploy the website to GitHub</p>
-<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy --<span class="keyword">generate</span></span><br><span class="line">hexo d -g</span><br></pre></td></tr></table></figure>
-
-<p>Clean the cache. It may be necessary after the change on a post, a page or a configuration file.</p>
-<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">hexo clean</span></span><br></pre></td></tr></table></figure>
-
-<p>Hexo folder structure and basic setup</p>
-<pre><code>node_modules: the folder to save Node.js modules for Hexo
-themes: the folder for themes
-source: the folder to save the source markdown (.md) files
-scaffolds: the folder for templates
-public: the folder to save the HTML pages after generation
-_config.yml: the root configuration file
-themes/[theme_name]/_config.yml: the theme configuration file
-source/_posts: the folder to save the post markdown (.md) files
-</code></pre>
-<p>add CNAME file in the source folder with following your own domain if you have and add CNAME record to your domain</p>
-<pre><code>blog.ddong.online
-</code></pre>
-<p>Update the root configuration file for the below parameters</p>
-<pre><code>url: https://damontung.github.io/
-
-highlight:
-  enable: true
-  line_number: true
-  auto_detect: true
-</code></pre>
-<p>or replace url with custom domain</p>
-<pre><code>url: https://blog.ddong.online/
-
-highlight:
-  enable: true
-  line_number: true
-  auto_detect: true
-</code></pre>
-<h2 id="Change-Hexo-theme"><a href="#Change-Hexo-theme" class="headerlink" title="Change Hexo theme"></a>Change Hexo theme</h2><p>Check the Hexo themes from <a target="_blank" rel="noopener" href="https://hexo.io/themes/">https://hexo.io/themes/</a>.</p>
-<p>For example, if you want to download the Next theme and use it, follow the below steps.</p>
-<p>a. Run the below command to download the Next theme to themes folder.</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:<span class="regexp">//gi</span>thub.com<span class="regexp">/theme-next/</span>hexo-theme-<span class="keyword">next</span> themes/<span class="keyword">next</span></span><br></pre></td></tr></table></figure>
-
-<p>b. Change the theme parameter to next in the root configuration file</p>
-<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">theme:</span> <span class="keyword">next</span></span><br></pre></td></tr></table></figure>
-
-<p>c. Change the parameters in the theme configuration file to use another scheme and add social links if necessary.</p>
-<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">scheme:</span> Gemini</span><br><span class="line"><span class="symbol">highlight_theme:</span> night</span><br></pre></td></tr></table></figure>
-
-<p>d. Update the file custom.styl under folder \themes\next\source\css_custom, and change the parameter as below</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// Custom styles.</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">code</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#098</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="About-Markdown"><a href="#About-Markdown" class="headerlink" title="About Markdown"></a>About Markdown</h2><p>Markdown is a text-to-HTML formatting syntax for web writers. Markdown allows you to write using an easy-to-read, easy-to-write plain text format, then convert it to structurally valid XHTML (or HTML). See <a target="_blank" rel="noopener" href="https://www.appinn.com/markdown/">https://www.appinn.com/markdown/</a> for Markdown syntax details.</p>
-<p>Here is some common syntax.</p>
-<p><em>italic text</em></p>
-<p><strong>bold text</strong></p>
-<hr>
-<p><a target="_blank" rel="noopener" href="http://www.url.com/">http://www.url.com</a><br>[url tile](url address)</p>
-<h3 id="header-3"><a href="#header-3" class="headerlink" title="header 3"></a>header 3</h3><ul>
-<li>list item 1</li>
-<li>list item 2</li>
-</ul>
-<p>text before <code>small code block</code> text after</p>
-<p><img src="/path/to/img.jpg" alt="Alt text"></p>
-<pre><code>code block line 1
-code block line 2
-</code></pre>
-<p>You can choose a Markdown editor like <a target="_blank" rel="noopener" href="http://www.markdownpad.com/"><em>MarkdownPad</em></a> to edit Markdown files. The editor has a preview functionality which is very helpful for editing.</p>
-<p>Install <a target="_blank" rel="noopener" href="http://markdownpad.com/download/awesomium_v1.6.6_sdk_win.exe">Awesomium 1.6.6 SDK</a> and restart the computer, if LivePreview is not working for MarkdownPad and the error message is <strong>This view has crashed!</strong></p>
-<h2 id="Link-to-a-local-image"><a href="#Link-to-a-local-image" class="headerlink" title="Link to a local image"></a>Link to a local image</h2><p>Update the <strong>root configuration file</strong> as below. After the configuration change, there will be a folder created when using command <strong>hexo new [post_name]</strong> to create a new post, and the folder name will be the same as post name.</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<p>You can copy your image file to the post folder, and use the below Markdown syntax to add an image in a post. With this approach, the image will be showing in the post, but it is not showing in the home page.</p>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!<span class="selector-attr">[alt_text]</span>(image_name.jpg)</span><br></pre></td></tr></table></figure>
-
-<p>You can install the below package and then use the below Markdown syntax to add an image to a post, and the image will be showing in both the post and home page.</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install http<span class="variable">s:</span>//github.<span class="keyword">com</span>/CodeFalling/hexo-asset-image --save</span><br><span class="line">&#123;% asset_img image_name.jpg This <span class="keyword">is</span> <span class="keyword">an</span> image %&#125;</span><br><span class="line">Add the page<span class="variable">s:</span> <span class="keyword">tags</span>, categories</span><br></pre></td></tr></table></figure>
-
-
-<p>Update the theme configuration file for the menu parameter.</p>
-<pre><code>menu:
-  tags: /tags/ || tags
-  categories: /categories/ || th
-</code></pre>
-<p>Run the below command to create the page for tags</p>
-<pre><code>hexo new page tags
-</code></pre>
-<p>Update the file \source\tags\index.md</p>
-<pre><code>---
-title: tags
-date: 2018-03-06 14:38:05
-type: &quot;tags&quot;
-comments: false
----
-</code></pre>
-<p>Run the below command to create the page for categories</p>
-<pre><code>hexo new page categories
-</code></pre>
-<p>Update the file \source\categories\index.md</p>
-<pre><code>---
-title: categories
-date: 2018-03-06 14:39:05
-type: &quot;categories&quot;
-comments: false
----
-</code></pre>
-<p>Add the page: about me<br>Update the theme configuration file for the menu parameter.</p>
-<pre><code>menu:
-  about: /about/ || user
-</code></pre>
-<p>Run the below command to create the page for about</p>
-<pre><code>hexo new page about
-</code></pre>
-<p>Update the file \source\about\index.md</p>
-<pre><code>---
-title: about me
-date: 2018-03-06 14:19:41
----
-### About me
-
-This is my blog.
-</code></pre>
-<h2 id="Add-search-functionality"><a href="#Add-search-functionality" class="headerlink" title="Add search functionality"></a>Add search functionality</h2><p>Install the Hexo search package via the below command</p>
-<pre><code>npm install hexo-generator-searchdb --save
-</code></pre>
-<p>Add the below parameters to root configuration file.</p>
-<pre><code>search:
-  path: search.xml
-  field: post
-</code></pre>
-<p>Change the below parameter in theme configuration file.</p>
-<pre><code>local_search:
-  enable: true
-</code></pre>
-<h2 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h2><p>Run the below command to create a new post</p>
-<pre><code>hexo new [post_name]
-</code></pre>
-<p>Update the file \source_post[post_name].md. See below for example.</p>
-<pre><code>---
-title: Hello World
-date: 2018-03-06 14:19:41
-tags: [Windows]
-categories: Windows
----
-###Hello
-
-Hello! This is my first blog.
-
-printf(&quot;Hello world!&quot;);
-</code></pre>
-<h2 id="Deploy-to-GitHub"><a href="#Deploy-to-GitHub" class="headerlink" title="Deploy to GitHub"></a>Deploy to GitHub</h2><p>If you are using HTTP to deploy your website to GitHub, you may get a pop-up dialog to input your GitHub account and password when running command hexo deploy during deployment.</p>
-<p>In this case, the root configuration file is configured as below.</p>
-<pre><code>deploy:
-  type: git
-  repo: https://github.com/damontung/damontung.github.io.git
-  name: damontung
-  email: damontung@163.com
-  branch: master
-</code></pre>
-<p>If you are using SSH to deploy your website to GitHub, you can follow the below steps.</p>
-<p>a. Run the below command via Git Bash to generate a key pair.</p>
-<pre><code>ssh-keygen -t rsa -C &quot;your_GitHub_email_address&quot;
-</code></pre>
-<p>b. Use the default file path C:/User/[Windows_account]/.ssh/, and input the passphrase if necessary</p>
-<p>c. Open the file C:/User/[Windows_account]/.ssh/id_rsa.pub, and copy the entire file content</p>
-<p>d. Log on to GitHub, click on Avatar on the left upper corner, choose Settings, choose SSH and GPG Keys, click on button New SSH Key, input the Title with any value, paste the entire file content from last step as Key, and click on button Add SSH Key</p>
-<p>e. If the passphrase is not empty in the step b, and you don’t want to reenter your passphrase every time you use your SSH key, you can run the below commands to add your key to the SSH agent, which manages your SSH keys and remembers your passphrase.</p>
-<pre><code>eval $(ssh-agent -s)
-ssh-add ~/.ssh/id_rsa
-</code></pre>
-<p>f. Run the below command via Git Bash to check the SSH connection</p>
-<pre><code>ssh -T git@github.com
-</code></pre>
-<p>The successful result should be like below.</p>
-<p><em>Hi XXX! You’ve successfully authenticated, but GitHub does not provide shell access.</em></p>
-<p>g. Run the below command to deploy website to GitHub</p>
-<pre><code>hexo deploy
-</code></pre>
-<p>In this case, the root configuration file is configured as below.</p>
-<pre><code>deploy:
-  type: git
-  repo: git@github.com:damontung/damontung.github.io.git
-  branch: master
-</code></pre>
-<h2 id="Count-of-Visitors"><a href="#Count-of-Visitors" class="headerlink" title="Count of Visitors"></a>Count of Visitors</h2><p>Open the theme configuration file and update the parameters as below</p>
-<pre><code>busuanzi_count:
-  enable: true
-  total_visitors: true
-  total_visitors_icon: user
-  total_views: true
-  total_views_icon: eye
-  post_views: true
-  post_views_icon: eye
-</code></pre>
-<h2 id="Add-comments-for-website"><a href="#Add-comments-for-website" class="headerlink" title="Add comments for website"></a>Add comments for website</h2><p>Create a new GitHub repository website_comments to save the comments for the website</p>
-<p>Request a GitHub OAuth application via the link <a target="_blank" rel="noopener" href="https://github.com/settings/applications/new">https://github.com/settings/applications/new</a>, or via navigation by GitHub homepage -&gt; Avatar on the left upper corner -&gt; Settings -&gt; Developer Settings -&gt; OAuth Apps -&gt; Request a new application. Input the parameters as below, and register application</p>
-<p>Application name: website_comments</p>
-<p>Homepage URL: <a target="_blank" rel="noopener" href="https://damontung.github.io/">https://damontung.github.io/</a></p>
-<p>Authorization callback URL: <a target="_blank" rel="noopener" href="https://damontung.github.io/">https://damontung.github.io/</a></p>
-<p>Note down the Client ID and Client Secret on the application page.</p>
-<p>Update the theme configuration file to add the below parameters</p>
-<pre><code>gitalk:
-  enable: true
-  clientID: [above_client_id]
-  clientSecret: [above_client_secret]
-  repo: website_comments
-  owner: ddong
-  admin: ddong
-  distractionFreeMode: true # Facebook-like distraction free mode
-  createIssueManually: false
-</code></pre>
-<p>Create a file gitalk.swig under folder next/layout/_third-party/comments. See below for the file content.</p>
-<pre><code>&#123;% if theme.gitalk.enable %&#125;
-	  &#123;% if page.comments %&#125;
-	    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-	    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-	    <script type="text/javascript">
-	      const gitalk = new Gitalk(&#123;
-	        clientID: '&#123;&#123;theme.gitalk.clientID&#125;&#125;',
-	        clientSecret: '&#123;&#123;theme.gitalk.clientSecret&#125;&#125;',
-	        repo: '&#123;&#123;theme.gitalk.repo&#125;&#125;',
-	        owner: '&#123;&#123;theme.gitalk.owner&#125;&#125;',
-	        admin: '&#123;&#123;theme.gitalk.admin&#125;&#125;'.split(','),
-	        id: location.pathname,
-	        // facebook-like distraction free mode
-	        distractionFreeMode: '&#123;&#123; theme.gitalk.distractionFreeMode &#125;&#125;',
-	        createIssueManually: '&#123;&#123; theme.gitalk.createIssueManually &#125;&#125;'
-	      &#125;)
-	      gitalk.render('gitalk-container')
-	    </script>
-	  &#123;% endif %&#125;
-&#123;% endif %&#125;
-</code></pre>
-<p>Update the file index.swig under folder next/layout/_third-party/comments to add the below code</p>
-<pre><code>&#123;% include 'gitalk.swig' %&#125;
-</code></pre>
-<p>Update the file comments.swig under folder next/layout/_partials to add the below code</p>
-<pre><code>&#123;% elseif theme.gitalk.distractionFreeMode %&#125;  
-  &lt;div id=&quot;gitalk-container&quot;&gt;&lt;/div&gt;
-Errors &amp; Tips
-Error message:
-</code></pre>
-<p>After the change on a post, a page or a configuration file, the change is not reflected on the site.</p>
-<p>Solution:</p>
-<pre><code>Clean the cache by running the command hexo clean
-</code></pre>
-<p>Error message:</p>
-<pre><code>The LivePreview functionality is not working for MarkdownPad editor. The error message is The view has crashed!.
-</code></pre>
-<p>Solution:</p>
-<pre><code>Install Awesomium 1.6.6 SDK from this link and restart the computer
-</code></pre>
-<p>Error message:</p>
-<p>If you are using SSH to deploy your Hexo contents to GitHub, you got an error message Could not read from remote repository when you are running the command hexo deploy to deploy the site to GitHub via cmd.</p>
-<p>Solution:</p>
-<pre><code>Use Git Bash to run the command, instead of cmd
-</code></pre>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://blog.ddong.online/2021/11/02/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Damon Tung">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DT's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/02/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-11-02 09:32:59" itemprop="dateCreated datePublished" datetime="2021-11-02T09:32:59+08:00">2021-11-02</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
 
 
 
@@ -2282,20 +1244,20 @@ Error message:
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">15</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

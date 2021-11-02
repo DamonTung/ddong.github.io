@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"blog.ddong.online","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="programexec program mxupdate --update --path D:\EPLM_Workspace\Enovia-DEV\40_mxupdate\program\jpo\ --program nsnDBAccessJPO; compile program nsnDBAccessJPO;  attributeexec program mxupdate --update --">
+  <meta name="description" content="attributeexec program mxupdate --update --path E:\EPLM_workspace\Enovia-5-3\40_mxupdate\datamodel\attribute\ --attribute &quot;NSN Network Element Type&quot;;  typeexec program mxupdate --update --pat">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MxUpdate Samples">
 <meta property="og:url" content="https://blog.ddong.online/2021/11/02/mxupdate/index.html">
 <meta property="og:site_name" content="DT&#39;s Blog">
-<meta property="og:description" content="programexec program mxupdate --update --path D:\EPLM_Workspace\Enovia-DEV\40_mxupdate\program\jpo\ --program nsnDBAccessJPO; compile program nsnDBAccessJPO;  attributeexec program mxupdate --update --">
+<meta property="og:description" content="attributeexec program mxupdate --update --path E:\EPLM_workspace\Enovia-5-3\40_mxupdate\datamodel\attribute\ --attribute &quot;NSN Network Element Type&quot;;  typeexec program mxupdate --update --pat">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-11-02T04:33:17.000Z">
-<meta property="article:modified_time" content="2021-11-02T04:50:32.383Z">
+<meta property="article:modified_time" content="2021-11-02T10:14:03.424Z">
 <meta property="article:author" content="Damon Tung">
 <meta property="article:tag" content="Enovia">
 <meta name="twitter:card" content="summary">
@@ -198,7 +198,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-11-02 12:33:17 / Modified: 12:50:32" itemprop="dateCreated datePublished" datetime="2021-11-02T12:33:17+08:00">2021-11-02</time>
+              <time title="Created: 2021-11-02 12:33:17 / Modified: 18:14:03" itemprop="dateCreated datePublished" datetime="2021-11-02T12:33:17+08:00">2021-11-02</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -221,10 +221,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="program"><a href="#program" class="headerlink" title="program"></a>program</h2><pre><code>exec program mxupdate --update --path D:\EPLM_Workspace\Enovia-DEV\40_mxupdate\program\jpo\ --program nsnDBAccessJPO;
-compile program nsnDBAccessJPO;
-</code></pre>
-<h2 id="attribute"><a href="#attribute" class="headerlink" title="attribute"></a>attribute</h2><pre><code>exec program mxupdate --update --path E:\EPLM_workspace\Enovia-5-3\40_mxupdate\datamodel\attribute\ --attribute &quot;NSN Network Element Type&quot;;
+        <h2 id="attribute"><a href="#attribute" class="headerlink" title="attribute"></a>attribute</h2><pre><code>exec program mxupdate --update --path E:\EPLM_workspace\Enovia-5-3\40_mxupdate\datamodel\attribute\ --attribute &quot;NSN Network Element Type&quot;;
 </code></pre>
 <h2 id="type"><a href="#type" class="headerlink" title="type"></a>type</h2><pre><code>exec program mxupdate --update --path E:\EPLM_workspace\Enovia-5-3\40_mxupdate\datamodel\type\ --type &quot;Conflict Mineral Declaration&quot;;
 </code></pre>
@@ -232,7 +229,16 @@ compile program nsnDBAccessJPO;
 </code></pre>
 <h2 id="run-tcl-script"><a href="#run-tcl-script" class="headerlink" title="run tcl script"></a>run tcl script</h2><pre><code>40_mxupdate/datamodel/type/TYPE_Conflict Mineral Declaration.tcl
 </code></pre>
+<h2 id="query-bus-with-where-clause"><a href="#query-bus-with-where-clause" class="headerlink" title="query bus with where clause"></a>query bus with where clause</h2><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">temp</span> query bus Part * * <span class="keyword">where</span> ((<span class="keyword">current</span> == Approved) &amp;&amp;</span><br><span class="line">(<span class="keyword">attribute</span>[Material Category] ~~ <span class="string">&#x27;Plastic&#x27;</span>) &amp;&amp;</span><br><span class="line">(<span class="keyword">to</span>[Component Substitution].<span class="keyword">from</span>.name ~~ <span class="string">&#x27;*Clutch*&#x27;</span>) &amp;&amp;</span><br><span class="line">(<span class="keyword">to</span>[Component Substitution].<span class="keyword">from</span>.name ~~ <span class="string">&#x27;*Transmission*&#x27;</span>));</span><br></pre></td></tr></table></figure>
 
+<h2 id="query-bus-with-Date"><a href="#query-bus-with-Date" class="headerlink" title="query bus with Date"></a>query bus with Date</h2><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">temp</span> query bus &quot;NSN Sales Item&quot; * * <span class="keyword">where</span> &quot;attribute[NSN GSC Base] != &#x27;0.0&#x27; &amp;&amp; attribute[NSN Cost Effective Date] &lt;= &#x27;Jan 07 2020&#x27;&quot; dump | <span class="keyword">limit</span> <span class="number">5</span> ;</span><br></pre></td></tr></table></figure>
+<h2 id="mod-bus-sample"><a href="#mod-bus-sample" class="headerlink" title="mod bus sample"></a>mod bus sample</h2><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">mod</span> bus <span class="keyword">TYPE</span> <span class="type">NAME </span>REVISION  ATTR_NAME ATTR_NEW_VALUE;</span><br></pre></td></tr></table></figure>
+<h2 id="exec-prog-with-method"><a href="#exec-prog-with-method" class="headerlink" title="exec prog with method"></a>exec prog with method</h2><figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exec program <span class="string">&#x27;NSNSalesItem&#x27;</span> -<span class="function"><span class="keyword">method</span> <span class="title">queryAndCopyCostsRelatedAttrsToCurrentFields</span>;</span></span><br></pre></td></tr></table></figure>
+<h2 id="update-prog-and-compile"><a href="#update-prog-and-compile" class="headerlink" title="update prog and compile"></a>update prog and compile</h2><figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">exec program mxupdate --update --path D:<span class="symbol">\E</span>PLM_Workspace<span class="symbol">\E</span>novia-DEV<span class="symbol">\4</span>0_mxupdate<span class="symbol">\p</span>rogram<span class="symbol">\j</span>po<span class="symbol">\ </span>--program NSNSalesItem;</span><br><span class="line">compile prog NSNSalesItem;</span><br></pre></td></tr></table></figure>
+
+<h2 id="insert-and-compile-prog"><a href="#insert-and-compile-prog" class="headerlink" title="insert and compile prog"></a>insert and compile prog</h2><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">insert prog PROG_FILE_PATH<span class="comment">;</span></span><br><span class="line">compile prog PROG_NAME<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<h2 id="mod-user"><a href="#mod-user" class="headerlink" title="mod user"></a>mod user</h2><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mod</span> person ddong <span class="built_in">assign</span> role ROLE_NAME<span class="comment">;</span></span><br><span class="line"><span class="built_in">mod</span> person ddong PROPERTY_NAME PROPERTY_VALUE<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<h2 id="check-assigned-role"><a href="#check-assigned-role" class="headerlink" title="check assigned role"></a>check assigned role</h2><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> person ddong <span class="keyword">select</span> assignment;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -315,7 +321,7 @@ compile program nsnDBAccessJPO;
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#program"><span class="nav-number">1.</span> <span class="nav-text">program</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#attribute"><span class="nav-number">2.</span> <span class="nav-text">attribute</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#type"><span class="nav-number">3.</span> <span class="nav-text">type</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#person"><span class="nav-number">4.</span> <span class="nav-text">person</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#run-tcl-script"><span class="nav-number">5.</span> <span class="nav-text">run tcl script</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#attribute"><span class="nav-number">1.</span> <span class="nav-text">attribute</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#type"><span class="nav-number">2.</span> <span class="nav-text">type</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#person"><span class="nav-number">3.</span> <span class="nav-text">person</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#run-tcl-script"><span class="nav-number">4.</span> <span class="nav-text">run tcl script</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#query-bus-with-where-clause"><span class="nav-number">5.</span> <span class="nav-text">query bus with where clause</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#query-bus-with-Date"><span class="nav-number">6.</span> <span class="nav-text">query bus with Date</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mod-bus-sample"><span class="nav-number">7.</span> <span class="nav-text">mod bus sample</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#exec-prog-with-method"><span class="nav-number">8.</span> <span class="nav-text">exec prog with method</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#update-prog-and-compile"><span class="nav-number">9.</span> <span class="nav-text">update prog and compile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#insert-and-compile-prog"><span class="nav-number">10.</span> <span class="nav-text">insert and compile prog</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mod-user"><span class="nav-number">11.</span> <span class="nav-text">mod user</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#check-assigned-role"><span class="nav-number">12.</span> <span class="nav-text">check assigned role</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -329,20 +335,20 @@ compile program nsnDBAccessJPO;
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">15</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
