@@ -4,13 +4,22 @@
     <title>Config_Hexo_with_GitHub_via_Windows</title>
     <url>/2021/11/02/Config-Hexo-with-GitHub-via-Windows/</url>
     <content><![CDATA[<h1 id="Config-Hexo-with-GitHub-via-Windows"><a href="#Config-Hexo-with-GitHub-via-Windows" class="headerlink" title="Config Hexo with GitHub via Windows"></a>Config Hexo with GitHub via Windows</h1><p>If you want to set up a GitHub website with Hexo in Windows, and you need your website set up with basic functionality, like tags, categories, about, search, theme, visitor count, comments and etc, you can follow the below guide.</p>
-<h2 id="Set-up-the-account-and-repository-in-GitHub"><a href="#Set-up-the-account-and-repository-in-GitHub" class="headerlink" title="Set up the account and repository in GitHub"></a>Set up the account and repository in GitHub</h2><p>Create an account in <a href="https://github.com/">https://github.com/</a>, click on the Create New button in the left upper corner, choose New Repository.</p>
-<p>In the Repository name, input [your_GitHub_account].github.io such as “damontung.github.io”, select the checkbox Initialize this repository with a README, and click on button Create repository.</p>
-<p>In the home page of the new repository, choose tab Settings. In the GitHub Pages section, change Source from None to master branch, and click on Save button next to it.</p>
+<h2 id="Set-up-the-account-and-repository-in-GitHub"><a href="#Set-up-the-account-and-repository-in-GitHub" class="headerlink" title="Set up the account and repository in GitHub"></a>Set up the account and repository in GitHub</h2><ol>
+<li><p>Create an account in <a href="https://github.com/">GitHub</a> </p>
+</li>
+<li><p>Click on the Create New button in the left upper corner, choose New Repository.</p>
+</li>
+<li><p>In the Repository name, input [your_GitHub_account].github.io such as “damontung.github.io”, select the checkbox Initialize this repository with a README, and click on button Create repository.</p>
+</li>
+<li><p>In the home page of the new repository, choose tab Settings. In the GitHub Pages section, change Source from None to main branch, and click on Save button next to it.</p>
+</li>
+</ol>
 <h2 id="Install-Git"><a href="#Install-Git" class="headerlink" title="Install Git"></a>Install Git</h2><p>Git is the tool to manage your repository on GitHub.</p>
 <p>Download the <a href="https://git-scm.com/download/win">Git</a>, and install it.</p>
 <p>After installation, right click on any folder, and choose Git Bash Here to open Git Bash. To bind your GitHub account and email to the Git tool on your local computer, run the below commands.</p>
-<p>git config –global user.name [your GitHub account]<br>git config –global user.email [your GitHub email address]</p>
+<pre><code>git config --global user.name [your GitHub account]
+git config --global user.email [your GitHub email address]
+</code></pre>
 <h2 id="Install-Node-js"><a href="#Install-Node-js" class="headerlink" title="Install Node.js"></a>Install Node.js</h2><p>Hexo is a framework based on Node.js.</p>
 <p>Download <a href="https://nodejs.org/en/download/">Node.js</a>, and install it. Run the below command to validate the Node.js status after installation.</p>
 <figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line"><span class="keyword">node</span> <span class="title">-v</span></span><br></pre></td></tr></table></figure>
@@ -73,7 +82,7 @@ highlight:
   line_number: true
   auto_detect: true
 </code></pre>
-<p>or replace url with custom domain</p>
+<p>or replace url with your custom domain</p>
 <pre><code>url: https://blog.ddong.online/
 
 highlight:
@@ -1868,5 +1877,145 @@ svn cleanup
       <tags>
         <tag>正则表达式</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>xsl_xml</title>
+    <url>/2021/11/03/xsl-xml/</url>
+    <content><![CDATA[<h2 id="XML-Sample"><a href="#XML-Sample" class="headerlink" title="XML Sample"></a>XML Sample</h2><?xml version="1.0" encoding="UTF-8"?>
+<WebSites>
+    <Site>
+        <name>EPLM R2017 Docs</name>
+        <url>/B418doc/index.htm</url>
+        <category>Docs</category>
+    </Site>
+    <Site>
+        <name>EPLM R2013 Docs</name>
+        <url>/B214doc/DShomepage_English.htm</url>
+        <category>Docs</category>
+    </Site>    
+    <Site>
+        <name>MyBlog</name>
+        <url>https://blog.ddong.online</url>
+    </Site>
+    <Site>
+        <name>JAVA 8 Docs</name>
+        <url>https://docs.oracle.com/javase/8/docs/api/overview-summary.html</url>
+        <category>Docs</category>
+    </Site>
+</WebSites>
+<figure class="highlight clean"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">## XSL Sample</span><br></pre></td></tr></table></figure>
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <xsl:template match="/">
+    <html>
+      <body>
+        <h2>My Web Sites Collection - DT</h2>
+        <table border="1">
+          <tr bgcolor="#9acd32">
+            <th>Site</th>
+            <th>URL</th>
+            <th>Description</th>
+          </tr>
+          <xsl:for-each select="WebSites/Site">
+            <xsl:sort select="category"/>
+            <tr>
+              <xsl:choose>
+                <xsl:when test="category = 'EPLM'">
+                  <td bgcolor="grey">
+                    <xsl:value-of select="name"/>
+                  </td>
+                  <td>
+                    <a href="{url}" rel="noopener noreferrer" target="_blank">
+                      <xsl:value-of select="url"/>
+                    </a>
+                  </td>
+                  <td bgcolor="grey">
+                    <xsl:value-of select="category"/>
+                  </td>
+                </xsl:when>
+                <xsl:when test="category = 'ALPIM'">
+                  <td bgcolor="yellow">
+                    <xsl:value-of select="name"/>
+                  </td>
+                  <td>
+                    <a href="{url}" rel="noopener noreferrer" target="_blank">
+                      <xsl:value-of select="url"/>
+                    </a>
+                  </td>
+                  <td bgcolor="yellow">
+                    <xsl:value-of select="category"/>
+                  </td>
+                </xsl:when>
+                <xsl:when test="category = 'AFP'">
+                  <td bgcolor="red">
+                    <xsl:value-of select="name"/>
+                  </td>
+                  <td>
+                    <a href="{url}" rel="noopener noreferrer" target="_blank">
+                      <xsl:value-of select="url"/>
+                    </a>
+                  </td>
+                  <td bgcolor="red">
+                    <xsl:value-of select="category"/>
+                  </td>
+                </xsl:when>
+                <xsl:when test="category = 'Docs'">
+                  <td bgcolor="green">
+                    <xsl:value-of select="name"/>
+                  </td>
+                  <td>
+                    <a href="{url}" rel="noopener noreferrer" target="_blank">
+                      <xsl:value-of select="url"/>
+                    </a>
+                  </td>
+                  <td bgcolor="green">
+                    <xsl:value-of select="category"/>
+                  </td>
+                </xsl:when>
+                <xsl:otherwise>
+                  <td>
+                    <xsl:value-of select="name"/>
+                  </td>
+                  <td>
+                    <a href="{url}" rel="noopener noreferrer" target="_blank">
+                      <xsl:value-of select="url"/>
+                    </a>
+                  </td>
+                  <td>
+                    <xsl:value-of select="category"/>
+                  </td>
+                </xsl:otherwise>
+              </xsl:choose>
+            </tr>
+          </xsl:for-each>
+        </table>
+      </body>
+    </html>
+  </xsl:template>
+</xsl:stylesheet>
+<figure class="highlight clean"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">## Html &amp; JavaScript combine</span><br></pre></td></tr></table></figure>
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function loadXMLDoc(filename){
+  if (window.ActiveXObject){
+    xhttp = new ActiveXObject("Msxml2.XMLHTTP");
+  }else{
+    xhttp = new XMLHttpRequest();
+  }
+  xhttp.open("GET", filename, false);
+  try {xhttp.responseType = "msxml-document"} catch(err) {} // Helping IE11
+  xhttp.send("");
+  return xhttp.responseXML;
+}
+ 
+<p>function displayResult(){<br>  xml = loadXMLDoc(“mywebsites.xml”);<br>  xsl = loadXMLDoc(“mywebsites.xsl”);<br>  // code for IE<br>  if (window.ActiveXObject || xhttp.responseType == “msxml-document”){<br>      ex = xml.transformNode(xsl);<br>      document.getElementById(“example”).innerHTML = ex;<br>  }else if (document.implementation &amp;&amp; document.implementation.createDocument){<br>    // code for Chrome, Firefox, Opera, etc.<br>    xsltProcessor = new XSLTProcessor();<br>    xsltProcessor.importStylesheet(xsl);<br>    resultDocument = xsltProcessor.transformToFragment(xml, document);<br>    document.getElementById(“example”).appendChild(resultDocument);<br>  }<br>}<br></script></p>
+</head>
+<body onload="displayResult()">
+<div id="example" />
+</body>
+</html>
+```]]></content>
   </entry>
 </search>

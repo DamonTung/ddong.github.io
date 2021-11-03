@@ -20,20 +20,19 @@
     var CONFIG = {"hostname":"blog.ddong.online","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="package com.sap.mdm.examples;  import com.sap.mdm.commands.AuthenticateServerSessionCommand; import com.sap.mdm.commands.CommandException; import com.sap.mdm.commands.CreateServerSessionCommand; impor">
+  <meta name="description" content="XML Sample               EPLM R2017 Docs         &#x2F;B418doc&#x2F;index.htm         Docs                   EPLM R2013 Docs         &#x2F;B214doc&#x2F;DShomepage_English.htm         Docs                       MyBlog">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SAP_MDM_Stop_Server">
-<meta property="og:url" content="https://blog.ddong.online/2021/11/02/SAP-MDM-Stop-Server/index.html">
+<meta property="og:title" content="xsl_xml">
+<meta property="og:url" content="https://blog.ddong.online/2021/11/03/xsl-xml/index.html">
 <meta property="og:site_name" content="DT&#39;s Blog">
-<meta property="og:description" content="package com.sap.mdm.examples;  import com.sap.mdm.commands.AuthenticateServerSessionCommand; import com.sap.mdm.commands.CommandException; import com.sap.mdm.commands.CreateServerSessionCommand; impor">
+<meta property="og:description" content="XML Sample               EPLM R2017 Docs         &#x2F;B418doc&#x2F;index.htm         Docs                   EPLM R2013 Docs         &#x2F;B214doc&#x2F;DShomepage_English.htm         Docs                       MyBlog">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-11-02T07:51:34.000Z">
-<meta property="article:modified_time" content="2021-11-02T07:53:03.191Z">
+<meta property="article:published_time" content="2021-11-03T05:36:58.000Z">
+<meta property="article:modified_time" content="2021-11-03T05:42:48.570Z">
 <meta property="article:author" content="Damon Tung">
-<meta property="article:tag" content="SAP, MDM">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://blog.ddong.online/2021/11/02/SAP-MDM-Stop-Server/">
+<link rel="canonical" href="https://blog.ddong.online/2021/11/03/xsl-xml/">
 
 
 <script id="page-configurations">
@@ -46,7 +45,7 @@
   };
 </script>
 
-  <title>SAP_MDM_Stop_Server | DT's Blog</title>
+  <title>xsl_xml | DT's Blog</title>
   
 
 
@@ -174,7 +173,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://blog.ddong.online/2021/11/02/SAP-MDM-Stop-Server/">
+    <link itemprop="mainEntityOfPage" href="https://blog.ddong.online/2021/11/03/xsl-xml/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -187,7 +186,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          SAP_MDM_Stop_Server
+          xsl_xml
         </h1>
 
         <div class="post-meta">
@@ -198,16 +197,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-11-02 15:51:34 / Modified: 15:53:03" itemprop="dateCreated datePublished" datetime="2021-11-02T15:51:34+08:00">2021-11-02</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/SAP/" itemprop="url" rel="index"><span itemprop="name">SAP</span></a>
-                </span>
+              <time title="Created: 2021-11-03 13:36:58 / Modified: 13:42:48" itemprop="dateCreated datePublished" datetime="2021-11-03T13:36:58+08:00">2021-11-03</time>
             </span>
 
           
@@ -221,106 +211,142 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <pre><code>package com.sap.mdm.examples;
-
-import com.sap.mdm.commands.AuthenticateServerSessionCommand;
-import com.sap.mdm.commands.CommandException;
-import com.sap.mdm.commands.CreateServerSessionCommand;
-import com.sap.mdm.net.ConnectionException;
-import com.sap.mdm.net.ConnectionPool;
-import com.sap.mdm.net.ConnectionPoolFactory;
-import com.sap.mdm.server.commands.StopServerCommand;
-
-/*
- * Copyright Â© 2004-2006 by SAP AG.
- * All Rights Reserved.
- * 
- * SAP, R/3, mySAP, mySAP.com, xApps, xApp, SAP NetWeaver, and other SAP
- * products and services mentioned herein as well as their respective logos are
- * trademarks or registered trademarks of SAP AG in Germany and in several other
- * countries all over the world. All other product and service names mentioned
- * are the trademarks of their respective companies. Data contained in this
- * document serves informational purposes only. National product specifications
- * may vary.
- * 
- * These materials are subject to change without notice. These materials are
- * provided by SAP AG and its affiliated companies (SAP Group) for informational
- * purposes only, without representation or warranty of any kind, and SAP Group
- * shall not be liable for errors or omissions with respect to the materials.
- * The only warranties for SAP Group products and services are those that are
- * set forth in the express warranty statements accompanying such products and
- * services, if any. Nothing herein should be construed as constituting an
- * additional warranty.
- * 
- */
-
-/**
- * This example demonstrates shutting down the MDM server. The steps are:
- * &lt;ol&gt;
- * &lt;li&gt;Establishes connection with the MDM server&lt;/li&gt;
- * &lt;li&gt;Creates a server session&lt;/li&gt;
- * &lt;li&gt;Authenticates the server session&lt;/li&gt;
- * &lt;li&gt;Stops the MDM server&lt;/li&gt;
- * &lt;/ol&gt;
- * Commands used:&lt;br&gt;
- * &lt;code&gt;CreateServerSessionCommand&lt;/code&gt;&lt;br&gt;
- * &lt;code&gt;AuthenticateServerSessionCommand&lt;/code&gt;&lt;br&gt;
- * &lt;code&gt;StopServerCommand&lt;/code&gt;&lt;br&gt;
- * &lt;br&gt;
- * &lt;a href=&quot;StopServer.java&quot;&gt;Source code for StopServer.java&lt;/a&gt;
- */
-public class StopServer &#123;        
-private StopServer() &#123;
-&#125;
-
-public static void main(String[] args) &#123;
-    // create connection pool
-    String connectionTag = &quot;LOCALHOST&quot;;
-    ConnectionPool connections = null;
-    try &#123;
-        connections = ConnectionPoolFactory.getInstance(connectionTag);
-    &#125; catch (ConnectionException e) &#123;
-        e.printStackTrace();
-        return;
-    &#125;
-
-    // create server session
-    CreateServerSessionCommand sessionCommand = new CreateServerSessionCommand(connections);
-    try &#123;
-        sessionCommand.execute();
-    &#125; catch (CommandException e) &#123;
-        e.printStackTrace();
-        return;
-    &#125;        
-    String sessionId = sessionCommand.getSession();
-    
-    // authenticate the repository session
-    String userName = &quot;Admin&quot;;
-    String userPassword = &quot;&quot;;
-    AuthenticateServerSessionCommand authCommand = new AuthenticateServerSessionCommand(connections);
-    authCommand.setSession(sessionId);
-    authCommand.setUserName(userName);
-    authCommand.setUserPassword(userPassword);
-    try &#123;
-        authCommand.execute();
-    &#125; catch (CommandException e) &#123;
-        e.printStackTrace();
-        return;
-    &#125;        
-
-    // stop the MDM server
-    StopServerCommand stopServerCommand = new StopServerCommand(connections);
-    stopServerCommand.setSession(sessionId);
-    try &#123;
-        stopServerCommand.execute();
-    &#125; catch (CommandException e) &#123;
-        e.printStackTrace();
-        return;
-    &#125;
-&#125;
-&#125;
-</code></pre>
-
+        <h2 id="XML-Sample"><a href="#XML-Sample" class="headerlink" title="XML Sample"></a>XML Sample</h2><?xml version="1.0" encoding="UTF-8"?>
+<WebSites>
+    <Site>
+        <name>EPLM R2017 Docs</name>
+        <url>/B418doc/index.htm</url>
+        <category>Docs</category>
+    </Site>
+    <Site>
+        <name>EPLM R2013 Docs</name>
+        <url>/B214doc/DShomepage_English.htm</url>
+        <category>Docs</category>
+    </Site>    
+    <Site>
+        <name>MyBlog</name>
+        <url>https://blog.ddong.online</url>
+    </Site>
+    <Site>
+        <name>JAVA 8 Docs</name>
+        <url>https://docs.oracle.com/javase/8/docs/api/overview-summary.html</url>
+        <category>Docs</category>
+    </Site>
+</WebSites>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## XSL Sample</span><br></pre></td></tr></table></figure>
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <xsl:template match="/">
+    <html>
+      <body>
+        <h2>My Web Sites Collection - DT</h2>
+        <table border="1">
+          <tr bgcolor="#9acd32">
+            <th>Site</th>
+            <th>URL</th>
+            <th>Description</th>
+          </tr>
+          <xsl:for-each select="WebSites/Site">
+            <xsl:sort select="category"/>
+            <tr>
+              <xsl:choose>
+                <xsl:when test="category = 'EPLM'">
+                  <td bgcolor="grey">
+                    <xsl:value-of select="name"/>
+                  </td>
+                  <td>
+                    <a href="{url}" rel="noopener noreferrer" target="_blank">
+                      <xsl:value-of select="url"/>
+                    </a>
+                  </td>
+                  <td bgcolor="grey">
+                    <xsl:value-of select="category"/>
+                  </td>
+                </xsl:when>
+                <xsl:when test="category = 'ALPIM'">
+                  <td bgcolor="yellow">
+                    <xsl:value-of select="name"/>
+                  </td>
+                  <td>
+                    <a href="{url}" rel="noopener noreferrer" target="_blank">
+                      <xsl:value-of select="url"/>
+                    </a>
+                  </td>
+                  <td bgcolor="yellow">
+                    <xsl:value-of select="category"/>
+                  </td>
+                </xsl:when>
+                <xsl:when test="category = 'AFP'">
+                  <td bgcolor="red">
+                    <xsl:value-of select="name"/>
+                  </td>
+                  <td>
+                    <a href="{url}" rel="noopener noreferrer" target="_blank">
+                      <xsl:value-of select="url"/>
+                    </a>
+                  </td>
+                  <td bgcolor="red">
+                    <xsl:value-of select="category"/>
+                  </td>
+                </xsl:when>
+                <xsl:when test="category = 'Docs'">
+                  <td bgcolor="green">
+                    <xsl:value-of select="name"/>
+                  </td>
+                  <td>
+                    <a href="{url}" rel="noopener noreferrer" target="_blank">
+                      <xsl:value-of select="url"/>
+                    </a>
+                  </td>
+                  <td bgcolor="green">
+                    <xsl:value-of select="category"/>
+                  </td>
+                </xsl:when>
+                <xsl:otherwise>
+                  <td>
+                    <xsl:value-of select="name"/>
+                  </td>
+                  <td>
+                    <a href="{url}" rel="noopener noreferrer" target="_blank">
+                      <xsl:value-of select="url"/>
+                    </a>
+                  </td>
+                  <td>
+                    <xsl:value-of select="category"/>
+                  </td>
+                </xsl:otherwise>
+              </xsl:choose>
+            </tr>
+          </xsl:for-each>
+        </table>
+      </body>
+    </html>
+  </xsl:template>
+</xsl:stylesheet>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## Html &amp; JavaScript combine</span><br></pre></td></tr></table></figure>
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function loadXMLDoc(filename){
+  if (window.ActiveXObject){
+    xhttp = new ActiveXObject("Msxml2.XMLHTTP");
+  }else{
+    xhttp = new XMLHttpRequest();
+  }
+  xhttp.open("GET", filename, false);
+  try {xhttp.responseType = "msxml-document"} catch(err) {} // Helping IE11
+  xhttp.send("");
+  return xhttp.responseXML;
+}
+ 
+<p>function displayResult(){<br>  xml = loadXMLDoc(“mywebsites.xml”);<br>  xsl = loadXMLDoc(“mywebsites.xsl”);<br>  // code for IE<br>  if (window.ActiveXObject || xhttp.responseType == “msxml-document”){<br>      ex = xml.transformNode(xsl);<br>      document.getElementById(“example”).innerHTML = ex;<br>  }else if (document.implementation &amp;&amp; document.implementation.createDocument){<br>    // code for Chrome, Firefox, Opera, etc.<br>    xsltProcessor = new XSLTProcessor();<br>    xsltProcessor.importStylesheet(xsl);<br>    resultDocument = xsltProcessor.transformToFragment(xml, document);<br>    document.getElementById(“example”).appendChild(resultDocument);<br>  }<br>}<br></script></p>
+</head>
+<body onload="displayResult()">
+<div id="example" />
+</body>
+</html>
+```
     </div>
 
     
@@ -328,9 +354,6 @@ public static void main(String[] args) &#123;
     
 
       <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/SAP-MDM/" rel="tag"># SAP, MDM</a>
-          </div>
 
         
 
@@ -338,13 +361,10 @@ public static void main(String[] args) &#123;
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/11/02/Redis_Commands/" rel="prev" title="Redis 常用命令">
-      <i class="fa fa-chevron-left"></i> Redis 常用命令
+    <a href="/2021/11/03/%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="prev" title="常用正则表达式">
+      <i class="fa fa-chevron-left"></i> 常用正则表达式
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/11/02/StringUtilsInEnovia/" rel="next" title="StringUtil In Enovia">
-      StringUtil In Enovia <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -403,6 +423,7 @@ public static void main(String[] args) &#123;
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#XML-Sample"><span class="nav-number">1.</span> <span class="nav-text">XML Sample</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">My Web Sites Collection - DT</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
