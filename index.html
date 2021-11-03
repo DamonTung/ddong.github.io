@@ -168,6 +168,89 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://blog.ddong.online/2021/11/03/ListUtil-Enovia/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Damon Tung">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DT's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/03/ListUtil-Enovia/" class="post-title-link" itemprop="url">ListUtil_Enovia</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-11-03 17:22:36 / Modified: 17:31:52" itemprop="dateCreated datePublished" datetime="2021-11-03T17:22:36+08:00">2021-11-03</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Enovia/" itemprop="url" rel="index"><span itemprop="name">Enovia</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Class-com-matrixone-apps-common-util-ListUtil"><a href="#Class-com-matrixone-apps-common-util-ListUtil" class="headerlink" title="Class com.matrixone.apps.common.util.ListUtil"></a>Class com.matrixone.apps.common.util.ListUtil</h1><blockquote>
+<p>public class ListUtil extends java.lang.Object</p>
+</blockquote>
+<h2 id="static-method-compareLists"><a href="#static-method-compareLists" class="headerlink" title="static method compareLists"></a>static method compareLists</h2><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public static void compareLists(java.util.List oldList,</span><br><span class="line">                                java.util.List newList,</span><br><span class="line">                                java.util.List addedItems,</span><br><span class="line">                                java.util.List removedItems,</span><br><span class="line">                                java.util.List retainedItems)</span><br><span class="line">Compare <span class="literal">two</span> lists <span class="keyword">and</span> determine <span class="keyword">the</span> added, removed, <span class="keyword">and</span> retained <span class="keyword">items</span>.</span><br><span class="line">Parameters:</span><br><span class="line">oldList - <span class="keyword">the</span> old list <span class="built_in">to</span> compare</span><br><span class="line">newList - <span class="keyword">the</span> <span class="built_in">new</span> list <span class="built_in">to</span> compare</span><br><span class="line">addedItems - <span class="keyword">items</span> that are only <span class="keyword">in</span> <span class="keyword">the</span> <span class="built_in">new</span> list</span><br><span class="line">removedItems - <span class="keyword">items</span> that are only <span class="keyword">in</span> <span class="keyword">the</span> old list</span><br><span class="line">retainedItems - <span class="keyword">items</span> that are <span class="keyword">in</span> both lists</span><br><span class="line">Since:</span><br><span class="line">AEF <span class="number">9.5</span><span class="number">.1</span><span class="number">.0</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="For-Example"><a href="#For-Example" class="headerlink" title="For Example"></a>For Example</h2><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">StringList</span> list3 = <span class="keyword">new</span> <span class="keyword">StringList</span>();</span><br><span class="line">      list3.<span class="built_in">add</span>(<span class="string">&quot;1&quot;</span>);</span><br><span class="line">      list3.<span class="built_in">add</span>(<span class="string">&quot;11&quot;</span>);</span><br><span class="line">      list3.<span class="built_in">add</span>(<span class="string">&quot;1111&quot;</span>);</span><br><span class="line">      list3.<span class="built_in">add</span>(<span class="string">&quot;11111&quot;</span>);</span><br><span class="line"></span><br><span class="line">      <span class="keyword">StringList</span> list4 = <span class="keyword">new</span> <span class="keyword">StringList</span>();</span><br><span class="line">      list4.<span class="built_in">add</span>(<span class="string">&quot;11&quot;</span>);</span><br><span class="line">      list4.<span class="built_in">add</span>(<span class="string">&quot;21&quot;</span>);</span><br><span class="line">      list4.<span class="built_in">add</span>(<span class="string">&quot;111&quot;</span>);</span><br><span class="line">      list4.<span class="built_in">add</span>(<span class="string">&quot;211&quot;</span>);</span><br><span class="line">      list4.<span class="built_in">add</span>(<span class="string">&quot;311&quot;</span>);</span><br><span class="line"></span><br><span class="line">      <span class="keyword">StringList</span> added = <span class="keyword">new</span> <span class="keyword">StringList</span>();</span><br><span class="line">      <span class="keyword">StringList</span> removed = <span class="keyword">new</span> <span class="keyword">StringList</span>();</span><br><span class="line">      <span class="keyword">StringList</span> retained = <span class="keyword">new</span> <span class="keyword">StringList</span>();</span><br><span class="line">      ListUtil.compareLists(list3, list4, added, removed, retained);</span><br><span class="line">      System.out.<span class="built_in">println</span>(<span class="string">&quot;list 3: &quot;</span> + list3);</span><br><span class="line">      System.out.<span class="built_in">println</span>(<span class="string">&quot;list 4: &quot;</span> + list4);</span><br><span class="line">      System.out.<span class="built_in">println</span>(<span class="string">&quot;list added: &quot;</span> + added);</span><br><span class="line">      System.out.<span class="built_in">println</span>(<span class="string">&quot;list removed: &quot;</span> + removed);</span><br><span class="line">      System.out.<span class="built_in">println</span>(<span class="string">&quot;list retained: &quot;</span> + retained);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Output:</p>
+</blockquote>
+<pre><code>list 3: [1, 11, 1111, 11111]
+list 4: [11, 21, 111, 211, 311]
+list added: [21, 111, 211, 311]
+list removed: [1, 1111, 11111]
+list retained: [11]
+</code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://blog.ddong.online/2021/11/03/default-value-of-attribute/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1080,73 +1163,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://blog.ddong.online/2021/11/02/retrive-limited-records-on-sap-mdm/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Damon Tung">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DT's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/02/retrive-limited-records-on-sap-mdm/" class="post-title-link" itemprop="url">retrive_limited_records_on_sap_mdm</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-11-02 17:50:15 / Modified: 17:51:41" itemprop="dateCreated datePublished" datetime="2021-11-02T17:50:15+08:00">2021-11-02</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/SAP/" itemprop="url" rel="index"><span itemprop="name">SAP</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Retrive-limited-records-and-modify-attributes"><a href="#Retrive-limited-records-and-modify-attributes" class="headerlink" title="Retrive limited records and modify attributes"></a>Retrive limited records and modify attributes</h2><figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></td><td class="code"><pre><span class="line">public void test<span class="constructor">Search(HashSet <span class="params">itemList</span>)</span> &#123;</span><br><span class="line">        long startTime = <span class="module-access"><span class="module"><span class="identifier">System</span>.</span></span>current<span class="constructor">TimeMillis()</span>;</span><br><span class="line">        FieldSearchDimension productIDSearchDimension = <span class="keyword">new</span> <span class="constructor">FieldSearchDimension(<span class="params">repSchema</span>.<span class="params">getFieldId</span>(TABLEID_PRODUCTS, <span class="string">&quot;ProductID&quot;</span>)</span>);</span><br><span class="line"></span><br><span class="line">        Set idList = itemList;</span><br><span class="line">        Iterator&lt;String&gt; it = idList.iterator<span class="literal">()</span>;</span><br><span class="line">        <span class="built_in">int</span> lastPageIndex = idList.size<span class="literal">()</span> % PAGE_SIZE<span class="operator"> == </span><span class="number">0</span> ? idList.size<span class="literal">()</span><span class="operator"> / </span>PAGE_SIZE : idList.size<span class="literal">()</span><span class="operator"> / </span>PAGE_SIZE + <span class="number">1</span>;</span><br><span class="line">        ResultDefinition rd = <span class="keyword">new</span> <span class="constructor">ResultDefinition(<span class="params">tableId</span>)</span>;</span><br><span class="line">        FieldId<span class="literal">[]</span> fieldIds = <span class="keyword">new</span> FieldId<span class="literal">[]</span>&#123;fieldProductID, fieldIdOriDB, fieldIdSentToEnovia, fieldIdSendToPCIR, fieldIdP20Relevant&#125;;</span><br><span class="line">        rd.set<span class="constructor">SelectFields(<span class="params">fieldIds</span>)</span>;</span><br><span class="line">        Search search = <span class="keyword">new</span> <span class="constructor">Search(<span class="params">tableId</span>)</span>;</span><br><span class="line">        RetrieveLimitedRecordsCommand rlrc = <span class="keyword">new</span> <span class="constructor">RetrieveLimitedRecordsCommand(<span class="params">connection</span>)</span>;</span><br><span class="line">        <span class="built_in">int</span> pageIdx = <span class="number">0</span>;</span><br><span class="line">        rlrc.set<span class="constructor">PageSize(PAGE_SIZE)</span>;</span><br><span class="line">        rlrc.set<span class="constructor">ResultDefinition(<span class="params">rd</span>)</span>;</span><br><span class="line">        <span class="built_in">int</span> updateConuntNEPEPLM = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">int</span> updateConuntPCIR = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">int</span> updateConuntP20 = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">int</span> updateConuntSentToEnovia = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> pageIndex = <span class="number">0</span>; pageIndex &lt; lastPageIndex; pageIndex++) &#123;</span><br><span class="line">            <span class="built_in">int</span> count = <span class="number">0</span>;</span><br><span class="line">            Set&lt;String&gt; searchSet = <span class="keyword">new</span> HashSet&lt;String&gt;(idList.size<span class="literal">()</span>);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> (count = <span class="number">0</span>; count &lt; PAGE_SIZE<span class="operator"> &amp;&amp; </span>idList.size<span class="literal">()</span> &gt; <span class="number">0</span>; count++) &#123;</span><br><span class="line">                String s = it.next<span class="literal">()</span>;</span><br><span class="line">                searchSet.add(s);</span><br><span class="line">                SearchConstraint scProductId = <span class="keyword">new</span> <span class="constructor">TextSearchConstraint(<span class="params">s</span>, TextSearchConstraint.EQUALS)</span>;</span><br><span class="line">                search.add<span class="constructor">SearchItem(<span class="params">productIDSearchDimension</span>, <span class="params">scProductId</span>)</span>;</span><br><span class="line">                it.remove<span class="literal">()</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            rlrc.set<span class="constructor">Search(<span class="params">search</span>)</span>;</span><br><span class="line">            rlrc.set<span class="constructor">Session(<span class="params">session</span>)</span>;</span><br><span class="line">            rlrc.set<span class="constructor">PageIndex(0)</span>;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                rlrc.execute<span class="literal">()</span>;</span><br><span class="line">            &#125; catch (CommandException e) &#123;</span><br><span class="line">                e.print<span class="constructor">StackTrace()</span>;</span><br><span class="line">                logger.error(e.get<span class="constructor">Message()</span>);</span><br><span class="line">                return;</span><br><span class="line">            &#125;</span><br><span class="line">            Record<span class="literal">[]</span> records = rlrc.get<span class="constructor">Records()</span>.get<span class="constructor">Records()</span>;</span><br><span class="line">            <span class="keyword">for</span> (Record record : records) &#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    <span class="keyword">if</span> (<span class="module-access"><span class="module"><span class="identifier">Boolean</span>.</span></span>value<span class="constructor">Of(String.<span class="params">valueOf</span>(<span class="params">record</span>.<span class="params">getFieldValue</span>(<span class="params">fieldIdSendToPCIR</span>)</span>))) &#123;</span><br><span class="line">                        updateConuntPCIR++;</span><br><span class="line">                        record.set<span class="constructor">FieldValue(<span class="params">fieldIdSendToPCIR</span>, <span class="params">new</span> BooleanValue(Boolean.<span class="params">valueOf</span>(VALUE_Send_To_PCIR)</span>));</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">if</span> (<span class="module-access"><span class="module"><span class="identifier">Boolean</span>.</span></span>value<span class="constructor">Of(String.<span class="params">valueOf</span>(<span class="params">record</span>.<span class="params">getFieldValue</span>(<span class="params">fieldIdP20Relevant</span>)</span>))) &#123;</span><br><span class="line">                        updateConuntP20++;</span><br><span class="line">                        record.set<span class="constructor">FieldValue(<span class="params">fieldIdP20Relevant</span>, <span class="params">new</span> BooleanValue(Boolean.<span class="params">valueOf</span>(VALUE_P20_Relevant)</span>));</span><br><span class="line">                    &#125;</span><br><span class="line">                    record.set<span class="constructor">FieldValue(<span class="params">fieldIdSentToEnovia</span>, <span class="params">new</span> BooleanValue(Boolean.<span class="params">valueOf</span>(VALUE_Sent_To_Enovia)</span>));</span><br><span class="line">                    <span class="keyword">if</span> (<span class="module-access"><span class="module"><span class="identifier">Boolean</span>.</span></span>value<span class="constructor">Of(String.<span class="params">valueOf</span>(<span class="params">record</span>.<span class="params">getFieldValue</span>(<span class="params">fieldIdSentToEnovia</span>)</span>))) &#123;</span><br><span class="line">                        updateConuntSentToEnovia++;</span><br><span class="line">                    &#125;</span><br><span class="line">                    record.set<span class="constructor">FieldValue(<span class="params">fieldIdOriDB</span>, <span class="params">new</span> LookupValue(<span class="params">recordOriDBNEP</span>.<span class="params">getId</span>()</span>));</span><br><span class="line">                    <span class="keyword">if</span> (!<span class="string">&quot;NEP&quot;</span>.equals<span class="constructor">IgnoreCase(String.<span class="params">valueOf</span>(<span class="params">record</span>.<span class="params">getLookupDisplayValue</span>(<span class="params">fieldIdOriDB</span>)</span>))) &#123;</span><br><span class="line">                        updateConuntNEPEPLM++;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    logger.debug(<span class="string">&quot;item&quot;</span> + record.get<span class="constructor">FieldValue(<span class="params">fieldProductID</span>)</span> + <span class="string">&quot;,pcir:&quot;</span> + <span class="module-access"><span class="module"><span class="identifier">String</span>.</span></span>value<span class="constructor">Of(<span class="params">record</span>.<span class="params">getFieldValue</span>(<span class="params">fieldIdSendToPCIR</span>)</span>) + <span class="string">&quot;,oridb:&quot;</span> + <span class="module-access"><span class="module"><span class="identifier">String</span>.</span></span>value<span class="constructor">Of(<span class="params">record</span>.<span class="params">getLookupDisplayValue</span>(<span class="params">fieldIdOriDB</span>)</span>));</span><br><span class="line">                    logger.debug(<span class="string">&quot;sent to enovia:&quot;</span> + <span class="module-access"><span class="module"><span class="identifier">String</span>.</span></span>value<span class="constructor">Of(<span class="params">record</span>.<span class="params">getFieldValue</span>(<span class="params">fieldIdSentToEnovia</span>)</span>));</span><br><span class="line">                    logger.debug(<span class="string">&quot;,p20:&quot;</span> + <span class="module-access"><span class="module"><span class="identifier">String</span>.</span></span>value<span class="constructor">Of(<span class="params">record</span>.<span class="params">getFieldValue</span>(<span class="params">fieldIdP20Relevant</span>)</span>));</span><br><span class="line"></span><br><span class="line">                &#125; catch (Exception e) &#123;</span><br><span class="line">                    e.print<span class="constructor">StackTrace()</span>;</span><br><span class="line">                    logger.error(<span class="string">&quot;MDM Value Type Exception::&quot;</span> + e.get<span class="constructor">Message()</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            ModifyRecordsCommand modifyRecordsCommand = <span class="keyword">new</span> <span class="constructor">ModifyRecordsCommand(<span class="params">connection</span>)</span>;</span><br><span class="line">            modifyRecordsCommand.set<span class="constructor">Records(<span class="params">records</span>)</span>;</span><br><span class="line">            modifyRecordsCommand.set<span class="constructor">Session(<span class="params">session</span>)</span>;</span><br><span class="line">            modifyRecordsCommand.set<span class="constructor">TableId(<span class="params">tableId</span>)</span>;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                modifyRecordsCommand.execute<span class="literal">()</span>;</span><br><span class="line">            &#125; catch (CommandException e) &#123;</span><br><span class="line">                e.print<span class="constructor">StackTrace()</span>;</span><br><span class="line">                logger.error(e.get<span class="constructor">Message()</span>);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="built_in">int</span><span class="literal">[]</span> crFailed = modifyRecordsCommand.get<span class="constructor">Result()</span>.get<span class="constructor">FailedRecords()</span>;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (crFailed != null<span class="operator"> &amp;&amp; </span>crFailed.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                logger.info(<span class="string">&quot;modifyRecords: No. of records failed:&quot;</span> + crFailed.length);</span><br><span class="line">                <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; crFailed.length; i++) &#123;</span><br><span class="line">                    <span class="built_in">int</span> j = crFailed<span class="literal">[<span class="identifier">i</span>]</span>;</span><br><span class="line">                    logger.info(<span class="string">&quot;modifyRecords: failed messages:&quot;</span> + modifyRecordsCommand.get<span class="constructor">Result()</span>.get<span class="constructor">FailedRecordMessage(<span class="params">j</span>)</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//Get Succeded Records</span></span><br><span class="line">            <span class="built_in">int</span> crSuccess<span class="literal">[]</span> = modifyRecordsCommand.get<span class="constructor">Result()</span>.get<span class="constructor">SucceededRecords()</span>;</span><br><span class="line">            <span class="keyword">if</span> (crSuccess != null<span class="operator"> &amp;&amp; </span>crSuccess.length &gt; <span class="number">0</span>)</span><br><span class="line">                logger.info(<span class="string">&quot;modifyRecords: No. of records succeeded:&quot;</span> + crSuccess.length);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        DestroySessionCommand destroySessionCommand = <span class="keyword">new</span> <span class="constructor">DestroySessionCommand(<span class="params">connection</span>)</span>;</span><br><span class="line">        destroySessionCommand.set<span class="constructor">Session(<span class="params">session</span>)</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            destroySessionCommand.execute<span class="literal">()</span>;</span><br><span class="line">        &#125; catch (CommandException e) &#123;</span><br><span class="line">            e.print<span class="constructor">StackTrace()</span>;</span><br><span class="line">            logger.error(e.get<span class="constructor">Message()</span>);</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">        long endTime = <span class="module-access"><span class="module"><span class="identifier">System</span>.</span></span>current<span class="constructor">TimeMillis()</span>;</span><br><span class="line"></span><br><span class="line">        logger.info(<span class="string">&quot;update nep item number::&quot;</span> + updateConuntNEPEPLM);</span><br><span class="line">        logger.info(<span class="string">&quot;update sent to enovia item number::&quot;</span> + updateConuntSentToEnovia);</span><br><span class="line">        logger.info(<span class="string">&quot;update P20 Relevant item number::&quot;</span> + updateConuntP20);</span><br><span class="line">        logger.info(<span class="string">&quot;update attribute send to pcir to N,,Total number:&quot;</span> + updateConuntPCIR);</span><br><span class="line">        logger.info(<span class="string">&quot;update attribute values done in alpim, total time::&quot;</span> + (endTime - startTime)<span class="operator"> / </span><span class="number">1000</span> + <span class="string">&quot;s&quot;</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1216,7 +1232,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

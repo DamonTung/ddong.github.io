@@ -1907,4 +1907,31 @@ svn cleanup
         <tag>Enovia; Attribute</tag>
       </tags>
   </entry>
+  <entry>
+    <title>ListUtil_Enovia</title>
+    <url>/2021/11/03/ListUtil-Enovia/</url>
+    <content><![CDATA[<h1 id="Class-com-matrixone-apps-common-util-ListUtil"><a href="#Class-com-matrixone-apps-common-util-ListUtil" class="headerlink" title="Class com.matrixone.apps.common.util.ListUtil"></a>Class com.matrixone.apps.common.util.ListUtil</h1><blockquote>
+<p>public class ListUtil extends java.lang.Object</p>
+</blockquote>
+<h2 id="static-method-compareLists"><a href="#static-method-compareLists" class="headerlink" title="static method compareLists"></a>static method compareLists</h2><figure class="highlight livecodeserver"><table><tr><td class="code"><pre><span class="line">public static void compareLists(java.util.List oldList,</span><br><span class="line">                                java.util.List newList,</span><br><span class="line">                                java.util.List addedItems,</span><br><span class="line">                                java.util.List removedItems,</span><br><span class="line">                                java.util.List retainedItems)</span><br><span class="line">Compare <span class="literal">two</span> lists <span class="keyword">and</span> determine <span class="keyword">the</span> added, removed, <span class="keyword">and</span> retained <span class="keyword">items</span>.</span><br><span class="line">Parameters:</span><br><span class="line">oldList - <span class="keyword">the</span> old list <span class="built_in">to</span> compare</span><br><span class="line">newList - <span class="keyword">the</span> <span class="built_in">new</span> list <span class="built_in">to</span> compare</span><br><span class="line">addedItems - <span class="keyword">items</span> that are only <span class="keyword">in</span> <span class="keyword">the</span> <span class="built_in">new</span> list</span><br><span class="line">removedItems - <span class="keyword">items</span> that are only <span class="keyword">in</span> <span class="keyword">the</span> old list</span><br><span class="line">retainedItems - <span class="keyword">items</span> that are <span class="keyword">in</span> both lists</span><br><span class="line">Since:</span><br><span class="line">AEF <span class="number">9.5</span><span class="number">.1</span><span class="number">.0</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="For-Example"><a href="#For-Example" class="headerlink" title="For Example"></a>For Example</h2><figure class="highlight processing"><table><tr><td class="code"><pre><span class="line"><span class="keyword">StringList</span> list3 = <span class="keyword">new</span> <span class="keyword">StringList</span>();</span><br><span class="line">      list3.<span class="built_in">add</span>(<span class="string">&quot;1&quot;</span>);</span><br><span class="line">      list3.<span class="built_in">add</span>(<span class="string">&quot;11&quot;</span>);</span><br><span class="line">      list3.<span class="built_in">add</span>(<span class="string">&quot;1111&quot;</span>);</span><br><span class="line">      list3.<span class="built_in">add</span>(<span class="string">&quot;11111&quot;</span>);</span><br><span class="line"></span><br><span class="line">      <span class="keyword">StringList</span> list4 = <span class="keyword">new</span> <span class="keyword">StringList</span>();</span><br><span class="line">      list4.<span class="built_in">add</span>(<span class="string">&quot;11&quot;</span>);</span><br><span class="line">      list4.<span class="built_in">add</span>(<span class="string">&quot;21&quot;</span>);</span><br><span class="line">      list4.<span class="built_in">add</span>(<span class="string">&quot;111&quot;</span>);</span><br><span class="line">      list4.<span class="built_in">add</span>(<span class="string">&quot;211&quot;</span>);</span><br><span class="line">      list4.<span class="built_in">add</span>(<span class="string">&quot;311&quot;</span>);</span><br><span class="line"></span><br><span class="line">      <span class="keyword">StringList</span> added = <span class="keyword">new</span> <span class="keyword">StringList</span>();</span><br><span class="line">      <span class="keyword">StringList</span> removed = <span class="keyword">new</span> <span class="keyword">StringList</span>();</span><br><span class="line">      <span class="keyword">StringList</span> retained = <span class="keyword">new</span> <span class="keyword">StringList</span>();</span><br><span class="line">      ListUtil.compareLists(list3, list4, added, removed, retained);</span><br><span class="line">      System.out.<span class="built_in">println</span>(<span class="string">&quot;list 3: &quot;</span> + list3);</span><br><span class="line">      System.out.<span class="built_in">println</span>(<span class="string">&quot;list 4: &quot;</span> + list4);</span><br><span class="line">      System.out.<span class="built_in">println</span>(<span class="string">&quot;list added: &quot;</span> + added);</span><br><span class="line">      System.out.<span class="built_in">println</span>(<span class="string">&quot;list removed: &quot;</span> + removed);</span><br><span class="line">      System.out.<span class="built_in">println</span>(<span class="string">&quot;list retained: &quot;</span> + retained);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Output:</p>
+</blockquote>
+<pre><code>list 3: [1, 11, 1111, 11111]
+list 4: [11, 21, 111, 211, 311]
+list added: [21, 111, 211, 311]
+list removed: [1, 1111, 11111]
+list retained: [11]
+</code></pre>
+]]></content>
+      <categories>
+        <category>Enovia</category>
+      </categories>
+      <tags>
+        <tag>Enovia</tag>
+      </tags>
+  </entry>
 </search>
