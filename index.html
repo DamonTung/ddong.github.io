@@ -168,6 +168,76 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://blog.ddong.online/2021/11/03/default-value-of-attribute/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Damon Tung">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DT's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/03/default-value-of-attribute/" class="post-title-link" itemprop="url">default_value_of_attribute</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-11-03 16:06:34 / Modified: 16:10:30" itemprop="dateCreated datePublished" datetime="2021-11-03T16:06:34+08:00">2021-11-03</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Enovia/" itemprop="url" rel="index"><span itemprop="name">Enovia</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Two-Types-of-Get-Attribute-Default-Value"><a href="#Two-Types-of-Get-Attribute-Default-Value" class="headerlink" title="Two Types of Get Attribute Default Value"></a>Two Types of Get Attribute Default Value</h2><h3 id="AttributeType"><a href="#AttributeType" class="headerlink" title="AttributeType"></a>AttributeType</h3><figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">AttributeType attrType = <span class="keyword">new</span> <span class="constructor">AttributeType(<span class="params">attrName</span>)</span>;</span><br><span class="line">String defaultValue = attrType.get<span class="constructor">DefaultValue(<span class="params">context</span>)</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="AttributeUtil"><a href="#AttributeUtil" class="headerlink" title="AttributeUtil"></a>AttributeUtil</h3><figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String strDefaultValue = <span class="module-access"><span class="module"><span class="identifier">AttributeUtil</span>.</span></span>get<span class="constructor">DefaultAttributeValue(<span class="params">context</span>, <span class="params">attrName</span>)</span>;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://blog.ddong.online/2021/11/03/xsl-xml/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1077,89 +1147,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://blog.ddong.online/2021/11/02/SVN-Commands/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Damon Tung">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DT's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/02/SVN-Commands/" class="post-title-link" itemprop="url">SVN_Commands</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-11-02 17:45:35 / Modified: 17:47:50" itemprop="dateCreated datePublished" datetime="2021-11-02T17:45:35+08:00">2021-11-02</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/SVN/" itemprop="url" rel="index"><span itemprop="name">SVN</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Got-detail-of-repository"><a href="#Got-detail-of-repository" class="headerlink" title="Got detail of repository"></a>Got detail of repository</h2><pre><code>svn info
-</code></pre>
-<h2 id="change-svn-branch-within-same-repository"><a href="#change-svn-branch-within-same-repository" class="headerlink" title="change svn branch within same repository"></a>change svn branch within same repository</h2><pre><code>svn switch NEW_BRANCH_URL
-svn cleanup
-</code></pre>
-<h2 id="change-location-with-different-repository"><a href="#change-location-with-different-repository" class="headerlink" title="change location with different repository"></a>change location with different repository</h2><pre><code>svn switch --relocate CURRENT_URL NEW_URL
-</code></pre>
-<blockquote>
-<p>Note: Be careful when using the –relocate option. If you mistype the argument, you might end up creating nonsensical URLs within your working copy that render the whole workspace unusable and tricky to fix. It’s also important to understand exactly when one should or shouldn’t use –relocate. Here’s the rule of thumb:</p>
-</blockquote>
-<ol>
-<li><p>If the working copy needs to reflect a new directory within the repository, use just svn switch.</p>
-</li>
-<li><p>If the working copy still reflects the same repository directory, but the location of the repository itself has changed, use svn switch with the –relocate option.</p>
-</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1229,7 +1216,7 @@ svn cleanup
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1242,7 +1229,7 @@ svn cleanup
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
