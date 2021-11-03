@@ -1934,4 +1934,32 @@ list retained: [11]
         <tag>Enovia</tag>
       </tags>
   </entry>
+  <entry>
+    <title>RelationshipUtil_Enovia</title>
+    <url>/2021/11/03/RelationshipUtil-Enovia/</url>
+    <content><![CDATA[<h1 id="Class-RelationshipUtil"><a href="#Class-RelationshipUtil" class="headerlink" title="Class RelationshipUtil"></a>Class RelationshipUtil</h1><blockquote>
+<p>com.matrixone.apps.common.util.RelationshipUtil<br>public class RelationshipUtil extends java.lang.Object</p>
+</blockquote>
+<p>The RelationshipUtil class provides tools to float objects.</p>
+<h2 id="Method-Summary"><a href="#Method-Summary" class="headerlink" title="Method Summary"></a>Method Summary</h2><p>—|—|—<br>static void|connected(matrix.db.Context context, java.lang.Object objectId,java.lang.String relPattern, java.lang.String typePattern, java.lang.String expandDir, java.util.Map policyStateMap)| Floats the specified relationships to this object.<br>static void    |connected(matrix.db.Context context, java.lang.Object objectId, java.lang.String relPattern, java.lang.String typePattern, java.lang.String expandDir, java.lang.String floatExpression)|Floats the specified relationships to this object.</p>
+<h2 id="Method-Detail"><a href="#Method-Detail" class="headerlink" title="Method Detail"></a>Method Detail</h2><h3 id="connected"><a href="#connected" class="headerlink" title="connected"></a>connected</h3><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">public static void connected(matrix<span class="selector-class">.db</span><span class="selector-class">.Context</span> context,</span><br><span class="line">                             java<span class="selector-class">.lang</span><span class="selector-class">.Object</span> objectId,</span><br><span class="line">                             java<span class="selector-class">.lang</span><span class="selector-class">.String</span> relPattern,</span><br><span class="line">                             java<span class="selector-class">.lang</span><span class="selector-class">.String</span> typePattern,</span><br><span class="line">                             java<span class="selector-class">.lang</span><span class="selector-class">.String</span> expandDir,</span><br><span class="line">                             java<span class="selector-class">.util</span><span class="selector-class">.Map</span> policyStateMap)</span><br><span class="line">                      throws java<span class="selector-class">.lang</span>.Exception</span><br></pre></td></tr></table></figure>
+<p>Floats the specified relationships to this object. The objects connected to the previous revision of the given object and that meet the specified criteria are disconnected from the previous revision and connected to the given object. To meet the specified criteria, the objects must be connected to the previous revision of the given object through the relationship and type patterns, in the specified direction, and must be editable. To be editable, the object’s state must be one of the states listed in the policy-state map, or the object must not be in it’s last state.</p>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h3><figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line">BusinessObject mc = <span class="keyword">new</span> <span class="built_in">BusinessObject</span>(<span class="string">&quot;Microcomputer&quot;</span>, <span class="string">&quot;Q Prom&quot;</span>,</span><br><span class="line">                                       <span class="string">&quot;A&quot;</span>, <span class="string">&quot;Manufacturing&quot;</span>);</span><br><span class="line">HashMap sTargetState = <span class="keyword">new</span> <span class="built_in">HashMap</span>();</span><br><span class="line">sTargetState.<span class="built_in">put</span>(<span class="string">&quot;Production&quot;</span>, <span class="string">&quot;Active&quot;</span>);</span><br><span class="line">sTargetState.<span class="built_in">put</span>(<span class="string">&quot;Documentation&quot;</span>, <span class="string">&quot;Finished&quot;</span>);</span><br><span class="line">HashMap returnedMsg = RelationshipUtil.<span class="built_in">connected</span>(context, mc,</span><br><span class="line">      <span class="string">&quot;&quot;</span>, <span class="string">&quot;&quot;</span>, sTargetState, <span class="number">0</span>, <span class="string">&quot;from&quot;</span>, <span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+<p>Parameters:</p>
+<ol>
+<li>context - The matrix context object.</li>
+<li>objectId - The object to float relationships to.</li>
+<li>relPattern - The relationships to expand.</li>
+<li>expandDir - The direction to expand. This can be “from” or “to”. Anything else will expand in both directions.</li>
+<li>policyStateMap - A map from policy names to a list of the editable states in that policy.<br>Throws:<br>java.lang.Exception - if float failed.</li>
+</ol>
+<h3 id="connected-1"><a href="#connected-1" class="headerlink" title="connected"></a>connected</h3><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">public static void connected(matrix<span class="selector-class">.db</span><span class="selector-class">.Context</span> context,</span><br><span class="line">                             java<span class="selector-class">.lang</span><span class="selector-class">.Object</span> objectId,</span><br><span class="line">                             java<span class="selector-class">.lang</span><span class="selector-class">.String</span> relPattern,</span><br><span class="line">                             java<span class="selector-class">.lang</span><span class="selector-class">.String</span> typePattern,</span><br><span class="line">                             java<span class="selector-class">.lang</span><span class="selector-class">.String</span> expandDir,</span><br><span class="line">                             java<span class="selector-class">.lang</span><span class="selector-class">.String</span> floatExpression)</span><br><span class="line">                      throws java<span class="selector-class">.lang</span>.Exception</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Enovia</category>
+      </categories>
+      <tags>
+        <tag>Enovia</tag>
+      </tags>
+  </entry>
 </search>
