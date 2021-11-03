@@ -168,6 +168,153 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://blog.ddong.online/2021/11/03/%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Damon Tung">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DT's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/03/%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="post-title-link" itemprop="url">常用正则表达式</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-11-03 09:22:54 / Modified: 09:25:36" itemprop="dateCreated datePublished" datetime="2021-11-03T09:22:54+08:00">2021-11-03</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">正则表达式</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="验证数字的正则表达式集"><a href="#验证数字的正则表达式集" class="headerlink" title="验证数字的正则表达式集"></a>验证数字的正则表达式集</h1><p>验证数字：</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^[0<span class="number">-9</span>]*<span class="variable">$ </span></span><br></pre></td></tr></table></figure>
+
+<p>验证n位的数字：</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">^\d</span><span class="template-variable">&#123;n&#125;</span><span class="xml">$ </span></span><br></pre></td></tr></table></figure>
+
+<p>验证至少n位数字：</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">^\d</span><span class="template-variable">&#123;n,&#125;</span><span class="xml">$ </span></span><br></pre></td></tr></table></figure>
+
+<p>验证m-n位的数字：</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">^\d</span><span class="template-variable">&#123;m,n&#125;</span><span class="xml">$ </span></span><br></pre></td></tr></table></figure>
+
+<p>验证零和非零开头的数字：</p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^(0|<span class="comment">[1-9]</span><span class="comment">[0-9]</span>*)$ </span><br></pre></td></tr></table></figure>
+
+<p>验证有两位小数的正实数：</p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^<span class="comment">[0-9]</span>+(.<span class="comment">[0-9]</span>&#123;2&#125;)?$ </span><br></pre></td></tr></table></figure>
+
+<p>验证有1-3位小数的正实数：</p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^<span class="comment">[0-9]</span>+(.<span class="comment">[0-9]</span>&#123;1,3&#125;)?$ </span><br></pre></td></tr></table></figure>
+<p>验证非零的正整数：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^\+<span class="string">?[</span><span class="number">1</span>-<span class="number">9</span>][<span class="number">0</span>-<span class="number">9</span>]*<span class="variable">$ </span></span><br></pre></td></tr></table></figure>
+
+<p>验证非零的负整数：</p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^\-<span class="comment">[1-9]</span><span class="comment">[0-9]</span>*$ </span><br></pre></td></tr></table></figure>
+
+<p>验证非负整数（正整数 + 0） </p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^\d+<span class="variable">$ </span></span><br></pre></td></tr></table></figure>
+
+<p>验证非正整数（负整数 + 0） </p>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^<span class="comment">((-\d+)</span>|<span class="comment">(0+)</span>)$ </span><br></pre></td></tr></table></figure>
+
+<p>验证长度为3的字符：</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">^.</span><span class="template-variable">&#123;3&#125;</span><span class="xml">$ </span></span><br></pre></td></tr></table></figure>
+<p>验证由26个英文字母组成的字符串：</p>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^[<span class="keyword">A</span>-Za-z]+$ </span><br></pre></td></tr></table></figure>
+
+<p>验证由26个大写英文字母组成的字符串：</p>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^[<span class="keyword">A</span>-Z]+$ </span><br></pre></td></tr></table></figure>
+<p>验证由26个小写英文字母组成的字符串：</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^[a-z]+<span class="variable">$ </span></span><br></pre></td></tr></table></figure>
+
+<p>验证由数字和26个英文字母组成的字符串：</p>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^[<span class="keyword">A</span>-Za-z0-<span class="number">9</span>]+$ </span><br></pre></td></tr></table></figure>
+<p>验证由数字、26个英文字母或者下划线组成的字符串：</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^\w+<span class="variable">$ </span></span><br></pre></td></tr></table></figure>
+<p>验证用户密码:</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">^[a-zA-Z]\w</span><span class="template-variable">&#123;5,17&#125;</span><span class="xml">$ </span></span><br></pre></td></tr></table></figure>
+<p>正确格式为：以字母开头，长度在6-18之间，只能包含字符、数字和下划线。 </p>
+<p>验证是否含有 ^%&amp;’,;=?$&quot; 等字符：</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[^%<span class="meta">&amp;&#x27;,;=?$\x22]+ </span></span><br></pre></td></tr></table></figure>
+
+<p>验证汉字：</p>
+<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^[<span class="symbol">\u</span>4e00-<span class="symbol">\u</span>9fa5],&#123;0,&#125;$ </span><br></pre></td></tr></table></figure>
+
+<p>验证Email地址：</p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^(<span class="comment">[a-zA-Z0-9]</span>+<span class="comment">[_|\_|\.]</span>?)*<span class="comment">[a-zA-Z0-9]</span>+@(<span class="comment">[a-zA-Z0-9]</span>+<span class="comment">[_|\_|\.]</span>?)*<span class="comment">[a-zA-Z0-9]</span>+\.<span class="comment">[a-zA-Z]</span>&#123;2,3&#125;$</span><br></pre></td></tr></table></figure>
+
+<p>验证InternetURL：</p>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^<span class="link">http://(</span>[<span class="string">\w-</span>]<span class="code">+\.)+</span>[\w-]<span class="code">+(/[\w-./?%&amp;=]*)?$ ；^[a-zA-z]+</span>://(w<span class="code">+(-w+</span>)<span class="strong">*)(.(w+(-w+)*</span>))<span class="strong">*(?S*</span>)?$ </span><br></pre></td></tr></table></figure>
+
+<p>验证电话号码：</p>
+<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^(<span class="symbol">\d</span>3,4|<span class="symbol">\d</span>&#123;3,4&#125;-)?<span class="symbol">\d</span>&#123;7,8&#125;$</span><br></pre></td></tr></table></figure>
+<p>–正确格式为：XXXX-XXXXXXX，XXXX-XXXXXXXX，XXX-XXXXXXX，XXX-XXXXXXXX，XXXXXXX，XXXXXXXX。<br>验证身份证号（15位或18位数字）：</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">^\d</span><span class="template-variable">&#123;15&#125;</span><span class="xml">|\d</span><span class="template-variable">&#123;&#125;</span><span class="xml">18$ </span></span><br></pre></td></tr></table></figure>
+<p>验证一年的12个月：</p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^(0?<span class="comment">[1-9]</span>|1<span class="comment">[0-2]</span>)$</span><br></pre></td></tr></table></figure>
+<p>正确格式为：“01”-“09”和“1”“12”<br>验证一个月的31天：</p>
+<figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^((<span class="number">0</span>?[<span class="number">1</span><span class="number">-9</span>])|<span class="type">((1</span>|<span class="type">2</span>)[<span class="number">0</span><span class="number">-9</span>])|<span class="type">30</span>|<span class="type">31</span>)$</span><br></pre></td></tr></table></figure>
+<p>正确格式为：01、09和1、31。<br>整数：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^-<span class="string">?\d</span>+<span class="variable">$ </span></span><br></pre></td></tr></table></figure>
+<p>非负浮点数（正浮点数 + 0）：</p>
+<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^<span class="symbol">\d</span>+(<span class="symbol">\.</span><span class="symbol">\d</span>+)?$ </span><br></pre></td></tr></table></figure>
+<p>正浮点数 </p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^((<span class="comment">[0-9]</span>+\.<span class="comment">[0-9]</span>*<span class="comment">[1-9]</span><span class="comment">[0-9]</span>*)|(<span class="comment">[0-9]</span>*<span class="comment">[1-9]</span><span class="comment">[0-9]</span>*\.<span class="comment">[0-9]</span>+)|(<span class="comment">[0-9]</span>*<span class="comment">[1-9]</span><span class="comment">[0-9]</span>*))$ </span><br></pre></td></tr></table></figure>
+<p>非正浮点数（负浮点数 + 0） </p>
+<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^((-<span class="symbol">\d</span>+(<span class="symbol">\.</span><span class="symbol">\d</span>+)?)|(0+(<span class="symbol">\.</span>0+)?))$ </span><br></pre></td></tr></table></figure>
+<p>负浮点数 </p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^(-((<span class="comment">[0-9]</span>+\.<span class="comment">[0-9]</span>*<span class="comment">[1-9]</span><span class="comment">[0-9]</span>*)|(<span class="comment">[0-9]</span>*<span class="comment">[1-9]</span><span class="comment">[0-9]</span>*\.<span class="comment">[0-9]</span>+)|(<span class="comment">[0-9]</span>*<span class="comment">[1-9]</span><span class="comment">[0-9]</span>*)))$ </span><br></pre></td></tr></table></figure>
+<p>浮点数 </p>
+<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^(-?<span class="symbol">\d</span>+)(<span class="symbol">\.</span><span class="symbol">\d</span>+)?$</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://blog.ddong.online/2021/11/02/mql-enovia/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1009,172 +1156,6 @@ svn cleanup
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://blog.ddong.online/2021/11/02/SAP-MDM-Stop-Server/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Damon Tung">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DT's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/02/SAP-MDM-Stop-Server/" class="post-title-link" itemprop="url">SAP_MDM_Stop_Server</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-11-02 15:51:34 / Modified: 15:53:03" itemprop="dateCreated datePublished" datetime="2021-11-02T15:51:34+08:00">2021-11-02</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/SAP/" itemprop="url" rel="index"><span itemprop="name">SAP</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <pre><code>package com.sap.mdm.examples;
-
-import com.sap.mdm.commands.AuthenticateServerSessionCommand;
-import com.sap.mdm.commands.CommandException;
-import com.sap.mdm.commands.CreateServerSessionCommand;
-import com.sap.mdm.net.ConnectionException;
-import com.sap.mdm.net.ConnectionPool;
-import com.sap.mdm.net.ConnectionPoolFactory;
-import com.sap.mdm.server.commands.StopServerCommand;
-
-/*
- * Copyright Â© 2004-2006 by SAP AG.
- * All Rights Reserved.
- * 
- * SAP, R/3, mySAP, mySAP.com, xApps, xApp, SAP NetWeaver, and other SAP
- * products and services mentioned herein as well as their respective logos are
- * trademarks or registered trademarks of SAP AG in Germany and in several other
- * countries all over the world. All other product and service names mentioned
- * are the trademarks of their respective companies. Data contained in this
- * document serves informational purposes only. National product specifications
- * may vary.
- * 
- * These materials are subject to change without notice. These materials are
- * provided by SAP AG and its affiliated companies (SAP Group) for informational
- * purposes only, without representation or warranty of any kind, and SAP Group
- * shall not be liable for errors or omissions with respect to the materials.
- * The only warranties for SAP Group products and services are those that are
- * set forth in the express warranty statements accompanying such products and
- * services, if any. Nothing herein should be construed as constituting an
- * additional warranty.
- * 
- */
-
-/**
- * This example demonstrates shutting down the MDM server. The steps are:
- * &lt;ol&gt;
- * &lt;li&gt;Establishes connection with the MDM server&lt;/li&gt;
- * &lt;li&gt;Creates a server session&lt;/li&gt;
- * &lt;li&gt;Authenticates the server session&lt;/li&gt;
- * &lt;li&gt;Stops the MDM server&lt;/li&gt;
- * &lt;/ol&gt;
- * Commands used:&lt;br&gt;
- * &lt;code&gt;CreateServerSessionCommand&lt;/code&gt;&lt;br&gt;
- * &lt;code&gt;AuthenticateServerSessionCommand&lt;/code&gt;&lt;br&gt;
- * &lt;code&gt;StopServerCommand&lt;/code&gt;&lt;br&gt;
- * &lt;br&gt;
- * &lt;a href=&quot;StopServer.java&quot;&gt;Source code for StopServer.java&lt;/a&gt;
- */
-public class StopServer &#123;        
-private StopServer() &#123;
-&#125;
-
-public static void main(String[] args) &#123;
-    // create connection pool
-    String connectionTag = &quot;LOCALHOST&quot;;
-    ConnectionPool connections = null;
-    try &#123;
-        connections = ConnectionPoolFactory.getInstance(connectionTag);
-    &#125; catch (ConnectionException e) &#123;
-        e.printStackTrace();
-        return;
-    &#125;
-
-    // create server session
-    CreateServerSessionCommand sessionCommand = new CreateServerSessionCommand(connections);
-    try &#123;
-        sessionCommand.execute();
-    &#125; catch (CommandException e) &#123;
-        e.printStackTrace();
-        return;
-    &#125;        
-    String sessionId = sessionCommand.getSession();
-    
-    // authenticate the repository session
-    String userName = &quot;Admin&quot;;
-    String userPassword = &quot;&quot;;
-    AuthenticateServerSessionCommand authCommand = new AuthenticateServerSessionCommand(connections);
-    authCommand.setSession(sessionId);
-    authCommand.setUserName(userName);
-    authCommand.setUserPassword(userPassword);
-    try &#123;
-        authCommand.execute();
-    &#125; catch (CommandException e) &#123;
-        e.printStackTrace();
-        return;
-    &#125;        
-
-    // stop the MDM server
-    StopServerCommand stopServerCommand = new StopServerCommand(connections);
-    stopServerCommand.setSession(sessionId);
-    try &#123;
-        stopServerCommand.execute();
-    &#125; catch (CommandException e) &#123;
-        e.printStackTrace();
-        return;
-    &#125;
-&#125;
-&#125;
-</code></pre>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1244,20 +1225,20 @@ public static void main(String[] args) &#123;
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

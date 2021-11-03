@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.ddong.online/2021/11/03/%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</loc>
+    
+    <lastmod>2021-11-03</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.ddong.online/2021/11/02/mql-enovia/</loc>
     
     <lastmod>2021-11-02</lastmod>
@@ -130,7 +137,7 @@
 
   <url>
     <loc>https://blog.ddong.online/</loc>
-    <lastmod>2021-11-02</lastmod>
+    <lastmod>2021-11-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -138,56 +145,63 @@
   
   <url>
     <loc>https://blog.ddong.online/tags/Hexo/</loc>
-    <lastmod>2021-11-02</lastmod>
+    <lastmod>2021-11-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.ddong.online/tags/Enovia/</loc>
-    <lastmod>2021-11-02</lastmod>
+    <lastmod>2021-11-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.ddong.online/tags/Enovia-Attribute/</loc>
-    <lastmod>2021-11-02</lastmod>
+    <lastmod>2021-11-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.ddong.online/tags/SAP-MDM/</loc>
-    <lastmod>2021-11-02</lastmod>
+    <lastmod>2021-11-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.ddong.online/tags/Redis/</loc>
-    <lastmod>2021-11-02</lastmod>
+    <lastmod>2021-11-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.ddong.online/tags/SVN/</loc>
-    <lastmod>2021-11-02</lastmod>
+    <lastmod>2021-11-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.ddong.online/tags/Oracle/</loc>
-    <lastmod>2021-11-02</lastmod>
+    <lastmod>2021-11-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.ddong.online/tags/Linux/</loc>
-    <lastmod>2021-11-02</lastmod>
+    <lastmod>2021-11-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.ddong.online/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</loc>
+    <lastmod>2021-11-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -196,49 +210,56 @@
   
   <url>
     <loc>https://blog.ddong.online/categories/Hexo/</loc>
-    <lastmod>2021-11-02</lastmod>
+    <lastmod>2021-11-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.ddong.online/categories/Enovia/</loc>
-    <lastmod>2021-11-02</lastmod>
+    <lastmod>2021-11-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.ddong.online/categories/SAP/</loc>
-    <lastmod>2021-11-02</lastmod>
+    <lastmod>2021-11-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.ddong.online/categories/Redis/</loc>
-    <lastmod>2021-11-02</lastmod>
+    <lastmod>2021-11-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.ddong.online/categories/SVN/</loc>
-    <lastmod>2021-11-02</lastmod>
+    <lastmod>2021-11-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.ddong.online/categories/Database/</loc>
-    <lastmod>2021-11-02</lastmod>
+    <lastmod>2021-11-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.ddong.online/categories/Linux/</loc>
-    <lastmod>2021-11-02</lastmod>
+    <lastmod>2021-11-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.ddong.online/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</loc>
+    <lastmod>2021-11-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
