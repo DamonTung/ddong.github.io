@@ -168,6 +168,74 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://blog.ddong.online/2021/11/08/info-of-MQL-Enovia/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Damon Tung">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DT's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/08/info-of-MQL-Enovia/" class="post-title-link" itemprop="url">Info_of_MQL_in_Enovia</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-11-08 10:31:41 / Modified: 12:02:02" itemprop="dateCreated datePublished" datetime="2021-11-08T10:31:41+08:00">2021-11-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Enovia/" itemprop="url" rel="index"><span itemprop="name">Enovia</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="what-is-MQL"><a href="#what-is-MQL" class="headerlink" title="what is MQL"></a>what is MQL</h2><p>MQL is the <strong>Matrix Query Language</strong>. Similar to SQL, MQL consists of a set of commands that help<br>the administrator set up and test an ENOVIA Live Collaboration database quickly and efficiently.<br>MQL is primarily a tool for building the ENOVIA Live Collaboration database. Also, you can use<br>MQL to add information to the existing database, and extract information from the database.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://blog.ddong.online/2021/11/08/extract-history-data-Enovia-2013XE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -290,7 +358,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-11-08 09:33:31" itemprop="dateModified" datetime="2021-11-08T09:33:31+08:00">2021-11-08</time>
+                <time title="Modified: 2021-11-08 17:12:55" itemprop="dateModified" datetime="2021-11-08T17:12:55+08:00">2021-11-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -317,7 +385,7 @@
 <p>com.matrixone.apps.common.util.RelationshipUtil<br>public class RelationshipUtil extends java.lang.Object</p>
 </blockquote>
 <p>The RelationshipUtil class provides tools to float objects.</p>
-<h2 id="Method-Summary"><a href="#Method-Summary" class="headerlink" title="Method Summary"></a>Method Summary</h2><p>—-:|:—-|:—-<br>static void|connected(matrix.db.Context context, java.lang.Object objectId,java.lang.String relPattern, java.lang.String typePattern, java.lang.String expandDir, java.util.Map policyStateMap)| Floats the specified relationships to this object.<br>static void    |connected(matrix.db.Context context, java.lang.Object objectId, java.lang.String relPattern, java.lang.String typePattern, java.lang.String expandDir, java.lang.String floatExpression)|Floats the specified relationships to this object.</p>
+<h2 id="Method-Summary"><a href="#Method-Summary" class="headerlink" title="Method Summary"></a>Method Summary</h2><p>——:|:——|:——<br>static void|connected(matrix.db.Context context, java.lang.Object objectId,java.lang.String relPattern, java.lang.String typePattern, java.lang.String expandDir, java.util.Map policyStateMap)| Floats the specified relationships to this object.<br>static void    |connected(matrix.db.Context context, java.lang.Object objectId, java.lang.String relPattern, java.lang.String typePattern, java.lang.String expandDir, java.lang.String floatExpression)|Floats the specified relationships to this object.</p>
 <h2 id="Method-Detail"><a href="#Method-Detail" class="headerlink" title="Method Detail"></a>Method Detail</h2><h3 id="connected"><a href="#connected" class="headerlink" title="connected"></a>connected</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public static void connected(matrix<span class="selector-class">.db</span><span class="selector-class">.Context</span> context,</span><br><span class="line">                             java<span class="selector-class">.lang</span><span class="selector-class">.Object</span> objectId,</span><br><span class="line">                             java<span class="selector-class">.lang</span><span class="selector-class">.String</span> relPattern,</span><br><span class="line">                             java<span class="selector-class">.lang</span><span class="selector-class">.String</span> typePattern,</span><br><span class="line">                             java<span class="selector-class">.lang</span><span class="selector-class">.String</span> expandDir,</span><br><span class="line">                             java<span class="selector-class">.util</span><span class="selector-class">.Map</span> policyStateMap)</span><br><span class="line">                      throws java<span class="selector-class">.lang</span>.Exception</span><br></pre></td></tr></table></figure>
 <p>Floats the specified relationships to this object. The objects connected to the previous revision of the given object and that meet the specified criteria are disconnected from the previous revision and connected to the given object. To meet the specified criteria, the objects must be connected to the previous revision of the given object through the relationship and type patterns, in the specified direction, and must be editable. To be editable, the object’s state must be one of the states listed in the policy-state map, or the object must not be in it’s last state.</p>
 <h3 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h3><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">BusinessObject mc = <span class="keyword">new</span> <span class="built_in">BusinessObject</span>(<span class="string">&quot;Microcomputer&quot;</span>, <span class="string">&quot;Q Prom&quot;</span>,</span><br><span class="line">                                       <span class="string">&quot;A&quot;</span>, <span class="string">&quot;Manufacturing&quot;</span>);</span><br><span class="line">HashMap sTargetState = <span class="keyword">new</span> <span class="built_in">HashMap</span>();</span><br><span class="line">sTargetState.<span class="built_in">put</span>(<span class="string">&quot;Production&quot;</span>, <span class="string">&quot;Active&quot;</span>);</span><br><span class="line">sTargetState.<span class="built_in">put</span>(<span class="string">&quot;Documentation&quot;</span>, <span class="string">&quot;Finished&quot;</span>);</span><br><span class="line">HashMap returnedMsg = RelationshipUtil.<span class="built_in">connected</span>(context, mc,</span><br><span class="line">      <span class="string">&quot;&quot;</span>, <span class="string">&quot;&quot;</span>, sTargetState, <span class="number">0</span>, <span class="string">&quot;from&quot;</span>, <span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
@@ -1114,82 +1182,6 @@ list retained: [11]
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://blog.ddong.online/2021/11/02/mxType-in-Enovia/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Damon Tung">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DT's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/02/mxType-in-Enovia/" class="post-title-link" itemprop="url">mxType_in_Enovia</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-11-02 18:05:07 / Modified: 18:07:21" itemprop="dateCreated datePublished" datetime="2021-11-02T18:05:07+08:00">2021-11-02</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Enovia/" itemprop="url" rel="index"><span itemprop="name">Enovia</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="mxType"><a href="#mxType" class="headerlink" title="mxType"></a>mxType</h2><blockquote>
-<p>framework.jar</p>
-</blockquote>
-<p>Static Method List </p>
-<h3 id="isOfParentType"><a href="#isOfParentType" class="headerlink" title="isOfParentType"></a>isOfParentType</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* var0 - context</span></span><br><span class="line"><span class="comment">* var1 - sub type need to check</span></span><br><span class="line"><span class="comment">* var2 - parent type </span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"><span class="keyword">public</span> <span class="built_in">static</span> <span class="keyword">boolean</span> isOfParentType(Context var0, <span class="keyword">String</span> var1, <span class="keyword">String</span> var2) throws FrameworkException &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (var1.equals(var2)) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">String</span> var3 = <span class="string">&quot;derivative[&quot;</span> + var1 + <span class="string">&quot;]&quot;</span>;</span><br><span class="line">                <span class="keyword">String</span> var4 = MqlUtil.mqlCommand(var0, <span class="string">&quot;print type <span class="subst">$1</span> select <span class="subst">$2</span> dump&quot;</span>, <span class="keyword">new</span> <span class="keyword">String</span>[]&#123;var2, var3&#125;);</span><br><span class="line">                <span class="keyword">return</span> var4.equalsIgnoreCase(<span class="string">&quot;true&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (<span class="built_in">Exception</span> var5) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> FrameworkException(var5);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="getAttributes"><a href="#getAttributes" class="headerlink" title="getAttributes"></a>getAttributes</h3><figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* var0 - current context</span></span><br><span class="line"><span class="comment">* var1 - type name</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">public static MapList get<span class="constructor">Attributes(Context <span class="params">var0</span>, String <span class="params">var1</span>)</span> throws FrameworkException &#123;</span><br><span class="line">        return get<span class="constructor">Attributes(<span class="params">var0</span>, <span class="params">var1</span>, <span class="params">false</span>)</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="getAttributes-1"><a href="#getAttributes-1" class="headerlink" title="getAttributes"></a>getAttributes</h3><figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* var0 - context</span></span><br><span class="line"><span class="comment">* var1 - type name</span></span><br><span class="line"><span class="comment">* var2 - if attribute is multiline</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"> public static MapList get<span class="constructor">Attributes(Context <span class="params">var0</span>, String <span class="params">var1</span>, <span class="params">boolean</span> <span class="params">var2</span>)</span> throws FrameworkException &#123;</span><br><span class="line">        AttributeType var3 = null;</span><br><span class="line">        MapList var4 = <span class="keyword">new</span> <span class="constructor">MapList()</span>;</span><br><span class="line">        <span class="built_in">int</span> var5 = <span class="number">0</span>;</span><br><span class="line">        String var6 = <span class="string">&quot;type&quot;</span>;</span><br><span class="line">        String var7 = <span class="string">&quot;name&quot;</span>;</span><br><span class="line">        String var8 = <span class="string">&quot;description&quot;</span>;</span><br><span class="line">        String var9 = <span class="string">&quot;default&quot;</span>;</span><br><span class="line">        String var10 = <span class="string">&quot;choices&quot;</span>;</span><br><span class="line">        String var11 = <span class="string">&quot;multiline&quot;</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="module-access"><span class="module"><span class="identifier">ContextUtil</span>.</span></span>start<span class="constructor">Transaction(<span class="params">var0</span>, <span class="params">false</span>)</span>;</span><br><span class="line">            Vault var12 = var0.get<span class="constructor">Vault()</span>;</span><br><span class="line">            BusinessType var13 = <span class="keyword">new</span> <span class="constructor">BusinessType(<span class="params">var1</span>, <span class="params">var12</span>)</span>;</span><br><span class="line">            var13.<span class="keyword">open</span>(var0);</span><br><span class="line">            BusinessTypeList var14 = <span class="module-access"><span class="module"><span class="identifier">BusinessType</span>.</span></span>get<span class="constructor">BusinessTypes(<span class="params">var0</span>)</span>;</span><br><span class="line">            BusinessTypeItr var15 = <span class="keyword">new</span> <span class="constructor">BusinessTypeItr(<span class="params">var14</span>)</span>;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span>(<span class="literal">true</span>) &#123;</span><br><span class="line">                BusinessType var16;</span><br><span class="line">                <span class="keyword">do</span> &#123;</span><br><span class="line">                    <span class="keyword">if</span> (!var15.next<span class="literal">()</span>) &#123;</span><br><span class="line">                        var13.close(var0);</span><br><span class="line">                        <span class="module-access"><span class="module"><span class="identifier">ContextUtil</span>.</span></span>commit<span class="constructor">Transaction(<span class="params">var0</span>)</span>;</span><br><span class="line">                        return var4;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    var16 = var15.obj<span class="literal">()</span>;</span><br><span class="line">                &#125; <span class="keyword">while</span>(!var16.<span class="keyword">to</span><span class="constructor">String()</span>.equals(var1));</span><br><span class="line"></span><br><span class="line">                var16.<span class="keyword">open</span>(var0);</span><br><span class="line">                AttributeTypeList var17 = var16.get<span class="constructor">AttributeTypes(<span class="params">var0</span>)</span>;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">for</span>(AttributeTypeItr var18 = <span class="keyword">new</span> <span class="constructor">AttributeTypeItr(<span class="params">var17</span>)</span>; var18.next<span class="literal">()</span>; ++var5) &#123;</span><br><span class="line">                    HashMap var19 = <span class="keyword">new</span> <span class="constructor">HashMap()</span>;</span><br><span class="line">                    var3 = var18.obj<span class="literal">()</span>;</span><br><span class="line">                    var3.<span class="keyword">open</span>(var0);</span><br><span class="line">                    var19.put(var7, var3.<span class="keyword">to</span><span class="constructor">String()</span>);</span><br><span class="line">                    var19.put(var6, var3.get<span class="constructor">DataType()</span>);</span><br><span class="line">                    var19.put(var8, var3.get<span class="constructor">Description()</span>);</span><br><span class="line">                    var19.put(var9, var3.get<span class="constructor">DefaultValue()</span>);</span><br><span class="line">                    var19.put(var10, var3.get<span class="constructor">Choices()</span>);</span><br><span class="line">                    <span class="keyword">if</span> (var2) &#123;</span><br><span class="line">                        <span class="keyword">if</span> (<span class="string">&quot;string&quot;</span>.equals<span class="constructor">IgnoreCase(<span class="params">var3</span>.<span class="params">getDataType</span>()</span>)) &#123;</span><br><span class="line">                            String var20 = <span class="module-access"><span class="module"><span class="identifier">MqlUtil</span>.</span></span>mql<span class="constructor">Command(<span class="params">var0</span>, <span class="string">&quot;print attribute $1 select $2 dump&quot;</span>, <span class="params">new</span> String[]&#123;<span class="params">var3</span>.<span class="params">toString</span>()</span>, <span class="string">&quot;multiline&quot;</span>&#125;);</span><br><span class="line">                            var19.put(var11, var20);</span><br><span class="line">                        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                            var19.put(var11, <span class="string">&quot;false&quot;</span>);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    var3.close(var0);</span><br><span class="line">                    var4.add(var5, var19);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                var16.close(var0);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; catch (Exception var21) &#123;</span><br><span class="line">            <span class="module-access"><span class="module"><span class="identifier">ContextUtil</span>.</span></span>abort<span class="constructor">Transaction(<span class="params">var0</span>)</span>;</span><br><span class="line">            throw <span class="keyword">new</span> <span class="constructor">FrameworkException(<span class="params">var21</span>)</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="getDefaultPolicy"><a href="#getDefaultPolicy" class="headerlink" title="getDefaultPolicy"></a>getDefaultPolicy</h3><figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* var0 - context</span></span><br><span class="line"><span class="comment">* var1 - business type</span></span><br><span class="line"><span class="comment">* var2 - if true means query policy for Person otherwise false</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"> public static Map get<span class="constructor">DefaultPolicy(Context <span class="params">var0</span>, String <span class="params">var1</span>, <span class="params">boolean</span> <span class="params">var2</span>)</span> throws FrameworkException &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Map var3 = null;</span><br><span class="line">            MapList var4 = get<span class="constructor">Policies(<span class="params">var0</span>, <span class="params">var1</span>, <span class="params">var2</span>)</span>;</span><br><span class="line">            <span class="keyword">if</span> (!var4.is<span class="constructor">Empty()</span>) &#123;</span><br><span class="line">                var3 = (Map)var4.get(<span class="number">0</span>);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            return var3;</span><br><span class="line">        &#125; catch (Exception var5) &#123;</span><br><span class="line">            throw <span class="keyword">new</span> <span class="constructor">FrameworkException(<span class="params">var5</span>)</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line"> public static MapList get<span class="constructor">Policies(Context <span class="params">var0</span>, String <span class="params">var1</span>, <span class="params">boolean</span> <span class="params">var2</span>)</span> throws MatrixException &#123;</span><br><span class="line">        MapList var3 = <span class="keyword">new</span> <span class="constructor">MapList()</span>;</span><br><span class="line">        BusinessType var4 = <span class="keyword">new</span> <span class="constructor">BusinessType(<span class="params">var1</span>, <span class="params">var0</span>.<span class="params">getVault</span>()</span>);</span><br><span class="line">        var4.<span class="keyword">open</span>(var0);</span><br><span class="line">        PolicyList var5 = null;</span><br><span class="line">        <span class="keyword">if</span> (var2) &#123;</span><br><span class="line">            var5 = var4.get<span class="constructor">PoliciesForPerson(<span class="params">var0</span>, <span class="params">false</span>)</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            var5 = var4.get<span class="constructor">Policies(<span class="params">var0</span>)</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Iterator var7 = var5.iterator<span class="literal">()</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(var7.has<span class="constructor">Next()</span>) &#123;</span><br><span class="line">            Policy var6 = (Policy)var7.next<span class="literal">()</span>;</span><br><span class="line">            var6.<span class="keyword">open</span>(var0);</span><br><span class="line">            HashMap var8 = <span class="keyword">new</span> <span class="constructor">HashMap()</span>;</span><br><span class="line">            var8.put(<span class="string">&quot;name&quot;</span>, var6.get<span class="constructor">Name()</span>);</span><br><span class="line">            var8.put(<span class="string">&quot;description&quot;</span>, var6.get<span class="constructor">Description(<span class="params">var0</span>)</span>);</span><br><span class="line">            var8.put(<span class="string">&quot;revision&quot;</span>, var6.get<span class="constructor">FirstInSequence()</span>);</span><br><span class="line">            String var9 = <span class="module-access"><span class="module"><span class="identifier">MqlUtil</span>.</span></span>mql<span class="constructor">Command(<span class="params">var0</span>, <span class="string">&quot;print Policy $1 select $2 dump $3&quot;</span>, <span class="params">new</span> String[]&#123;<span class="params">var6</span>.<span class="params">getName</span>()</span>, <span class="string">&quot;format&quot;</span>, <span class="string">&quot;|&quot;</span>&#125;);</span><br><span class="line">            String var10 = <span class="module-access"><span class="module"><span class="identifier">MqlUtil</span>.</span></span>mql<span class="constructor">Command(<span class="params">var0</span>, <span class="string">&quot;print Policy $1 select $2 dump $3&quot;</span>, <span class="params">new</span> String[]&#123;<span class="params">var6</span>.<span class="params">getName</span>()</span>, <span class="string">&quot;defaultformat&quot;</span>, <span class="string">&quot;|&quot;</span>&#125;);</span><br><span class="line">            String var11 = <span class="module-access"><span class="module"><span class="identifier">MqlUtil</span>.</span></span>mql<span class="constructor">Command(<span class="params">var0</span>, <span class="string">&quot;print Policy $1 select $2 dump $3&quot;</span>, <span class="params">new</span> String[]&#123;<span class="params">var6</span>.<span class="params">getName</span>()</span>, <span class="string">&quot;store&quot;</span>, <span class="string">&quot;|&quot;</span>&#125;);</span><br><span class="line">            StringList var12 = <span class="module-access"><span class="module"><span class="identifier">FrameworkUtil</span>.</span></span>split(var9, <span class="string">&quot;|&quot;</span>);</span><br><span class="line">            var8.put(<span class="string">&quot;formats&quot;</span>, var12);</span><br><span class="line">            var8.put(<span class="string">&quot;defaultFormat&quot;</span>, var10);</span><br><span class="line">            var8.put(<span class="string">&quot;store&quot;</span>, var11);</span><br><span class="line">            var6.close(var0);</span><br><span class="line">            var3.add(var8);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        return var3;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1259,7 +1251,7 @@ list retained: [11]
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1272,7 +1264,7 @@ list retained: [11]
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
