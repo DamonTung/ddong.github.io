@@ -168,6 +168,88 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://blog.ddong.online/2021/11/02/Oracle-PDB-and-CDB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Damon Tung">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DT's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/02/Oracle-PDB-and-CDB/" class="post-title-link" itemprop="url">Oracle_PDB_and_CDB</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-11-02 17:59:07 / Modified: 18:03:19" itemprop="dateCreated datePublished" datetime="2021-11-02T17:59:07+08:00">2021-11-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Database/" itemprop="url" rel="index"><span itemprop="name">Database</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Pretty-Sqlplus-Output"><a href="#Pretty-Sqlplus-Output" class="headerlink" title="Pretty Sqlplus Output"></a>Pretty Sqlplus Output</h2><figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> lines <span class="comment">256</span>;</span><br><span class="line"><span class="keyword">set</span> trimout <span class="comment">on</span>;</span><br><span class="line"><span class="keyword">set</span> tab <span class="comment">off</span>;</span><br><span class="line"><span class="keyword">set</span> pagesize <span class="comment">100</span>;</span><br><span class="line"><span class="keyword">set</span> colsep <span class="comment">&quot; | &quot;</span>;</span><br><span class="line">COLUMN column_name FORMAT <span class="keyword">model</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="switch-PDB"><a href="#switch-PDB" class="headerlink" title="switch PDB"></a>switch PDB</h2><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">session</span> <span class="keyword">set</span> container = PDB_NAME;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Conn-to-CDB-from-PDB"><a href="#Conn-to-CDB-from-PDB" class="headerlink" title="Conn to CDB from PDB"></a>Conn to CDB from PDB</h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER SESSION <span class="builtin-name">SET</span> <span class="attribute">CONTAINER</span>=cdb$root;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Open-PDB"><a href="#Open-PDB" class="headerlink" title="Open PDB"></a>Open PDB</h2><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> pluggable <span class="keyword">database</span> PDB_NAME <span class="keyword">open</span>;</span><br><span class="line"><span class="keyword">alter</span> pluggable <span class="keyword">database</span> <span class="keyword">all</span> <span class="keyword">open</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="Auto-Open-PDB-when-CDB-restart"><a href="#Auto-Open-PDB-when-CDB-restart" class="headerlink" title="Auto Open PDB when CDB restart"></a>Auto Open PDB when CDB restart</h2><ol>
+<li>Create trigger at CDB<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TRIGGER</span> open_all_pdbs</span><br><span class="line">  <span class="keyword">AFTER</span> STARTUP <span class="keyword">ON</span> <span class="keyword">DATABASE</span></span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">   <span class="keyword">EXECUTE</span> <span class="keyword">IMMEDIATE</span> ‘<span class="keyword">ALTER</span> PLUGGABLE <span class="keyword">DATABASE</span> <span class="keyword">ALL</span> <span class="keyword">OPEN</span>’;</span><br><span class="line"><span class="keyword">END</span> ;</span><br><span class="line">/</span><br></pre></td></tr></table></figure>
+<h2 id="Create-unlimited-bigfile-tablespace"><a href="#Create-unlimited-bigfile-tablespace" class="headerlink" title="Create unlimited bigfile tablespace"></a>Create unlimited bigfile tablespace</h2><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> BIGFILE <span class="keyword">TABLESPACE</span> &quot;NSNPR_DATA&quot; DATAFILE <span class="string">&#x27;D:/datafiles/NSNPR/NSNPR_tvc_index.dbf&#x27;</span> SIZE <span class="number">100</span>M REUSE AUTOEXTEND <span class="keyword">ON</span> NEXT <span class="number">3</span>G MAXSIZE UNLIMITED LOGGING EXTENT MANAGEMENT <span class="keyword">LOCAL</span> SEGMENT SPACE MANAGEMENT AUTO ;</span><br></pre></td></tr></table></figure>
+<h2 id="Create-user-and-grant-privilege"><a href="#Create-user-and-grant-privilege" class="headerlink" title="Create user and grant privilege"></a>Create user and grant privilege</h2><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> NSNPR IDENTIFIED <span class="keyword">BY</span> XXXXX</span><br><span class="line">  <span class="keyword">default</span> <span class="keyword">tablespace</span> NSNPR_DATA</span><br><span class="line">  <span class="keyword">temporary</span> <span class="keyword">tablespace</span> <span class="keyword">TEMP</span></span><br><span class="line">  profile <span class="keyword">DEFAULT</span>;</span><br><span class="line"><span class="comment">-- Grant/Revoke role privileges </span></span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">connect</span> <span class="keyword">to</span> NSNPR;</span><br><span class="line"><span class="keyword">grant</span> resource <span class="keyword">to</span> NSNPR;</span><br><span class="line"><span class="comment">-- Grant/Revoke system privileges </span></span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">create</span> <span class="keyword">database</span> link <span class="keyword">to</span> NSNPR;</span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">create</span> <span class="built_in">public</span> <span class="keyword">database</span> link <span class="keyword">to</span> NSNPR;</span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">create</span> <span class="keyword">table</span> <span class="keyword">to</span> NSNPR;</span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">create</span> <span class="keyword">view</span> <span class="keyword">to</span> NSNPR;</span><br><span class="line"><span class="keyword">grant</span> query rewrite <span class="keyword">to</span> NSNPR;</span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">select</span> <span class="keyword">any</span> <span class="keyword">dictionary</span> <span class="keyword">to</span> NSNPR;</span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">select</span> <span class="keyword">any</span> <span class="keyword">table</span> <span class="keyword">to</span> NSNPR;</span><br><span class="line"><span class="keyword">grant</span> unlimited <span class="keyword">tablespace</span> <span class="keyword">to</span> NSNPR;</span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">connect</span> <span class="keyword">to</span> NSNPR;</span><br><span class="line"><span class="keyword">grant</span> resource <span class="keyword">to</span> NSNPR;</span><br><span class="line"><span class="keyword">grant</span> DATAPUMP_IMP_FULL_DATABASE <span class="keyword">to</span> NSNPR;</span><br><span class="line"><span class="keyword">grant</span> dba <span class="keyword">to</span> NSNPR;</span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">create</span> <span class="keyword">any</span> <span class="keyword">index</span> <span class="keyword">to</span> NSNPR;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="Create-Directory"><a href="#Create-Directory" class="headerlink" title="Create Directory"></a>Create Directory</h2><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> <span class="built_in">replace</span> directory EXPDP_1</span><br><span class="line"> <span class="keyword">as</span> <span class="string">&#x27;D:\dump&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Impdp-with-multi-dump-file"><a href="#Impdp-with-multi-dump-file" class="headerlink" title="Impdp with multi dump file"></a>Impdp with multi dump file</h2><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">impdp</span> IMP_User/Pass@pdborcl directory=expdp_<span class="number">1</span> dumpfile=expdp_nsnpr_DB_<span class="number">15092020</span>_<span class="number">01</span>.dmp,expdp_nsnpr_DB_<span class="number">15092020</span>_<span class="number">02</span>.dmp,expdp_nsnpr_DB_<span class="number">15092020</span>_<span class="number">03</span>.dmp,	expdp_nsnpr_DB_<span class="number">15092020</span>_<span class="number">04</span>.dmp,expdp_nsnpr_DB_<span class="number">15092020</span>_<span class="number">05</span>.dmp,expdp_nsnpr_DB_<span class="number">15092020</span>_<span class="number">06</span>.dmp,expdp_nsnpr_DB_<span class="number">15092020</span>_<span class="number">07</span>.dmp,expdp_nsnpr_DB_<span class="number">15092020</span>_<span class="number">08</span>.dmp,expdp_nsnpr_DB_<span class="number">15092020</span>_<span class="number">09</span>.dmp,expdp_nsnpr_DB_<span class="number">15092020</span>_<span class="number">10</span>.dmp,expdp_nsnpr_DB_<span class="number">15092020</span>_<span class="number">11</span>.dmp,expdp_nsnpr_DB_<span class="number">15092020</span>_<span class="number">12</span>.dmp,expdp_nsnpr_DB_<span class="number">15092020</span>_<span class="number">13</span>.dmp full=y table_exists_action=replace logfile=NSNPR-import-%date:~<span class="number">4</span>,<span class="number">2</span>%-%date:~<span class="number">7</span>,<span class="number">2</span>%-%date:~<span class="number">10</span>,<span class="number">4</span>%.log LOGTIME=<span class="literal">ALL</span> METRICS=Y version=<span class="number">12</span>.<span class="number">2</span></span><br></pre></td></tr></table></figure>
+<h2 id="Resize-tablespace"><a href="#Resize-tablespace" class="headerlink" title="Resize tablespace"></a>Resize tablespace</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span>space TABLESPACE_NAME resize <span class="number">100</span>G;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://blog.ddong.online/2021/11/02/loadRepository-and-modify-table-and-field/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2167,80 +2249,10 @@ Error message:
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://blog.ddong.online/2021/11/02/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Damon Tung">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DT's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/02/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-11-02 09:32:59" itemprop="dateCreated datePublished" datetime="2021-11-02T09:32:59+08:00">2021-11-02</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -2306,7 +2318,7 @@ Error message:
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -2319,7 +2331,7 @@ Error message:
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

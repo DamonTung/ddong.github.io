@@ -1962,4 +1962,39 @@ list retained: [11]
         <tag>Enovia</tag>
       </tags>
   </entry>
+  <entry>
+    <title>extract_history_data_Enovia_2013XE</title>
+    <url>/2021/11/08/extract-history-data-Enovia-2013XE/</url>
+    <content><![CDATA[<h1 id="Filter-History-Data-in-Enovia-v2013xE"><a href="#Filter-History-Data-in-Enovia-v2013xE" class="headerlink" title="Filter History Data in Enovia v2013xE"></a>Filter History Data in Enovia v2013xE</h1><pre><code>                Map hmaplist = UINavigatorUtil.getHistoryData(this.ctx, objId);
+                Vector timeArray = (Vector) hmaplist.get(&quot;time&quot;);
+                Vector userArray = (Vector) hmaplist.get(&quot;user&quot;);
+                Vector actionArray = (Vector) hmaplist.get(&quot;action&quot;);
+                Vector stateArray = (Vector) hmaplist.get(&quot;state&quot;);
+                Vector descriptionArray = (Vector) hmaplist.get(&quot;description&quot;);
+                sb.append(&quot;\n&quot; + objId + &quot;~&quot; + type + &quot;~&quot; + name + &quot;~Current state = &quot; + current + &quot;~Branch To = &quot; + strBranchTo);
+                //System.out.println(&quot;\n&quot; + objId + &quot;~&quot; + type + &quot;~&quot; + name + &quot;~Current state = &quot; + current + &quot;~Branch To = &quot; + strBranchTo);
+                for (int i = 0; i &lt; descriptionArray.size(); i++) &#123;
+                    String history = &quot;history = &quot;;
+                    String desc = (String) descriptionArray.get(i);
+                    if (desc.contains(&quot;Branch To&quot;)) &#123;
+                        String user = (String) userArray.get(i);
+                        if (!user.split(&quot;\\:&quot;)[1].trim().equalsIgnoreCase(&quot;User Agent&quot;)) &#123;
+                            history += actionArray.get(i) + &quot; &quot;;
+                            history += desc + &quot; &quot;;
+                            history += userArray.get(i) + &quot; &quot;;
+                            history += stateArray.get(i) + &quot; &quot;;
+                            history += timeArray.get(i) + &quot; &quot;;
+                            sb.append(&quot;\n\t&quot; + history);
+                        &#125;
+                    &#125;
+                &#125;
+</code></pre>
+]]></content>
+      <categories>
+        <category>Enovia</category>
+      </categories>
+      <tags>
+        <tag>Enovia-History</tag>
+      </tags>
+  </entry>
 </search>
