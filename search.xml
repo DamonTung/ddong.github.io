@@ -2027,4 +2027,24 @@ list retained: [11]
         <tag>Enovia, MQL</tag>
       </tags>
   </entry>
+  <entry>
+    <title>JPOs_in_Enovia</title>
+    <url>/2021/11/24/JPOs-in-Enovia/</url>
+    <content><![CDATA[<p>Access to JPOs through the Studio Customization Toolkit consists of two invoke methods on a new JPO class.  </p>
+<ol>
+<li><p>One form of the invoke method returns an int (useful for returning exit codes).)</p>
+<p> int ret = JPO.invoke(Context context, String className, String[] initargs, String methodName, String[] methodargs);</p>
+</li>
+<li><p>The other form returns a Java Object.</p>
+<p> Object ret = JPO.invoke(Context context, String className, String[] initargs,String methodName,String[] methodargs, java.lang.Class retType);</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Enovia</category>
+      </categories>
+      <tags>
+        <tag>Enovia, JPO</tag>
+      </tags>
+  </entry>
 </search>

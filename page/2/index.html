@@ -168,6 +168,150 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://blog.ddong.online/2021/11/02/lsof-linux/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Damon Tung">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DT's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/02/lsof-linux/" class="post-title-link" itemprop="url">lsof_linux</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-11-02 18:15:16 / Modified: 18:16:02" itemprop="dateCreated datePublished" datetime="2021-11-02T18:15:16+08:00">2021-11-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="lsof-一切皆文件"><a href="#lsof-一切皆文件" class="headerlink" title="lsof 一切皆文件"></a>lsof 一切皆文件</h1><p>lsof（list open files）是一个查看当前系统文件的工具。在linux环境下，任何事物都以文件的形式存在，通过文件不仅仅可以访问常规数据，还可以访问网络连接和硬件。如传输控制协议 (TCP) 和用户数据报协议 (UDP) 套接字等，系统在后台都为该应用程序分配了一个文件描述符，该文件描述符提供了大量关于这个应用程序本身的信息。</p>
+<p>lsof打开的文件可以是：</p>
+<pre><code>普通文件
+目录
+网络文件系统的文件
+字符或设备文件
+(函数)共享库
+管道，命名管道
+符号链接
+网络文件（例如：NFS file、网络socket，unix域名socket）
+还有其它类型的文件，等等
+</code></pre>
+<ol>
+<li>命令参数<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="deletion">-a 列出打开文件存在的进程</span></span><br><span class="line"><span class="deletion">-c&lt;进程名&gt; 列出指定进程所打开的文件</span></span><br><span class="line"><span class="deletion">-g 列出GID号进程详情</span></span><br><span class="line"><span class="deletion">-d&lt;文件号&gt; 列出占用该文件号的进程</span></span><br><span class="line"><span class="addition">+d&lt;目录&gt; 列出目录下被打开的文件</span></span><br><span class="line"><span class="addition">+D&lt;目录&gt; 递归列出目录下被打开的文件</span></span><br><span class="line"><span class="deletion">-n&lt;目录&gt; 列出使用NFS的文件</span></span><br><span class="line"><span class="deletion">-i&lt;条件&gt; 列出符合条件的进程。（4、6、协议、:端口、 @ip ）</span></span><br><span class="line"><span class="deletion">-p&lt;进程号&gt; 列出指定进程号所打开的文件</span></span><br><span class="line"><span class="deletion">-u 列出UID号进程详情</span></span><br><span class="line"><span class="deletion">-h 显示帮助信息</span></span><br><span class="line"><span class="deletion">-v 显示版本信息</span></span><br></pre></td></tr></table></figure></li>
+<li>使用实例<br>实例1：无任何参数<figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$lsof| more</span><br><span class="line">COMMAND     PID      USER   FD      TYPE             DEVICE SIZE/OFF       NODE NAME</span><br><span class="line">init         <span class="number"> 1 </span>     root  cwd       DIR              253,0    <span class="number"> 4096 </span>        <span class="number"> 2 </span>/</span><br><span class="line">init         <span class="number"> 1 </span>     root  rtd       DIR              253,0    <span class="number"> 4096 </span>        <span class="number"> 2 </span>/</span><br><span class="line">init         <span class="number"> 1 </span>     root  txt       REG              253,0  <span class="number"> 150352 </span>  <span class="number"> 1310795 </span>/sbin/init</span><br><span class="line">init         <span class="number"> 1 </span>     root  mem       REG              253,0   <span class="number"> 65928 </span>  <span class="number"> 5505054 </span>/lib64/libnss_files-2.12.so</span><br><span class="line">init         <span class="number"> 1 </span>     root  mem       REG              253,0 <span class="number"> 1918016 </span>  <span class="number"> 5521405 </span>/lib64/libc-2.12.so</span><br><span class="line">init         <span class="number"> 1 </span>     root  mem       REG              253,0   <span class="number"> 93224 </span>  <span class="number"> 5521440 </span>/lib64/libgcc_s-4.4.6-20120305.so.1</span><br><span class="line">init         <span class="number"> 1 </span>     root  mem       REG              253,0   <span class="number"> 47064 </span>  <span class="number"> 5521407 </span>/lib64/librt-2.12.so</span><br><span class="line">init         <span class="number"> 1 </span>     root  mem       REG              253,0  <span class="number"> 145720 </span>  <span class="number"> 5521406 </span>/lib64/libpthread-2.12.so</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+说明：</li>
+</ol>
+<p>lsof输出各列信息的意义如下：</p>
+<ul>
+<li><p>COMMAND：进程的名称</p>
+</li>
+<li><p>PID：进程标识符</p>
+</li>
+<li><p>PPID：父进程标识符（需要指定-R参数）</p>
+</li>
+<li><p>USER：进程所有者</p>
+</li>
+<li><p>PGID：进程所属组</p>
+</li>
+<li><p>FD：文件描述符，应用程序通过文件描述符识别该文件。如cwd、txt等:</p>
+<blockquote>
+<p>  （1）cwd：表示current work dirctory，即：应用程序的当前工作目录，这是该应用程序启动的目录，除非它本身对这个目录进行更改<br>  （2）txt ：该类型的文件是程序代码，如应用程序二进制文件本身或共享库，如上列表中显示的 /sbin/init 程序<br>  （3）lnn：library references (AIX);<br>  （4）er：FD information error (see NAME column);<br>  （5）jld：jail directory (FreeBSD);<br>  （6）ltx：shared library text (code and data);<br>  （7）mxx ：hex memory-mapped type number xx.<br>  （8）m86：DOS Merge mapped file;<br>  （9）mem：memory-mapped file;<br>  （10）mmap：memory-mapped device;<br>  （11）pd：parent directory;<br>  （12）rtd：root directory;<br>  （13）tr：kernel trace file (OpenBSD);<br>  （14）v86  VP/ix mapped file;<br>  （15）0：表示标准输入<br>  （16）1：表示标准输出<br>  （17）2：表示标准错误<br>  一般在标准输出、标准错误、标准输入后还跟着文件状态模式：r、w、u等<br>  （1）u：表示该文件被打开并处于读取/写入模式<br>  （2）r：表示该文件被打开并处于只读模式<br>  （3）w：表示该文件被打开并处于<br>  （4）空格：表示该文件的状态模式为unknow，且没有锁定<br>  （5）-：表示该文件的状态模式为unknow，且被锁定<br>  同时在文件状态模式后面，还跟着相关的锁<br>  （1）N：for a Solaris NFS lock of unknown type;<br>  （2）r：for read lock on part of the file;<br>  （3）R：for a read lock on the entire file;<br>  （4）w：for a write lock on part of the file;（文件的部分写锁）<br>  （5）W：for a write lock on the entire file;（整个文件的写锁）<br>  （6）u：for a read and write lock of any length;<br>  （7）U：for a lock of unknown type;<br>  （8）x：for an SCO OpenServer Xenix lock on part      of the file;<br>  （9）X：for an SCO OpenServer Xenix lock on the      entire file;<br>  （10）space：if there is no lock.</p>
+</blockquote>
+</li>
+<li><p>TYPE：文件类型，如DIR、REG等，常见的文件类型:</p>
+<blockquote>
+<p>   （1）DIR：表示目录<br>  （2）CHR：表示字符类型<br>  （3）BLK：块设备类型<br>  （4）UNIX： UNIX 域套接字<br>  （5）FIFO：先进先出 (FIFO) 队列<br>  （6）IPv4：网际协议 (IP) 套接字</p>
+</blockquote>
+</li>
+<li><p>DEVICE：指定磁盘的名称</p>
+</li>
+<li><p>SIZE：文件的大小</p>
+</li>
+<li><p>NODE：索引节点（文件在磁盘上的标识）</p>
+</li>
+<li><p>NAME：打开文件的确切名称</p>
+</li>
+</ul>
+<p>实例2：查找某个文件相关的进程</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$lsof</span> <span class="regexp">/bin/</span>bash</span><br><span class="line">COMMAND     PID USER  FD   TYPE DEVICE SIZE/OFF    NODE NAME</span><br><span class="line">mysqld_sa  <span class="number">2169</span> root txt    REG  <span class="number">253</span>,<span class="number">0</span>   <span class="number">938736</span> <span class="number">4587562</span> <span class="regexp">/bin/</span>bash</span><br><span class="line">ksmtuned   <span class="number">2334</span> root txt    REG  <span class="number">253</span>,<span class="number">0</span>   <span class="number">938736</span> <span class="number">4587562</span> <span class="regexp">/bin/</span>bash</span><br><span class="line">bash      <span class="number">20121</span> root txt    REG  <span class="number">253</span>,<span class="number">0</span>   <span class="number">938736</span> <span class="number">4587562</span> <span class="regexp">/bin/</span>bash</span><br></pre></td></tr></table></figure>
+<p>实例3：列出某个用户打开的文件信息</p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"><span class="meta-keyword">$lsof</span> -u username</span></span><br></pre></td></tr></table></figure>
+<p>-u 选项，u是user的缩写</p>
+<p>实例4：列出某个程序进程所打开的文件信息</p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"><span class="meta-keyword">$lsof</span> -c mysql</span></span><br></pre></td></tr></table></figure>
+<p>-c 选项将会列出所有以mysql这个进程开头的程序的文件，其实你也可以写成 </p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsof <span class="string">| grep mysql</span></span><br></pre></td></tr></table></figure>
+<p>但是第一种方法明显比第二种方法要少打几个字符；<br>实例5：列出某个用户以及某个进程所打开的文件信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$lsof</span>  -u <span class="built_in">test</span> -c mysql</span><br></pre></td></tr></table></figure>
+<p>实例6：通过某个进程号显示该进程打开的文件</p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"><span class="meta-keyword">$lsof</span> -p 11968</span></span><br></pre></td></tr></table></figure>
+<p>实例7：列出所有的网络连接</p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"><span class="meta-keyword">$lsof</span> -i</span></span><br></pre></td></tr></table></figure>
+<p>实例8：列出所有tcp 网络连接信息</p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"><span class="meta-keyword">$lsof</span> -i tcp</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$lsof -n -i tcp</span><br><span class="line">COMMAND     PID  <span class="keyword">USER</span>   <span class="title">FD</span>   <span class="keyword">TYPE</span>  DEVICE SIZE/OFF <span class="keyword">NODE</span> <span class="title">NAME</span></span><br><span class="line">svnserve  <span class="number">11552</span> weber    <span class="number">3</span>u  IPv4 <span class="number">3799399</span>      <span class="number">0</span>t0  TCP *:svn (LISTEN)</span><br><span class="line">redis-ser <span class="number">25501</span> weber    <span class="number">4</span>u  IPv4  <span class="number">113150</span>      <span class="number">0</span>t0  TCP <span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">6379</span> (LISTEN)</span><br></pre></td></tr></table></figure>
+<p>实例9：列出谁在使用某个端口</p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"><span class="meta-keyword">$lsof</span> -i :3306</span></span><br></pre></td></tr></table></figure>
+<p>实例10：列出某个用户的所有活跃的网络端口</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$lsof</span> -a -u <span class="built_in">test</span> -i</span><br></pre></td></tr></table></figure>
+<p>实例11：根据文件描述列出对应的文件信息</p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"><span class="meta-keyword">$lsof</span> -d description(like 2)</span></span><br></pre></td></tr></table></figure>
+<p>示例:</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$lsof</span> -d <span class="number">3</span> | grep PARSER1</span><br><span class="line">tail      <span class="number">6499</span> tde    <span class="number">3</span>r   REG    <span class="number">253</span>,<span class="number">3</span>   <span class="number">4514722</span>     <span class="number">417798</span> <span class="regexp">/opt/</span>applog<span class="regexp">/open/</span>log/HOSTPARSER1_ERROR_141217.log.<span class="number">001</span></span><br></pre></td></tr></table></figure>
+<p>说明： 0表示标准输入，1表示标准输出，2表示标准错误，从而可知：所以大多数应用程序所打开的文件的 FD 都是从 3 开始<br>实例12：列出被进程号为1234的进程所打开的所有IPV4 network files</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$lsof</span> -<span class="selector-tag">i</span> <span class="number">4</span> -<span class="selector-tag">a</span> -<span class="selector-tag">p</span> <span class="number">1234</span></span><br></pre></td></tr></table></figure>
+<p>实例13：列出目前连接主机nf5260i5-td上端口为：20，21，80相关的所有文件信息，且每隔3秒重复执行</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">lsof</span> -i @nf<span class="number">5260</span>i<span class="number">5</span>-td:<span class="number">20</span>,<span class="number">21</span>,<span class="number">80</span> -r <span class="number">3</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://blog.ddong.online/2021/11/02/mxType-in-Enovia/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1862,90 +2006,6 @@ public static void main(String[] args) &#123;
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://blog.ddong.online/2021/11/02/mxupdate/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Damon Tung">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DT's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/02/mxupdate/" class="post-title-link" itemprop="url">MxUpdate Samples</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-11-02 12:33:17 / Modified: 18:14:03" itemprop="dateCreated datePublished" datetime="2021-11-02T12:33:17+08:00">2021-11-02</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Enovia/" itemprop="url" rel="index"><span itemprop="name">Enovia</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="attribute"><a href="#attribute" class="headerlink" title="attribute"></a>attribute</h2><pre><code>exec program mxupdate --update --path E:\EPLM_workspace\Enovia-5-3\40_mxupdate\datamodel\attribute\ --attribute &quot;NSN Network Element Type&quot;;
-</code></pre>
-<h2 id="type"><a href="#type" class="headerlink" title="type"></a>type</h2><pre><code>exec program mxupdate --update --path E:\EPLM_workspace\Enovia-5-3\40_mxupdate\datamodel\type\ --type &quot;Conflict Mineral Declaration&quot;;
-</code></pre>
-<h2 id="person"><a href="#person" class="headerlink" title="person"></a>person</h2><pre><code>exec program mxupdate --update --path C:\workspace\EPLM\vendor\dbschema\user\person\ --person admin_platform;
-</code></pre>
-<h2 id="run-tcl-script"><a href="#run-tcl-script" class="headerlink" title="run tcl script"></a>run tcl script</h2><pre><code>40_mxupdate/datamodel/type/TYPE_Conflict Mineral Declaration.tcl
-</code></pre>
-<h2 id="query-bus-with-where-clause"><a href="#query-bus-with-where-clause" class="headerlink" title="query bus with where clause"></a>query bus with where clause</h2><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">temp</span> query bus Part * * <span class="keyword">where</span> ((<span class="keyword">current</span> == Approved) &amp;&amp;</span><br><span class="line">(<span class="keyword">attribute</span>[Material Category] ~~ <span class="string">&#x27;Plastic&#x27;</span>) &amp;&amp;</span><br><span class="line">(<span class="keyword">to</span>[Component Substitution].<span class="keyword">from</span>.name ~~ <span class="string">&#x27;*Clutch*&#x27;</span>) &amp;&amp;</span><br><span class="line">(<span class="keyword">to</span>[Component Substitution].<span class="keyword">from</span>.name ~~ <span class="string">&#x27;*Transmission*&#x27;</span>));</span><br></pre></td></tr></table></figure>
-
-<h2 id="query-bus-with-Date"><a href="#query-bus-with-Date" class="headerlink" title="query bus with Date"></a>query bus with Date</h2><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">temp</span> query bus &quot;NSN Sales Item&quot; * * <span class="keyword">where</span> &quot;attribute[NSN GSC Base] != &#x27;0.0&#x27; &amp;&amp; attribute[NSN Cost Effective Date] &lt;= &#x27;Jan 07 2020&#x27;&quot; dump | <span class="keyword">limit</span> <span class="number">5</span> ;</span><br></pre></td></tr></table></figure>
-<h2 id="mod-bus-sample"><a href="#mod-bus-sample" class="headerlink" title="mod bus sample"></a>mod bus sample</h2><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">mod</span> bus <span class="keyword">TYPE</span> <span class="type">NAME </span>REVISION  ATTR_NAME ATTR_NEW_VALUE;</span><br></pre></td></tr></table></figure>
-<h2 id="exec-prog-with-method"><a href="#exec-prog-with-method" class="headerlink" title="exec prog with method"></a>exec prog with method</h2><figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exec program <span class="string">&#x27;NSNSalesItem&#x27;</span> -<span class="function"><span class="keyword">method</span> <span class="title">queryAndCopyCostsRelatedAttrsToCurrentFields</span>;</span></span><br></pre></td></tr></table></figure>
-<h2 id="update-prog-and-compile"><a href="#update-prog-and-compile" class="headerlink" title="update prog and compile"></a>update prog and compile</h2><figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">exec program mxupdate --update --path D:<span class="symbol">\E</span>PLM_Workspace<span class="symbol">\E</span>novia-DEV<span class="symbol">\4</span>0_mxupdate<span class="symbol">\p</span>rogram<span class="symbol">\j</span>po<span class="symbol">\ </span>--program NSNSalesItem;</span><br><span class="line">compile prog NSNSalesItem;</span><br></pre></td></tr></table></figure>
-
-<h2 id="insert-and-compile-prog"><a href="#insert-and-compile-prog" class="headerlink" title="insert and compile prog"></a>insert and compile prog</h2><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">insert prog PROG_FILE_PATH<span class="comment">;</span></span><br><span class="line">compile prog PROG_NAME<span class="comment">;</span></span><br></pre></td></tr></table></figure>
-<h2 id="mod-user"><a href="#mod-user" class="headerlink" title="mod user"></a>mod user</h2><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mod</span> person ddong <span class="built_in">assign</span> role ROLE_NAME<span class="comment">;</span></span><br><span class="line"><span class="built_in">mod</span> person ddong PROPERTY_NAME PROPERTY_VALUE<span class="comment">;</span></span><br></pre></td></tr></table></figure>
-<h2 id="check-assigned-role"><a href="#check-assigned-role" class="headerlink" title="check assigned role"></a>check assigned role</h2><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> person ddong <span class="keyword">select</span> assignment;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -2015,7 +2075,7 @@ public static void main(String[] args) &#123;
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -2028,7 +2088,7 @@ public static void main(String[] args) &#123;
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

@@ -168,6 +168,82 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://blog.ddong.online/2021/11/24/JPOs-in-Enovia/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Damon Tung">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DT's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/24/JPOs-in-Enovia/" class="post-title-link" itemprop="url">JPOs_in_Enovia</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-11-24 17:33:14 / Modified: 17:36:08" itemprop="dateCreated datePublished" datetime="2021-11-24T17:33:14+08:00">2021-11-24</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Enovia/" itemprop="url" rel="index"><span itemprop="name">Enovia</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Access to JPOs through the Studio Customization Toolkit consists of two invoke methods on a new JPO class.  </p>
+<ol>
+<li><p>One form of the invoke method returns an int (useful for returning exit codes).)</p>
+<p> int ret = JPO.invoke(Context context, String className, String[] initargs, String methodName, String[] methodargs);</p>
+</li>
+<li><p>The other form returns a Java Object.</p>
+<p> Object ret = JPO.invoke(Context context, String className, String[] initargs,String methodName,String[] methodargs, java.lang.Class retType);</p>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://blog.ddong.online/2021/11/08/info-of-MQL-Enovia/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1056,150 +1132,6 @@ list retained: [11]
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://blog.ddong.online/2021/11/02/lsof-linux/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Damon Tung">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DT's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/02/lsof-linux/" class="post-title-link" itemprop="url">lsof_linux</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-11-02 18:15:16 / Modified: 18:16:02" itemprop="dateCreated datePublished" datetime="2021-11-02T18:15:16+08:00">2021-11-02</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="lsof-一切皆文件"><a href="#lsof-一切皆文件" class="headerlink" title="lsof 一切皆文件"></a>lsof 一切皆文件</h1><p>lsof（list open files）是一个查看当前系统文件的工具。在linux环境下，任何事物都以文件的形式存在，通过文件不仅仅可以访问常规数据，还可以访问网络连接和硬件。如传输控制协议 (TCP) 和用户数据报协议 (UDP) 套接字等，系统在后台都为该应用程序分配了一个文件描述符，该文件描述符提供了大量关于这个应用程序本身的信息。</p>
-<p>lsof打开的文件可以是：</p>
-<pre><code>普通文件
-目录
-网络文件系统的文件
-字符或设备文件
-(函数)共享库
-管道，命名管道
-符号链接
-网络文件（例如：NFS file、网络socket，unix域名socket）
-还有其它类型的文件，等等
-</code></pre>
-<ol>
-<li>命令参数<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="deletion">-a 列出打开文件存在的进程</span></span><br><span class="line"><span class="deletion">-c&lt;进程名&gt; 列出指定进程所打开的文件</span></span><br><span class="line"><span class="deletion">-g 列出GID号进程详情</span></span><br><span class="line"><span class="deletion">-d&lt;文件号&gt; 列出占用该文件号的进程</span></span><br><span class="line"><span class="addition">+d&lt;目录&gt; 列出目录下被打开的文件</span></span><br><span class="line"><span class="addition">+D&lt;目录&gt; 递归列出目录下被打开的文件</span></span><br><span class="line"><span class="deletion">-n&lt;目录&gt; 列出使用NFS的文件</span></span><br><span class="line"><span class="deletion">-i&lt;条件&gt; 列出符合条件的进程。（4、6、协议、:端口、 @ip ）</span></span><br><span class="line"><span class="deletion">-p&lt;进程号&gt; 列出指定进程号所打开的文件</span></span><br><span class="line"><span class="deletion">-u 列出UID号进程详情</span></span><br><span class="line"><span class="deletion">-h 显示帮助信息</span></span><br><span class="line"><span class="deletion">-v 显示版本信息</span></span><br></pre></td></tr></table></figure></li>
-<li>使用实例<br>实例1：无任何参数<figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$lsof| more</span><br><span class="line">COMMAND     PID      USER   FD      TYPE             DEVICE SIZE/OFF       NODE NAME</span><br><span class="line">init         <span class="number"> 1 </span>     root  cwd       DIR              253,0    <span class="number"> 4096 </span>        <span class="number"> 2 </span>/</span><br><span class="line">init         <span class="number"> 1 </span>     root  rtd       DIR              253,0    <span class="number"> 4096 </span>        <span class="number"> 2 </span>/</span><br><span class="line">init         <span class="number"> 1 </span>     root  txt       REG              253,0  <span class="number"> 150352 </span>  <span class="number"> 1310795 </span>/sbin/init</span><br><span class="line">init         <span class="number"> 1 </span>     root  mem       REG              253,0   <span class="number"> 65928 </span>  <span class="number"> 5505054 </span>/lib64/libnss_files-2.12.so</span><br><span class="line">init         <span class="number"> 1 </span>     root  mem       REG              253,0 <span class="number"> 1918016 </span>  <span class="number"> 5521405 </span>/lib64/libc-2.12.so</span><br><span class="line">init         <span class="number"> 1 </span>     root  mem       REG              253,0   <span class="number"> 93224 </span>  <span class="number"> 5521440 </span>/lib64/libgcc_s-4.4.6-20120305.so.1</span><br><span class="line">init         <span class="number"> 1 </span>     root  mem       REG              253,0   <span class="number"> 47064 </span>  <span class="number"> 5521407 </span>/lib64/librt-2.12.so</span><br><span class="line">init         <span class="number"> 1 </span>     root  mem       REG              253,0  <span class="number"> 145720 </span>  <span class="number"> 5521406 </span>/lib64/libpthread-2.12.so</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-说明：</li>
-</ol>
-<p>lsof输出各列信息的意义如下：</p>
-<ul>
-<li><p>COMMAND：进程的名称</p>
-</li>
-<li><p>PID：进程标识符</p>
-</li>
-<li><p>PPID：父进程标识符（需要指定-R参数）</p>
-</li>
-<li><p>USER：进程所有者</p>
-</li>
-<li><p>PGID：进程所属组</p>
-</li>
-<li><p>FD：文件描述符，应用程序通过文件描述符识别该文件。如cwd、txt等:</p>
-<blockquote>
-<p>  （1）cwd：表示current work dirctory，即：应用程序的当前工作目录，这是该应用程序启动的目录，除非它本身对这个目录进行更改<br>  （2）txt ：该类型的文件是程序代码，如应用程序二进制文件本身或共享库，如上列表中显示的 /sbin/init 程序<br>  （3）lnn：library references (AIX);<br>  （4）er：FD information error (see NAME column);<br>  （5）jld：jail directory (FreeBSD);<br>  （6）ltx：shared library text (code and data);<br>  （7）mxx ：hex memory-mapped type number xx.<br>  （8）m86：DOS Merge mapped file;<br>  （9）mem：memory-mapped file;<br>  （10）mmap：memory-mapped device;<br>  （11）pd：parent directory;<br>  （12）rtd：root directory;<br>  （13）tr：kernel trace file (OpenBSD);<br>  （14）v86  VP/ix mapped file;<br>  （15）0：表示标准输入<br>  （16）1：表示标准输出<br>  （17）2：表示标准错误<br>  一般在标准输出、标准错误、标准输入后还跟着文件状态模式：r、w、u等<br>  （1）u：表示该文件被打开并处于读取/写入模式<br>  （2）r：表示该文件被打开并处于只读模式<br>  （3）w：表示该文件被打开并处于<br>  （4）空格：表示该文件的状态模式为unknow，且没有锁定<br>  （5）-：表示该文件的状态模式为unknow，且被锁定<br>  同时在文件状态模式后面，还跟着相关的锁<br>  （1）N：for a Solaris NFS lock of unknown type;<br>  （2）r：for read lock on part of the file;<br>  （3）R：for a read lock on the entire file;<br>  （4）w：for a write lock on part of the file;（文件的部分写锁）<br>  （5）W：for a write lock on the entire file;（整个文件的写锁）<br>  （6）u：for a read and write lock of any length;<br>  （7）U：for a lock of unknown type;<br>  （8）x：for an SCO OpenServer Xenix lock on part      of the file;<br>  （9）X：for an SCO OpenServer Xenix lock on the      entire file;<br>  （10）space：if there is no lock.</p>
-</blockquote>
-</li>
-<li><p>TYPE：文件类型，如DIR、REG等，常见的文件类型:</p>
-<blockquote>
-<p>   （1）DIR：表示目录<br>  （2）CHR：表示字符类型<br>  （3）BLK：块设备类型<br>  （4）UNIX： UNIX 域套接字<br>  （5）FIFO：先进先出 (FIFO) 队列<br>  （6）IPv4：网际协议 (IP) 套接字</p>
-</blockquote>
-</li>
-<li><p>DEVICE：指定磁盘的名称</p>
-</li>
-<li><p>SIZE：文件的大小</p>
-</li>
-<li><p>NODE：索引节点（文件在磁盘上的标识）</p>
-</li>
-<li><p>NAME：打开文件的确切名称</p>
-</li>
-</ul>
-<p>实例2：查找某个文件相关的进程</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$lsof</span> <span class="regexp">/bin/</span>bash</span><br><span class="line">COMMAND     PID USER  FD   TYPE DEVICE SIZE/OFF    NODE NAME</span><br><span class="line">mysqld_sa  <span class="number">2169</span> root txt    REG  <span class="number">253</span>,<span class="number">0</span>   <span class="number">938736</span> <span class="number">4587562</span> <span class="regexp">/bin/</span>bash</span><br><span class="line">ksmtuned   <span class="number">2334</span> root txt    REG  <span class="number">253</span>,<span class="number">0</span>   <span class="number">938736</span> <span class="number">4587562</span> <span class="regexp">/bin/</span>bash</span><br><span class="line">bash      <span class="number">20121</span> root txt    REG  <span class="number">253</span>,<span class="number">0</span>   <span class="number">938736</span> <span class="number">4587562</span> <span class="regexp">/bin/</span>bash</span><br></pre></td></tr></table></figure>
-<p>实例3：列出某个用户打开的文件信息</p>
-<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"><span class="meta-keyword">$lsof</span> -u username</span></span><br></pre></td></tr></table></figure>
-<p>-u 选项，u是user的缩写</p>
-<p>实例4：列出某个程序进程所打开的文件信息</p>
-<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"><span class="meta-keyword">$lsof</span> -c mysql</span></span><br></pre></td></tr></table></figure>
-<p>-c 选项将会列出所有以mysql这个进程开头的程序的文件，其实你也可以写成 </p>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsof <span class="string">| grep mysql</span></span><br></pre></td></tr></table></figure>
-<p>但是第一种方法明显比第二种方法要少打几个字符；<br>实例5：列出某个用户以及某个进程所打开的文件信息</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$lsof</span>  -u <span class="built_in">test</span> -c mysql</span><br></pre></td></tr></table></figure>
-<p>实例6：通过某个进程号显示该进程打开的文件</p>
-<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"><span class="meta-keyword">$lsof</span> -p 11968</span></span><br></pre></td></tr></table></figure>
-<p>实例7：列出所有的网络连接</p>
-<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"><span class="meta-keyword">$lsof</span> -i</span></span><br></pre></td></tr></table></figure>
-<p>实例8：列出所有tcp 网络连接信息</p>
-<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"><span class="meta-keyword">$lsof</span> -i tcp</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$lsof -n -i tcp</span><br><span class="line">COMMAND     PID  <span class="keyword">USER</span>   <span class="title">FD</span>   <span class="keyword">TYPE</span>  DEVICE SIZE/OFF <span class="keyword">NODE</span> <span class="title">NAME</span></span><br><span class="line">svnserve  <span class="number">11552</span> weber    <span class="number">3</span>u  IPv4 <span class="number">3799399</span>      <span class="number">0</span>t0  TCP *:svn (LISTEN)</span><br><span class="line">redis-ser <span class="number">25501</span> weber    <span class="number">4</span>u  IPv4  <span class="number">113150</span>      <span class="number">0</span>t0  TCP <span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">6379</span> (LISTEN)</span><br></pre></td></tr></table></figure>
-<p>实例9：列出谁在使用某个端口</p>
-<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"><span class="meta-keyword">$lsof</span> -i :3306</span></span><br></pre></td></tr></table></figure>
-<p>实例10：列出某个用户的所有活跃的网络端口</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$lsof</span> -a -u <span class="built_in">test</span> -i</span><br></pre></td></tr></table></figure>
-<p>实例11：根据文件描述列出对应的文件信息</p>
-<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"><span class="meta-keyword">$lsof</span> -d description(like 2)</span></span><br></pre></td></tr></table></figure>
-<p>示例:</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$lsof</span> -d <span class="number">3</span> | grep PARSER1</span><br><span class="line">tail      <span class="number">6499</span> tde    <span class="number">3</span>r   REG    <span class="number">253</span>,<span class="number">3</span>   <span class="number">4514722</span>     <span class="number">417798</span> <span class="regexp">/opt/</span>applog<span class="regexp">/open/</span>log/HOSTPARSER1_ERROR_141217.log.<span class="number">001</span></span><br></pre></td></tr></table></figure>
-<p>说明： 0表示标准输入，1表示标准输出，2表示标准错误，从而可知：所以大多数应用程序所打开的文件的 FD 都是从 3 开始<br>实例12：列出被进程号为1234的进程所打开的所有IPV4 network files</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$lsof</span> -<span class="selector-tag">i</span> <span class="number">4</span> -<span class="selector-tag">a</span> -<span class="selector-tag">p</span> <span class="number">1234</span></span><br></pre></td></tr></table></figure>
-<p>实例13：列出目前连接主机nf5260i5-td上端口为：20，21，80相关的所有文件信息，且每隔3秒重复执行</p>
-<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">lsof</span> -i @nf<span class="number">5260</span>i<span class="number">5</span>-td:<span class="number">20</span>,<span class="number">21</span>,<span class="number">80</span> -r <span class="number">3</span></span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1269,7 +1201,7 @@ list retained: [11]
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1282,7 +1214,7 @@ list retained: [11]
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

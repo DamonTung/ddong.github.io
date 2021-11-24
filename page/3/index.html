@@ -168,6 +168,90 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://blog.ddong.online/2021/11/02/mxupdate/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Damon Tung">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DT's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/02/mxupdate/" class="post-title-link" itemprop="url">MxUpdate Samples</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-11-02 12:33:17 / Modified: 18:14:03" itemprop="dateCreated datePublished" datetime="2021-11-02T12:33:17+08:00">2021-11-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Enovia/" itemprop="url" rel="index"><span itemprop="name">Enovia</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="attribute"><a href="#attribute" class="headerlink" title="attribute"></a>attribute</h2><pre><code>exec program mxupdate --update --path E:\EPLM_workspace\Enovia-5-3\40_mxupdate\datamodel\attribute\ --attribute &quot;NSN Network Element Type&quot;;
+</code></pre>
+<h2 id="type"><a href="#type" class="headerlink" title="type"></a>type</h2><pre><code>exec program mxupdate --update --path E:\EPLM_workspace\Enovia-5-3\40_mxupdate\datamodel\type\ --type &quot;Conflict Mineral Declaration&quot;;
+</code></pre>
+<h2 id="person"><a href="#person" class="headerlink" title="person"></a>person</h2><pre><code>exec program mxupdate --update --path C:\workspace\EPLM\vendor\dbschema\user\person\ --person admin_platform;
+</code></pre>
+<h2 id="run-tcl-script"><a href="#run-tcl-script" class="headerlink" title="run tcl script"></a>run tcl script</h2><pre><code>40_mxupdate/datamodel/type/TYPE_Conflict Mineral Declaration.tcl
+</code></pre>
+<h2 id="query-bus-with-where-clause"><a href="#query-bus-with-where-clause" class="headerlink" title="query bus with where clause"></a>query bus with where clause</h2><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">temp</span> query bus Part * * <span class="keyword">where</span> ((<span class="keyword">current</span> == Approved) &amp;&amp;</span><br><span class="line">(<span class="keyword">attribute</span>[Material Category] ~~ <span class="string">&#x27;Plastic&#x27;</span>) &amp;&amp;</span><br><span class="line">(<span class="keyword">to</span>[Component Substitution].<span class="keyword">from</span>.name ~~ <span class="string">&#x27;*Clutch*&#x27;</span>) &amp;&amp;</span><br><span class="line">(<span class="keyword">to</span>[Component Substitution].<span class="keyword">from</span>.name ~~ <span class="string">&#x27;*Transmission*&#x27;</span>));</span><br></pre></td></tr></table></figure>
+
+<h2 id="query-bus-with-Date"><a href="#query-bus-with-Date" class="headerlink" title="query bus with Date"></a>query bus with Date</h2><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">temp</span> query bus &quot;NSN Sales Item&quot; * * <span class="keyword">where</span> &quot;attribute[NSN GSC Base] != &#x27;0.0&#x27; &amp;&amp; attribute[NSN Cost Effective Date] &lt;= &#x27;Jan 07 2020&#x27;&quot; dump | <span class="keyword">limit</span> <span class="number">5</span> ;</span><br></pre></td></tr></table></figure>
+<h2 id="mod-bus-sample"><a href="#mod-bus-sample" class="headerlink" title="mod bus sample"></a>mod bus sample</h2><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">mod</span> bus <span class="keyword">TYPE</span> <span class="type">NAME </span>REVISION  ATTR_NAME ATTR_NEW_VALUE;</span><br></pre></td></tr></table></figure>
+<h2 id="exec-prog-with-method"><a href="#exec-prog-with-method" class="headerlink" title="exec prog with method"></a>exec prog with method</h2><figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exec program <span class="string">&#x27;NSNSalesItem&#x27;</span> -<span class="function"><span class="keyword">method</span> <span class="title">queryAndCopyCostsRelatedAttrsToCurrentFields</span>;</span></span><br></pre></td></tr></table></figure>
+<h2 id="update-prog-and-compile"><a href="#update-prog-and-compile" class="headerlink" title="update prog and compile"></a>update prog and compile</h2><figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">exec program mxupdate --update --path D:<span class="symbol">\E</span>PLM_Workspace<span class="symbol">\E</span>novia-DEV<span class="symbol">\4</span>0_mxupdate<span class="symbol">\p</span>rogram<span class="symbol">\j</span>po<span class="symbol">\ </span>--program NSNSalesItem;</span><br><span class="line">compile prog NSNSalesItem;</span><br></pre></td></tr></table></figure>
+
+<h2 id="insert-and-compile-prog"><a href="#insert-and-compile-prog" class="headerlink" title="insert and compile prog"></a>insert and compile prog</h2><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">insert prog PROG_FILE_PATH<span class="comment">;</span></span><br><span class="line">compile prog PROG_NAME<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<h2 id="mod-user"><a href="#mod-user" class="headerlink" title="mod user"></a>mod user</h2><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mod</span> person ddong <span class="built_in">assign</span> role ROLE_NAME<span class="comment">;</span></span><br><span class="line"><span class="built_in">mod</span> person ddong PROPERTY_NAME PROPERTY_VALUE<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<h2 id="check-assigned-role"><a href="#check-assigned-role" class="headerlink" title="check assigned role"></a>check assigned role</h2><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> person ddong <span class="keyword">select</span> assignment;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://blog.ddong.online/2021/11/02/Config-Hexo-with-GitHub-via-Windows/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -682,7 +766,7 @@ Error message:
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -695,7 +779,7 @@ Error message:
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
