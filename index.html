@@ -193,7 +193,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-11-24 17:33:14 / Modified: 17:36:08" itemprop="dateCreated datePublished" datetime="2021-11-24T17:33:14+08:00">2021-11-24</time>
+              <time title="Created: 2021-11-24 17:33:14 / Modified: 18:30:11" itemprop="dateCreated datePublished" datetime="2021-11-24T17:33:14+08:00">2021-11-24</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -216,7 +216,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Access to JPOs through the Studio Customization Toolkit consists of two invoke methods on a new JPO class.  </p>
+          <h2 id="JPO-in-Enovia"><a href="#JPO-in-Enovia" class="headerlink" title="JPO in Enovia"></a>JPO in Enovia</h2><p>Access to JPOs through the Studio Customization Toolkit consists of two invoke methods on a new JPO class.  </p>
 <ol>
 <li><p>One form of the invoke method returns an int (useful for returning exit codes).)</p>
 <p> int ret = JPO.invoke(Context context, String className, String[] initargs, String methodName, String[] methodargs);</p>
@@ -225,6 +225,183 @@
 <p> Object ret = JPO.invoke(Context context, String className, String[] initargs,String methodName,String[] methodargs, java.lang.Class retType);</p>
 </li>
 </ol>
+<p>An example of an object method in the “emxProject” JPO would be:</p>
+<pre><code>import matrix.db.*;
+public class $&#123;CLASSNAME&#125; &#123;
+     public $&#123;CLASSNAME&#125; (Context context, String []args) &#123;
+    &#125;
+    public BusinessObjectList query(Context context, String []args) 
+    &#123;
+        Query query = new Query(args[0]);
+         return query.evaluate(context);
+     &#125;
+&#125;
+</code></pre>
+<p>called by the following in a .jsp:</p>
+<pre><code>String[] init = new String[] &#123;&#125;;
+String[] args = new String[] &#123; &quot;.finder&quot; &#125;;
+BusinessObjectList list = (BusinessObjectList)JPO.invoke(context, &quot;Project&quot;, init, &quot;query&quot;, args, BusinessObjectList.class);
+</code></pre>
+<p><em>Note the use of casting, which is necessary because the system only knows to return an<br>object instance. In the example above you see that BusinessObjectList is consistently used<br>for declaring the object to hold the return object, for casting, and for the sixth argument<br>that defines the return type.</em></p>
+<p>The JPO class has two methods that correspond to serializing an Object into a String, and de-serializing a String back into an Object. The method names are <strong>packArgs</strong> and <strong>unpackArgs</strong>, respectively. Since <strong>JPOs only accept<br>strings as arguments</strong>, you must use the packArgs/unpackArgs methods to convert Java objects to/from strings when using JPOs. </p>
+<p>These methods actually work with a String array of size two, that holds the class in the first slot and the serialized object in the second slot. This allows users of the String array to do proper type casting.<br>One can build up several Objects in a String array by calling <strong>packArgs()</strong> several times using the proper indexing into the String array. However, it is better to place all arguments in a single compound object (like a hashmap) and then pack just the single compound object into the args array. Keep in mind that any Object needing to be passed as an argument in this way must implement the <em>java.io.Serializable</em> interface.You can only call packargs on objects that are serialized. In releases before 9.5.3.0, many of the Studio Customization Toolkit classes were not. Most classes are now serialized and so may be passed as arguments to JPOs.</p>
+<h2 id="The-packArgs-method-has-the-following-signature"><a href="#The-packArgs-method-has-the-following-signature" class="headerlink" title="The packArgs method has the following signature:"></a>The packArgs method has the following signature:</h2><pre><code>public static String[] packArgs(Object in) throws Exception
+</code></pre>
+<h2 id="The-unpackArgs-method-has-the-following-signature"><a href="#The-unpackArgs-method-has-the-following-signature" class="headerlink" title="The unpackArgs method has the following signature:"></a>The unpackArgs method has the following signature:</h2><pre><code>public static Object unpackArgs(String[] in) throws Exception
+</code></pre>
+<p>The following packing logic is placed in a bean that is called from a JSP.</p>
+<pre><code> /**
+ * Sends an icon mail message to the specified users.
+ *
+ * @param context the Matrix &lt;code&gt;Context&lt;/code&gt; object
+ * @param toList the to list of users to notify
+ * @param ccList the cc list of users to notify
+ * @param bccList the bcc list of users to notify
+ * @param subject the notification subject
+ * @param message the notification message
+ * @param objectIdList the list of objects to send with the 
+notification
+ * @throws FrameworkException if the operation fails
+ * @since AEF 9.5.0.0
+ * @grade 0
+ */
+ public static void sendMessage(Context context, StringList toList, StringList ccList, StringList bccList,     String subject, String message, StringList objectIdList) throws FrameworkException
+     &#123;
+         try
+         &#123;
+             ContextUtil.pushContext(context);
+             // Create the arguments for the notification.
+             Map note = new HashMap();
+             note.put(&quot;toList&quot;, toList);
+             note.put(&quot;ccList&quot;, ccList);
+             note.put(&quot;bccList&quot;, bccList);
+             note.put(&quot;subject&quot;, subject);
+             note.put(&quot;message&quot;, message);
+             note.put(&quot;objectIdList&quot;, objectIdList);
+             // Pack arguments into string array.
+             String[] args = JPO.packArgs(note);
+             // Call the jpo to send the message.
+             JPO.invoke(context, &quot;emxMailUtil&quot;, null, 
+            &quot;sendMessage&quot;, args);
+         &#125;
+         catch (Exception e)
+         &#123;
+             throw (new FrameworkException(e));
+         &#125;
+         finally
+         &#123;
+             ContextUtil.popContext(context);
+         &#125;
+ &#125;
+</code></pre>
+<p>The unpacking logic is then found in the JPO method where it is performed prior to passing the arguments on to the worker method (this design pattern is very useful for hiding the details of packing and unpacking arguments).</p>
+<pre><code> /**
+ * Sends an icon mail notification to the specified users.
+ *
+ * @param context the Matrix &lt;code&gt;Context&lt;/code&gt; object
+ * @param args contains a Map with the following entries:
+ * toList - the list of users to notify
+ * ccList - the list of users to cc
+ * bccList - the list of users to bcc
+ * subject - the notification subject
+ * message - the notification message
+ * objectIdList - the ids of objects to send with the 
+notification
+ * @returns nothing
+ * @throws Exception if the operation fails
+ * @since AEF 9.5.0.0
+ */
+ public static int sendMessage(Context context, String[] args) throws Exception&#123;
+     if (args == null || args.length &lt; 1)
+     &#123;
+         throw (new IllegalArgumentException());
+     &#125;
+     Map map = (Map) JPO.unpackArgs(args);
+     sendMessage(context,(StringList) map.get(&quot;toList&quot;), (StringList) map.get(&quot;ccList&quot;), (StringList) map.get(&quot;bccList&quot;), (String) map.get(&quot;subject&quot;), (String) map.get(&quot;message&quot;), (StringList) map.get(&quot;objectIdList&quot;));
+     return 0;
+ &#125;
+</code></pre>
+<p>Avoid getting business object selectable items one at a time. Code similar to the following should never exist:</p>
+<pre><code>///////////////////////////////////////////////////////////////
+// Do not have code like below 
+///////////////////////////////////////////////////////////////
+// Query using MQLCommand
+ MQLCommand mqlCmd = new MQLCommand();
+ mqlCmd.executeCommand(ctx, &quot;temp query bus t2 t2* 0 dump \n&quot;);
+ String rslt = mqlCmd.getResult().trim();
+ StringTokenizer st1 = new StringTokenizer(rslt,&quot;\n&quot;);
+ while (st1.hasMoreElements()) &#123;
+     String resultBo = st1.nextToken().trim();
+     System.out.println(&quot;Result bo =&quot;+resultBo);
+     MQLCommand subMqlCmd = new MQLCommand();
+     String mqlStr = &quot;print bus &quot;+resultBo+ &quot; select attribute[int-u] attribute[color-u];&quot;;
+     subMqlCmd.executeCommand(ctx, mqlStr);
+     String subResult = subMqlCmd.getResult().trim();
+     System.out.println(&quot;Sub result =&quot;+subResult);
+ &#125;
+</code></pre>
+<p>Instead, multiple selectables should be specified in one command. Multiple selectable items can be specified for any of the following commands:</p>
+<p>• print bus<br>• expand bus<br>• temp query<br>• print set  </p>
+<p>For example:</p>
+<pre><code> MQLCommand mqlCmd = new MQLCommand();
+ mqlCmd.executeCommand(ctx, &quot;temp query bus t2 t2* 0 select attribute[int-u].value attribute[color-u].value    from[r3].attribute[rstring-u].value dump |&quot;);
+ String result = mqlCmd.getResult().trim();
+ StringTokenizer st = new StringTokenizer(result,&quot;|&quot;);
+ while (st.hasMoreTokens()) &#123;
+     System.out.println(&quot;Result token =&quot;+st.nextToken());
+ &#125;
+</code></pre>
+<p>The coding approach shown above could be made more efficient by using the following syntax:</p>
+<pre><code> // Query using ADK calls
+ StringList busSelect = new StringList(7);
+ busSelect.addElement(&quot;id&quot;);
+ busSelect.addElement(&quot;type&quot;);
+ busSelect.addElement(&quot;name&quot;);
+ busSelect.addElement(&quot;revision&quot;);
+ busSelect.addElement(&quot;attribute[int-u].value&quot;);
+ busSelect.addElement(&quot;attribute[color-u].value&quot;);     
+ busSelect.addElement(&quot;from[r3].attribute[rstring-u].value&quot;);
+
+ // Prepare temp query
+ Query query = new Query();
+ query.setBusinessObjectType(&quot;t2&quot;);
+ query.setBusinessObjectName(&quot;t2*&quot;);
+ query.setBusinessObjectRevision(&quot;0&quot;);
+ query.setOwnerPattern(&quot;*&quot;);
+ query.setVaultPattern(&quot;unit1&quot;);
+ query.setWhereExpression(&quot;&quot;);
+ BusinessObjectWithSelectList bwsList = new BusinessObjectWithSelectList();
+ 
+ // Do the query
+ bwsList = query.selectTmp(ctx, busSelect); 
+ // Iterate through the objects returned and get data.
+ for (int idx=0; idx&lt;bwsList.size(); idx++)
+ &#123;
+     BusinessObjectWithSelect bws = (BusinessObjectWithSelect) bwsList.elementAt(idx);
+     String sType = (String)bws.getSelectData(&quot;type&quot;); 
+     System.out.println(&quot;Type =&quot;+sType);
+     String sName = (String)bws.getSelectData(&quot;name&quot;); 
+     System.out.println(&quot;Name =&quot;+sName);
+     String sRevision = (String)bws.getSelectData(&quot;revision&quot;); 
+     System.out.println(&quot;Revision =&quot;+sRevision);
+
+     // Get businessobject attribute values
+     String attrOneVal = (String)bws.getSelectData(&quot;attribute[int-u].value&quot;); 
+     System.out.println(&quot;AttrOneVal =&quot;+attrOneVal);
+     String attrTwoVal = (String)bws.getSelectData(&quot;attribute[color-u].value&quot;);
+     System.out.println(&quot;AttrTwoVal =&quot;+attrTwoVal);
+
+     // Get relationship attribute values
+     String attrRelVal = (String)bws.getSelectData(&quot;from[r3].attribute[rstring-u].value&quot;);
+     System.out.println(&quot;AttrRelVal =&quot;+attrRelVal);         
+ &#125; 
+</code></pre>
+<p>When an MQL selectable item is used to retrieve information about a relationship, the “relationship” item should not be used if a direction is known. Instead, “to” or “from” should be used. This reduces the number of database tables that need to be searched. For example, instead of:</p>
+<pre><code>relationship\[BOM\].attribute\[Qty\]
+</code></pre>
+<p>Use:</p>
+<pre><code>from\[BOM\].attribute\[Qty\]
+</code></pre>
 
       
     </div>
