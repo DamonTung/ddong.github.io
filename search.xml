@@ -2224,4 +2224,145 @@ notification
         <tag>Enovia, JPO</tag>
       </tags>
   </entry>
+  <entry>
+    <title>vault_in_enovia</title>
+    <url>/2021/11/30/vault-in-enovia-1/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>vault_in_enovia</title>
+    <url>/2021/11/30/vault-in-enovia/</url>
+    <content><![CDATA[<h1 id="Vaults"><a href="#Vaults" class="headerlink" title="Vaults"></a>Vaults</h1><p>A <em>vault</em> is a storage location residing in the underlying database that is defined by an ENOVIA Live Collaboration System Administrator for use by ENOVIA Live Collaboration. Vaults allow the designer of the ENOVIA Live Collaboration database to construct one or more logical storage locations within the database. The Business Administrator determines what the vault is for, while the System Administrator defines where the vault is located on the network. Vaults should use actual host and path names, not mounted directories. Paths must be exported on the host to all users<br>who require access to the vaults.  </p>
+<blockquote>
+<p>You must be a System Administrator to access vaults.</p>
+</blockquote>
+<p>In addition to the business object vaults created by the System Administrator, a vault called the Administration vault that is created automatically when ENOVIA Live Collaboration is installed on your system. The Administration vault is used for administrative purposes only and serves as the master definition vault. The Administration vault is used for definitions only. You cannot use it for storing business objects. Vaults contain metadata (information about objects), while stores contain the application files associated with business objects. All vaults contain a complete set of ENOVIA Live Collaboration definitions. These definitions identify the characteristics of items such as persons, roles, types, formats, etc. When you make changes to a definition (such as add, modify, or delete), all definition copies must be updated to reflect the change. This update of the vaults occurs simultaneously if all the copies are available. If any of the copies are not available (a vault is not available), you cannot alter the definitions. This prevents partial alteration of the ENOVIA Live Collaboration definitions. For example, assume you want to add a new format definition. After you enter the Add Format command, ENOVIA Live Collaboration will attempt to add the definition. If the definition is valid (no errors), all copies of the ENOVIA Live Collaboration definitions are changed to include this new format. But assume that a vault resides on a host that is currently offline. In this case, no changes to the definitions are made. If changes were allowed, the one vault would not be updated to contain the change. Therefore, you should ensure that all defined vaults are available before modifying the ENOVIA Live Collaboration definitions.</p>
+<h2 id="Types-of-Vaults"><a href="#Types-of-Vaults" class="headerlink" title="Types of Vaults"></a>Types of Vaults</h2><p>There are four types of vaults: </p>
+<ol>
+<li>local</li>
+<li>remote</li>
+<li>foreign</li>
+<li>external.</li>
+</ol>
+<ul>
+<li>Most vaults are local.  </li>
+<li>Remote vaults are used for loosely-coupled databases, which allow two entirely different ENOVIA Live Collaboration installations to share data.</li>
+<li>Foreign vaults are used with Adaplets, which allow data from virtually any source to be modeled as ENOVIA Live Collaboration objects.</li>
+<li>External (Web Service Adaplet) vaults are used with External stores that contain data maintained by external servers.  </li>
+</ul>
+<p>When defining a vault in MQL, you don’t need to specify which type it is. The system knows which type of vault you are defining by the parameters you specify for the vault.</p>
+<ul>
+<li>For local vaults, you define Oracle tablespaces using the Tablespace and Indexspace clauses.</li>
+<li>For remote vaults, you specify the server using the Server clause.</li>
+<li>For foreign vaults, you specify tablespaces, and Interface and Map fields (using the Interface and Map clauses).</li>
+<li>External vaults need only a parameters file.</li>
+</ul>
+<h2 id="Defining-a-Vault"><a href="#Defining-a-Vault" class="headerlink" title="Defining a Vault"></a>Defining a Vault</h2><p>Use the Add Vault command to define a vault:</p>
+<pre><code>add vault NAME [ADD_ITEM &#123;ADD_ITEM&#125;];
+</code></pre>
+<p><strong>NAME</strong> is the name of the vault you are creating.<br><strong>ADD_ITEM</strong> is an Add Vault clause that provides more information about the vault you are creating.</p>
+<h2 id="Printing-a-vault-definition"><a href="#Printing-a-vault-definition" class="headerlink" title="Printing a vault definition"></a>Printing a vault definition</h2><pre><code>print vault NAME;
+</code></pre>
+<p><em>If the NAME contains embedded spaces, use quotation marks</em> </p>
+<h2 id="Delete-Vault"><a href="#Delete-Vault" class="headerlink" title="Delete Vault"></a>Delete Vault</h2><pre><code>delete vault NAME;
+</code></pre>
+<h2 id="Clear-Vault"><a href="#Clear-Vault" class="headerlink" title="Clear Vault"></a>Clear Vault</h2><p>The Clear Vault command is used to delete all business objects and associations in a vault:</p>
+<pre><code>clear vault NAME [minorrevision] [relationship] [full] [size NUMBER];
+</code></pre>
+<p><em>NAME</em> is the name of the vault you want to clear.<br><em>NUMBER</em> is the size of the transaction before a database commit. The Size clause only applies when any of the other optional clauses are included.</p>
+<p>Once a Vault has been established and used, you should NOT use the Clear Vault command. In addition, you should not use it when users are online.  </p>
+<ul>
+<li><p>Minorrevision Clause</p>
+<blockquote>
+<p>Include this clause before actually clearing the vault to have first remove the business objects in the named vault from revision chains of objects in other vaults. This involves modifying rows in the vaults lxBO table (marking rows that need to be cleaned up). Upon successful execution of this command, all revision chains that need adjustment prior to the clear vault command are fixed.</p>
+</blockquote>
+</li>
+<li><p>Relation Clause</p>
+<blockquote>
+<p>Include this clause before actually clearing the vault to have ENOVIA Live Collaboration first disconnect business objects in the named vault from objects in other vaults. This involves modifying rows in the vaults lxRO table (marking rows that need to be cleaned up). Upon successful execution of this command, all connections to objects in other vaults are removed.</p>
+</blockquote>
+</li>
+<li><p>Full Clause</p>
+<blockquote>
+<p>Include this clause before actually clearing the vault to have ENOVIA Live Collaboration first perform both a “clear vault relationship” and a “clear vault revision.” Additionally all tables of the vault are dropped and recreated, cleaning up the marked rows.</p>
+</blockquote>
+</li>
+<li><p>Size Clause</p>
+<blockquote>
+<p>Include this clause of the clear vault command to indicate a transaction size before the relation or revision changes are committed to the database. For example, to remove all connections to or from objects in other vaults and commit the changes 100 at a time use the following:.</p>
+</blockquote>
+<p>  clear vault MyVault relation size 100;</p>
+</li>
+</ul>
+<p>When used without the Revision, Relation or Full clauses, the Size clause is ignored.</p>
+<h2 id="Index-Vault"><a href="#Index-Vault" class="headerlink" title="Index Vault"></a>Index Vault</h2><p>The index command should be used periodically after modification and deletions to clean up the database indices.</p>
+<pre><code>index vault NAME [table TABLE_NAME [indexspace TABLESPACE_NAME]];
+</code></pre>
+<p>NAME is the name of the vault to index. You can run the index vault command against any vault, including ADMINISTRATION.</p>
+<p>Re-indexing vaults can improve find performance whether or not transaction boundaries have been used in the data loading process. If data is loaded from a sequentially sorted data file, the resulting index will be less than optimal. Re-indexing randomizes the index, making find performance noticeably better. Indexing a vault in this manner rebuilds the system indices that must be present for locating objects by name, type, and owner, as well as other SQL convertible fields.</p>
+<p>To show the SQL commands for a particular index vault command, without actually changing the indices, use the validate index vault command as follows:.</p>
+<pre><code>validate index vault NAME [table TABLE_NAME [indexspace TABLESPACE_NAME]];
+</code></pre>
+<p>This is helpful to use on very large databases, where indexing a vault may take many hours. The validate output shows the SQL commands that need to be run. You could then manually run the commands in order, to make progress with minimal disruption.</p>
+<p>Each clause is described below.</p>
+<ul>
+<li>Table Clause </li>
+</ul>
+<p>Include this clause to indicate which database tables should be re-indexed. Only those columns that have indexing defined will be re-indexed. You should include up to and including the “_” in a table name, since what follows is specific to the vault specified. For example:</p>
+<pre><code>index vault &quot;Engineering-1&quot; table lxbo_;
+</code></pre>
+<p>This command might generate and execute SQL similar to:</p>
+<blockquote>
+<p>alter index lxBO_abbe6b7a_lxOid_Index rebuild;<br> alter index lxBO_abbe6b7a_lxName_Index rebuild;<br>alter index lxBO_abbe6b7a_lxOwner_Index rebuild;<br>alter index lxBO_abbe6b7a_lxPolicy_Index rebuild;  </p>
+</blockquote>
+<p>The Engineering-1 vault is associated with the abbe6b7a table.</p>
+<ul>
+<li>Indexspace Clause</li>
+</ul>
+<p>Use this clause to specify an alternate database tablespace to use for processing this command. For example:</p>
+<pre><code>index vault “Engineering-1” table lxbo_ indexspace USER_DATA;
+</code></pre>
+<p>This SQL generated is as follows:</p>
+<blockquote>
+<p>alter index lxBO_abbe6b7a_lxOid_Index rebuild tablespace USER_DATA;<br>alter index lxBO_abbe6b7a_lxName_Index rebuild tablespace USER_DATA;<br>alter index lxBO_abbe6b7a_lxOwner_Index rebuild tablespace USER_DATA;<br>alter index lxBO_abbe6b7a_lxPolicy_Index rebuild tablespace USER_DATA;<br>alter index lxBO_abbe6b7a_lxState_Index rebuild tablespace USER_DATA;</p>
+</blockquote>
+<p>This command adds indices to all columns of lxBO_ table (of the vault Engineering-1) that have indexing defined, and the command would use tablespace USER_DATA to hold the index data.</p>
+<p>You must also include the table clause with using the indexspace clause.</p>
+<h2 id="Fixing-Fragmented-Vaults"><a href="#Fixing-Fragmented-Vaults" class="headerlink" title="Fixing Fragmented Vaults"></a>Fixing Fragmented Vaults</h2><p>As objects are deleted from a vault, storage gaps will occur in the vault database file. These gaps represent wasted disk space and can cause an increase in access time. MQL provides the tidy vault command to fix fragmentations in the database file of the vault. </p>
+<pre><code>tidy vault NAME [commit N];
+</code></pre>
+<ul>
+<li><p>NAME is the name of the vault you want to fix. You can specify the ADMINISTRATION vault to remove unused records of deleted administration objects.  </p>
+</li>
+<li><p>When this command is executed, ENOVIA Live Collaboration consolidates the fragmented database file. It deletes rows in the database tables that are marked for deletion.</p>
+</li>
+<li><p>Commit N Clause<br>Include this clause when tidying large vaults. The number N that follows specifies that the command should commit the database transaction after this many objects have been tidied. The default is 1000. For example:</p>
+<p>  tidy vault “Engineering” commit 200</p>
+</li>
+</ul>
+<p>The Commit N clause cannot be used for the ADMINISTRATION vault.</p>
+<h2 id="List-of-Vaults"><a href="#List-of-Vaults" class="headerlink" title="List of Vaults"></a>List of Vaults</h2><p>A vault is a grouping of objects that depends on the types of objects used, the relationships they have to one another, and the people who need access to them.<br>The following code demonstrates how to get a list of vaults.</p>
+<pre><code>try&#123;
+     getContext().connect();
+     VaultList list = Vault.getVaults(getContext());
+     _context.disconnect();
+     VaultItr itr = new VaultItr(list);
+     while(itr.next())
+     &#123;
+         Vault vault = itr.obj();
+         System.out.println(&quot;vault: &quot; + vault.getName());
+     &#125;
+     getContext().disconnect();
+&#125;catch (MatrixException e)&#123;
+ // Can’t load vaults
+&#125;
+</code></pre>
+]]></content>
+      <categories>
+        <category>Enovia</category>
+      </categories>
+      <tags>
+        <tag>Enovia</tag>
+      </tags>
+  </entry>
 </search>
