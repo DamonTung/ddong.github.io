@@ -2226,11 +2226,6 @@ notification
   </entry>
   <entry>
     <title>vault_in_enovia</title>
-    <url>/2021/11/30/vault-in-enovia-1/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>vault_in_enovia</title>
     <url>/2021/11/30/vault-in-enovia/</url>
     <content><![CDATA[<h1 id="Vaults"><a href="#Vaults" class="headerlink" title="Vaults"></a>Vaults</h1><p>A <em>vault</em> is a storage location residing in the underlying database that is defined by an ENOVIA Live Collaboration System Administrator for use by ENOVIA Live Collaboration. Vaults allow the designer of the ENOVIA Live Collaboration database to construct one or more logical storage locations within the database. The Business Administrator determines what the vault is for, while the System Administrator defines where the vault is located on the network. Vaults should use actual host and path names, not mounted directories. Paths must be exported on the host to all users<br>who require access to the vaults.  </p>
 <blockquote>
